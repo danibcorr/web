@@ -90,5 +90,9 @@
   "sidebar.tutorialSidebar.category.MLOps": {
     "message": "MLOps",
     "description": "The label for category MLOps in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Deep Learning": {
+    "message": "Deep Learning",
+    "description": "The label for category Deep Learning in sidebar tutorialSidebar"
   }
 }

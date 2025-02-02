@@ -15,10 +15,10 @@ toc_max_heading_level: 4
 
 | job_id | job_title_short  | job_title               | salary_year_avg | job_location |
 | ------ | ---------------- | ----------------------- | --------------- | ------------ |
-| 1      | Data Analyst     | Junior Data Analyst     | 95000           | Boston, MA   |
-| 2      | Business Analyst | Senior Business Analyst | 120000          | Anywhere     |
-| 3      | Data Analyst     | Data Analyst            | 105000          | Boston, MA   |
-| 4      | Business Analyst | Business Analyst        | 75000           | Anywhere     |
+| 1      | Data Analyst     | Junior Data Analyst     | 95,000          | Boston, MA   |
+| 2      | Business Analyst | Senior Business Analyst | 120,000         | Anywhere     |
+| 3      | Data Analyst     | Data Analyst            | 105,000         | Boston, MA   |
+| 4      | Business Analyst | Business Analyst        | 75,000          | Anywhere     |
 
 ### invoices_fact
 
@@ -51,10 +51,10 @@ toc_max_heading_level: 4
 
 ### Enunciado
 
-Obtener detalles de trabajos para las posiciones de 'Data Analyst' o 'Business
-Analyst'. Para 'Data Analyst', solo quiero trabajos con salario > \$100k, y para
-'Business Analyst', solo quiero trabajos con salario > \$70k. Incluir solo
-trabajos ubicados en 'Boston, MA' o 'Anywhere'.
+Obtener detalles de trabajos para las posiciones de 'Data Analyst' o 'Business Analyst'.
+Para 'Data Analyst', solo quiero trabajos con salario > \$100k, y para 'Business
+Analyst', solo quiero trabajos con salario > \$70k. Incluir solo trabajos ubicados en
+'Boston, MA' o 'Anywhere'.
 
 <details>
 <summary>Solución</summary>
@@ -80,8 +80,8 @@ WHERE
 
 ### Enunciado
 
-Buscar roles de 'Data Analyst' o 'Business Analyst' que no sean senior. Obtener
-el título del trabajo, la ubicación y el salario promedio anual.
+Buscar roles de 'Data Analyst' o 'Business Analyst' que no sean senior. Obtener el título
+del trabajo, la ubicación y el salario promedio anual.
 
 <details>
 <summary>Solución</summary>
@@ -105,8 +105,8 @@ WHERE
 
 ### Enunciado
 
-Calcular las ganancias totales del mes actual por proyecto. Calcular un
-escenario donde la tarifa por hora aumenta en \$5.
+Calcular las ganancias totales del mes actual por proyecto. Calcular un escenario donde
+la tarifa por hora aumenta en \$5.
 
 <details>
 <summary>Solución</summary>
@@ -130,8 +130,7 @@ ORDER BY
 
 ### Enunciado
 
-Encontrar el salario promedio y el número de ofertas de trabajo para cada
-habilidad.
+Encontrar el salario promedio y el número de ofertas de trabajo para cada habilidad.
 
 <details>
 <summary>Solución</summary>

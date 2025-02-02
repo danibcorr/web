@@ -23,22 +23,18 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
   <em>Logo de Anaconda</em>
 </p>
 
-**Anaconda** es una plataforma de código abierto diseñada para la creación y
-gestión de entornos virtuales en Python, enfocada en proyectos de ciencia de
-datos y aprendizaje automático.
+**Anaconda** es una plataforma de código abierto diseñada para la creación y gestión de
+entornos virtuales en Python, enfocada en proyectos de ciencia de datos y aprendizaje
+automático. Proporciona una distribución de Python con numerosas bibliotecas
+preinstaladas, un gestor de paquetes eficiente y herramientas avanzadas, como los
+cuadernos [_Jupyter_](https://jupyter.org/). La gestión de paquetes en Anaconda se
+realiza mediante el gestor [_Conda_](https://anaconda.org/anaconda/repo), aunque también
+es posible utilizar [_PIP_](https://pypi.org/).
 
-Proporciona una distribución de Python con numerosas bibliotecas preinstaladas,
-un gestor de paquetes eficiente y herramientas avanzadas, como los cuadernos
-[_Jupyter_](https://jupyter.org/).
-
-La gestión de paquetes en Anaconda se realiza mediante el gestor
-[_Conda_](https://anaconda.org/anaconda/repo), aunque también es posible
-utilizar [_PIP_](https://pypi.org/).
-
-Por otro lado, [_VENV_](https://docs.python.org/3/library/venv.html) es una
-alternativa más ligera para la creación de entornos virtuales sin las
-dependencias adicionales de Anaconda. En este caso, la gestión de paquetes se
-lleva a cabo con [_PIP_](https://pypi.org/).
+Por otro lado, [_VENV_](https://docs.python.org/3/library/venv.html) es una alternativa
+más ligera para la creación de entornos virtuales sin las dependencias adicionales de
+Anaconda. En este caso, la gestión de paquetes se lleva a cabo con
+[_PIP_](https://pypi.org/).
 
 <p align="center">
   <img src="https://python-poetry.org/images/logo-origami.svg" width="100"/>
@@ -46,18 +42,20 @@ lleva a cabo con [_PIP_](https://pypi.org/).
   <em>Logo de Poetry</em>
 </p>
 
-[_Poetry_](https://python-poetry.org/) es otra herramienta de gestión de
-dependencias en proyectos de Python. Permite, entre otras cosas:
+[_Poetry_](https://python-poetry.org/) es otra herramienta de gestión de dependencias en
+proyectos de Python. Permite, entre otras cosas:
 
-- Administrar dependencias por grupos (_producción_, _pruebas_, _documentación_,
-  etc.).
+- Administrar dependencias por grupos (_producción_, _pruebas_, _documentación_, etc.).
 - Crear y manejar entornos virtuales automáticamente.
 - Facilitar la creación de _wheels_ para empaquetar proyectos y publicarlos en
   [_PyPI_](https://pypi.org/).
 
-:::warning Este tutorial asume el uso de un sistema basado en Linux,
-específicamente una distribución derivada de Debian. Ten en cuenta que algunos
-comandos pueden variar según la distribución o el sistema operativo utilizado.
+:::warning
+
+Este tutorial asume el uso de un sistema basado en Linux, específicamente una
+distribución derivada de Debian. Ten en cuenta que algunos comandos pueden variar según
+la distribución o el sistema operativo utilizado.
+
 :::
 
 ## 2. Utilidades para la gestión de entornos
@@ -134,12 +132,46 @@ comandos pueden variar según la distribución o el sistema operativo utilizado.
          ```
 
    </TabItem>
+
+   <TabItem value="poetry" label="Poetry">
+
+      1. **Instalar Poetry**:
+
+         ```bash
+         pip install poetry
+         ```
+
+      2. **Configurar Poetry para usar entornos virtuales dentro del proyecto**:
+         Este es el valor por defecto que tiene Poetry, en caso contrario Poetry
+         funcionara como un gestor de dependencias sin instalar un entorno virtual
+         especifico para el proyecto.
+
+         ```bash
+         poetry config virtualenvs.in-project true
+         ```
+
+      3. **Crear un nuevo proyecto con Poetry**:
+
+         ```bash
+         poetry new nombre_del_proyecto
+         ```
+
+         Esto generará una estructura de proyecto con un archivo `pyproject.toml`.
+
+      4. **Instalar dependencias y crear el entorno virtual automáticamente**:
+
+         ```bash
+         poetry install
+         ```
+
+   </TabItem>
+
 </Tabs>
 
 ### 2.2. Gestión de la caché
 
-Para liberar espacio o solucionar problemas con dependencias, se puede purgar la
-caché con los siguientes comandos:
+Para liberar espacio o solucionar problemas con dependencias, se puede purgar la caché
+con los siguientes comandos:
 
 <Tabs>
    <TabItem value="pip" label="PIP">
@@ -161,8 +193,8 @@ caché con los siguientes comandos:
 
 ### 2.3. Actualización de paquetes
 
-Mantener las dependencias actualizadas es clave para el correcto funcionamiento
-del proyecto.
+Mantener las dependencias actualizadas es clave para el correcto funcionamiento del
+proyecto.
 
 <Tabs>
    <TabItem value="pip" label="PIP">
@@ -237,8 +269,7 @@ del proyecto.
 Cuando un proyecto necesita dependencias específicas, es útil usar un archivo
 `requirements.txt`:
 
-1. **Crear un archivo `requirements.txt`** con los paquetes y versiones
-   deseadas:
+1. **Crear un archivo `requirements.txt`** con los paquetes y versiones deseadas:
 
    ```plaintext
    numpy==1.21.0
