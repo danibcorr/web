@@ -17,6 +17,7 @@
   --borderColor: #e0e0e0;
   --transitionTime: 0.3s;
   --maxWidth: 100%;
+  --ifm-link-color: #b37940;
 }
 
 /* Dark Mode Variables */
@@ -39,6 +40,7 @@
   --borderColor: #555555;
   --transitionTime: 0.3s;
   --maxWidth: 100%;
+  --ifm-link-color: #a7b847;
 }
 
 .main-wrapper {
