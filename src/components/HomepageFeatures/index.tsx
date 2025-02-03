@@ -232,25 +232,22 @@ function HomepageFeatures() {
 
               <div className={styles.projectItem}>
                 <h4 className={styles.projectTitle}>
-                  <Translate id="proyectos.ia.universidad">
-                    🎓 Asistente Universitario
-                  </Translate>
+                  <Translate id="proyectos.ia.universidad">🎓 MorphX</Translate>
                 </h4>
                 <p className={styles.projectDescription}>
                   <Translate id="proyectos.ia.universidad.descripcion">
-                    Herramienta que simplifica tareas académicas y
-                    administrativas para estudiantes, educadores e
-                    investigadores, proporcionando utilidades para gestionar
-                    metadatos de documentos, convertir PDFs a Markdown,
-                    transcribir audio, analizar estadísticas de calificaciones y
-                    más.
+                    MorphX es una herramienta basada en Streamlit que permite
+                    modificar metadatos, convertir archivos a Markdown,
+                    transcribir audio y más, todo desde una interfaz web
+                    intuitiva.
                   </Translate>
                 </p>
                 <div className={styles.projectLinks}>
                   <a
-                    href="https://github.com/danibcorr/university-helper"
+                    href="https://github.com/danibcorr/morphx"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Ver repositorio en GitHub"
                   >
                     <FaGithub />
                   </a>
@@ -275,6 +272,31 @@ function HomepageFeatures() {
                     href="https://github.com/danibcorr/wattpad-mate"
                     target="_blank"
                     rel="noopener noreferrer"
+                  >
+                    <FaGithub />
+                  </a>
+                </div>
+              </div>
+
+              <div className={styles.projectItem}>
+                <h4 className={styles.projectTitle}>
+                  <Translate id="proyectos.ia.musica">
+                    🏗️ Plantilla en Python para producción
+                  </Translate>
+                </h4>
+                <p className={styles.projectDescription}>
+                  <Translate id="proyectos.ia.musica.descripcion">
+                    Una plantilla en Python diseñada para agilizar el desarrollo
+                    de proyectos, facilitando la transición de prototipos a
+                    productos o aplicaciones funcionales.
+                  </Translate>
+                </p>
+                <div className={styles.projectLinks}>
+                  <a
+                    href="https://github.com/danibcorr/python-project-template"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver repositorio en GitHub"
                   >
                     <FaGithub />
                   </a>

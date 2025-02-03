@@ -94,3 +94,7 @@ def funcion(a, b):
 ```
 
 Este decorador facilita la captura y el registro automático de errores en las funciones.
+
+## 2. Creación y registro de logs con logging
+
+Este es el logger por defecto de Python.
