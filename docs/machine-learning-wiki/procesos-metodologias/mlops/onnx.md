@@ -3,7 +3,7 @@ sidebar_position: 10
 authors:
   - name: Daniel Bazo Correa
 description: Exportación de modelos para inferencia con ONNX.
-title: Exportación de modelos con ONNX
+title: ONNX
 toc_max_heading_level: 4
 ---
 
@@ -18,7 +18,7 @@ toc_max_heading_level: 4
 <p align="center">
   <img src={require("../../../img/onnx-logo.png").default} width="500"/>
   <br />
-  <em>Logo de OONX.</em>
+  <em>Logo de ONNX.</em>
 </p>
 
 El ecosistema del aprendizaje profundo se caracteriza por una gran fragmentación en los
@@ -65,10 +65,16 @@ mediante técnicas como la contenerización con Docker.
 
 ## 1.2. Funcionamiento
 
-ONNX representa los modelos como un grafo de computación, donde cada nodo representa una
-operación matemática y cada arista indica la relación entre las operaciones. Es
-compatible con distintos tipos de datos, como enteros, flotantes y booleanos, entre
-otros.
+ONNX representa los modelos mediante un grafo de computación, en el cual cada nodo
+corresponde a una operación matemática y cada arista define la relación entre dichas
+operaciones. Este formato es compatible con diversos tipos de datos estándar, incluyendo
+tensores y tipos no tensoriales, como enteros, flotantes y booleanos, entre otros.
+
+El archivo de modelo en ONNX contiene información esencial, como la versión del modelo,
+metadatos y un grafo de flujo de datos de computación acíclico. Dentro del grafo, se
+especifican las entradas y salidas del modelo, la lista de nodos de computación y el
+nombre del propio grafo. Además, se incluyen definiciones de operadores, parámetros y
+tipos de datos utilizados en el modelo.
 
 El estándar ONNX define un conjunto de operadores que permiten mapear las funcionalidades
 de los frameworks de alto nivel con su propia representación. Existe una tabla de
@@ -80,34 +86,67 @@ ONNX permite la creación de operadores personalizados para extender su funciona
 Para facilitar la visualización de los grafos de computación generados, se dispone de la
 herramienta [**Netron**](https://netron.app/), que forma parte del ecosistema de ONNX.
 
+### 1.2.1. Versionado en ONNX
+
+El versionado en ONNX se estructura en tres niveles:
+
+- **IR Version (Intermediate Representation Version):** Define el formato del archivo y
+  la estructura del modelo dentro de ONNX.
+- **Opset Version (Operator Set Version):** Indica el conjunto de operadores compatibles
+  con el modelo, asegurando compatibilidad con diferentes versiones del framework.
+- **Operator Version:** Especifica la versión de cada operador individual dentro del
+  conjunto de operadores, lo que permite gestionar cambios en su funcionalidad sin
+  afectar la compatibilidad general del modelo.
+
 ## 1.3. ONNX Runtime
 
-ONNX Runtime es un motor de inferencia optimizado que permite ejecutar modelos en formato
-ONNX de manera eficiente en distintos entornos de hardware, tanto en la nube como en
-dispositivos edge. Este motor proporciona una capa de abstracción sobre el hardware
-utilizado y permite la integración con bibliotecas de aceleración específicas mediante
-los **Execution Providers (EP)**.
+ONNX Runtime es un motor de inferencia optimizado para la ejecución eficiente de modelos
+en formato ONNX en diversos entornos de hardware, incluyendo la nube y dispositivos edge.
+Proporciona una capa de abstracción sobre el hardware utilizado y permite la integración
+con bibliotecas de aceleración específicas mediante los **Execution Providers (EP)**.
+Soporta completamente la especificación de ONNX, garantizando la interoperabilidad entre
+diferentes frameworks y herramientas, y asegura la compatibilidad retroactiva con modelos
+creados en versiones anteriores.
+
+Este motor está diseñado para ofrecer alto rendimiento mediante estrategias de
+optimización y aceleración, así como una ejecución híbrida que prioriza el uso de
+hardware acelerado siempre que esté disponible. En caso de incompatibilidad, el modelo se
+ejecuta en la CPU de manera eficiente. Además, ONNX Runtime es una solución portátil y
+compatible con múltiples sistemas operativos y plataformas de hardware, permitiendo la
+integración con aceleradores personalizados y entornos de ejecución optimizados.
+
+Otro aspecto destacado es su extensibilidad, ya que admite la incorporación de módulos
+personalizados para mejorar la funcionalidad y el rendimiento. Gracias a estas
+características, ONNX Runtime se posiciona como una solución flexible y eficiente para la
+inferencia de modelos en una amplia variedad de entornos y dispositivos.
 
 ### 1.3.1. Funcionamiento
 
-1. **Execution Providers (EP):** ONNX Runtime permite integrar bibliotecas específicas de
-   aceleración de hardware, lo que facilita la optimización de la inferencia en
-   diferentes plataformas.
-   [Documentación](https://onnxruntime.ai/docs/execution-providers/).
-2. **Interfaz `GetCapability()`:** Asigna nodos o subgrafos del modelo ONNX a la
-   biblioteca del EP compatible, permitiendo una ejecución optimizada en CPU, GPU, FPGA y
-   NPUs.
+Para optimizar la ejecución de los modelos, ONNX Runtime realiza una partición del grafo
+de computación, dividiéndolo en subgrafos que pueden ejecutarse en diferentes **Execution
+Providers (EP)**, lo que permite aprovechar distintas plataformas de hardware y ejecutar
+operaciones en paralelo dentro del grafo. Esta optimización se lleva a cabo en varios
+niveles:
 
-### 1.3.2. Ventajas
+1. **Partición del grafo:** Se identifican y dividen las secciones del modelo que pueden
+   ejecutarse en distintos EP.
+2. **Aplicación de transformaciones generales:** Se realizan modificaciones en el grafo
+   como inserción de conversiones de tipo (_cast insertion_) o copias de memoria (_mem
+   copy insertion_).
+3. **Transformaciones generales independientes del EP:** Se aplican optimizaciones que no
+   dependen de un hardware específico.
+4. **Transformaciones específicas del EP:** Se ajusta el modelo para aprovechar al máximo
+   las capacidades de hardware especializadas, como TPU, GPU o FPGA.
 
-- **Flexibilidad:** Permite ejecutar modelos ONNX en múltiples entornos sin depender del
-  hardware específico. ONNX Runtime es compatible con múltiples proveedores de ejecución,
-  agrupados en distintas categorías, como CPUs, GPUs, Edge, u otros.
-- **Optimización:** Aprovecha las capacidades computacionales del hardware para mejorar
-  el rendimiento de la inferencia.
-- **Compatibilidad ampliada:** Soporta una amplia variedad de proveedores de ejecución.
+Los **Execution Providers (EP)** permiten la integración de bibliotecas específicas de
+aceleración de hardware, facilitando la optimización de la inferencia en diversas
+plataformas. Además, la interfaz `GetCapability()` asigna nodos o subgrafos del modelo
+ONNX a la biblioteca del **Execution Provider** compatible, permitiendo una ejecución
+optimizada en distintos tipos de hardware, como CPU, GPU, FPGA y NPU. Más información
+sobre los EP está disponible en la
+[documentación oficial](https://onnxruntime.ai/docs/execution-providers/).
 
-### 1.3.3. Integración y configuración
+### 1.3.2. Integración y configuración
 
 Los desarrolladores pueden crear e integrar sus propios EPs para ejecutar modelos en
 soluciones de aceleración personalizadas. Además, ONNX Runtime permite construir paquetes
@@ -139,3 +178,21 @@ session.set_providers(["CPUExecutionProvider"])
 ONNX proporciona un repositorio de modelos preentrenados denominado
 [**ONNX Model Zoo**](https://onnx.ai/models/), que incluye modelos de visión
 computacional, procesamiento de lenguaje natural (NLP) y audio, entre otros.
+
+## 1.5. Olive (ONNX LIVE)
+
+Para mejorar aún más la optimización de modelos ONNX, se dispone de
+[**Olive (ONNX LIVE)**](https://github.com/microsoft/OLive), una herramienta diseñada
+para optimizar modelos ONNX para su ejecución eficiente en la nube o en dispositivos
+_edge_. Dado un modelo y un hardware objetivo, Olive selecciona y aplica las técnicas de
+optimización más adecuadas para generar un modelo optimizado, teniendo en cuenta
+restricciones como precisión y latencia.
+
+Entre sus principales beneficios se encuentran la automatización del proceso de
+optimización, eliminando la necesidad de pruebas manuales, y una amplia variedad de
+técnicas avanzadas de compresión, ajuste fino (_fine-tuning_) y compilación. Dispone de
+una interfaz de línea de comandos (CLI), flujos de trabajo estructurados para gestionar
+la transformación y optimización de modelos, y soporte para la compilación de adaptadores
+LoRA. Además, ofrece integración con plataformas como **Hugging Face** y **Azure AI**. Un
+mecanismo de caché integrado permite mejorar la productividad al almacenar y reutilizar
+optimizaciones previas, reduciendo el tiempo de cómputo en experimentaciones repetitivas.

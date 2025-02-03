@@ -20,14 +20,10 @@ const config = {
 
   i18n: {
     defaultLocale: "es",
-    locales: ["es", "en"],
+    locales: ["es"],
     localeConfigs: {
       es: {
         label: "Español",
-        direction: "ltr",
-      },
-      en: {
-        label: "English",
         direction: "ltr",
       },
     },

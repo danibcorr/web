@@ -10,9 +10,10 @@ const features = [
     title: "Daniel Bazo Correa",
     description: (
       <Translate id="perfil.descripcion">
-        Soy Ingeniero de Sistemas Electrónicos y actualmente trabajo como
-        Científico de Datos en Ericsson. Me apasionan la IA, los datos y sus
-        aplicaciones para mejorar las capacidades humanas.
+        Hola, soy Dani! 👋 Soy Ingeniero de Sistemas Electrónicos y Científico
+        de Datos en el área de investigación de Ericsson. Me apasiona la
+        inteligencia artificial, los datos y sus aplicaciones para potenciar las
+        capacidades humanas.
       </Translate>
     ),
     image: "https://avatars.githubusercontent.com/u/77023868?v=4",
