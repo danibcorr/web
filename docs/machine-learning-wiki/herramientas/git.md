@@ -313,7 +313,7 @@ automáticamente estos scripts cuando ocurra el evento correspondiente.
 
 ### 5.2. Tipos de Git Hooks y ejemplos
 
-#### **5.2.1. pre-commit**
+#### 5.2.1. pre-commit
 
 Se ejecuta antes de realizar un _commit_. Es útil para verificar el formato del código,
 ejecutar pruebas unitarias, validar los mensajes de _commit_ o evitar errores
@@ -350,7 +350,7 @@ echo "El commit se ha completado con éxito."
 
 :::
 
-#### **5.2.2. pre-push**
+#### 5.2.2. pre-push
 
 Se ejecuta antes de enviar cambios a un repositorio remoto. Se emplea para evitar
 _pushes_ en ramas protegidas o para ejecutar pruebas antes de subir los cambios.
@@ -398,7 +398,7 @@ echo "El push se ha completado con éxito."
 
 :::
 
-#### **5.2.3. post-commit**
+#### 5.2.3. post-commit
 
 Se ejecuta después de realizar un _commit_. Puede utilizarse para enviar notificaciones
 automáticas al equipo.
@@ -420,7 +420,7 @@ echo "Nuevo commit realizado: $commit_message" | sendmail -v equipo@example.com
 
 :::
 
-#### **5.2.4. post-merge**
+#### 5.2.4. post-merge
 
 Se ejecuta después de completar un _merge_. Es útil para actualizar dependencias o
 regenerar documentación.
@@ -458,7 +458,7 @@ echo "El post-merge se ha completado con éxito."
 
 :::
 
-#### **5.2.5. pre-receive y post-receive**
+#### 5.2.5. pre-receive y post-receive
 
 Estos _hooks_ se ejecutan en el servidor remoto al recibir cambios mediante _push_.
 

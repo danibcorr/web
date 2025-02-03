@@ -30,8 +30,8 @@ build:
 	@echo "Instalando las dependencias..."
 	yarn install
 
-	@echo "Creando los ficheros de configuración para la traducción..."
-	npm run write-translations
+	#@echo "Creando los ficheros de configuración para la traducción..."
+	#npm run write-translations
 	
 	@echo "Construyendo la documentación..."
 	yarn build

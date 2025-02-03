@@ -3,7 +3,7 @@ sidebar_position: 6
 authors:
   - name: Daniel Bazo Correa
 description: Creación y uso de logs en Python.
-title: Creación y uso de logs
+title: Logs
 toc_max_heading_level: 4
 ---
 
@@ -94,3 +94,7 @@ def funcion(a, b):
 ```
 
 Este decorador facilita la captura y el registro automático de errores en las funciones.
+
+## 2. Creación y registro de logs con logging
+
+Este es el logger por defecto de Python.
