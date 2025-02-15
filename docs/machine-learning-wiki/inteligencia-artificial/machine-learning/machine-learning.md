@@ -350,10 +350,141 @@ $$
 f(X|\mu, \sigma) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_i - \mu)^2}{2\sigma^2}}
 $$
 
-Para calcular probabilidades en distribuciones continuas, es necesario integrar la
-función de densidad de probabilidad, lo que permite obtener el área bajo la curva.
+En las distribuciones continuas, el cálculo de probabilidades requiere la integración de
+la función de densidad de probabilidad (PDF). Esta integración permite obtener el área
+bajo la curva entre dos puntos, lo que representa la probabilidad acumulada en dicho
+intervalo. Dado que el área total bajo la curva es igual a 1, el área acumulada hasta la
+media en una distribución normal es de 0.5.
+
+Es importante destacar que la probabilidad exacta en un único punto es igual a 0. Esto se
+debe a que, gráficamente, un punto no tiene ancho y, por lo tanto, no contribuye con área
+bajo la curva. En consecuencia, solo es posible calcular probabilidades en intervalos.
 
 La **función de distribución acumulada** (_Cumulative Distribution Function_, CDF)
-representa la probabilidad acumulada hasta un punto específico, es decir, el área bajo la
-curva desde $$-\infty$$ hasta dicho punto. Dado que el área total bajo la curva es igual
-a 1, el área acumulada hasta la media de la distribución normal es 0.5.
+expresa la probabilidad acumulada hasta un determinado valor. Matemáticamente, representa
+el área bajo la curva de la función de densidad desde $$-\infty$$ hasta dicho punto.
+
+##### 3.2.3.2. Propiedades de la Función de Densidad de Probabilidad
+
+Sea $F$ la función de distribución y $\mathbb{R}$ el conjunto de números reales, entonces
+se cumple que $F: \mathbb{R} \to [0,1]$. Esto implica que el rango de valores de la
+función de densidad de probabilidad está comprendido entre 0 y 1.
+
+Algunas de sus propiedades fundamentales son:
+
+- $F(x) = P(A_x) = P(X \leq x)$
+- $P(X \leq x) = F(x)$, lo que equivale a realizar la CDF.
+- $P(X > x) = 1 - P(X \leq x) = 1 - F(x)$
+- $P(a < X \leq b) = F(b) - F(a)$
+- $P(X \geq a) = P(X > a) + P(X = a)$
+- $P(X = a) = F(a) - \lim_{h \to 0^+} F(a - h) = F(a) - P(X \leq a)$
+
+Estas propiedades permiten calcular probabilidades acumuladas y complementar el análisis
+de distribuciones de probabilidad continuas.
+
+:::tip Ejemplo
+
+Se desea calcular la probabilidad de que un valor se encuentre en el intervalo
+$[142.5,
+155.7]$ en una distribución normal $N(\mu=155.7, \sigma=6.6)$.
+
+La probabilidad se obtiene a partir de la función de distribución acumulada (CDF):
+
+$P(a < X \leq b) = P(142.5 < X \leq 155.7) = F(155.7) - F(142.5)$
+
+$P(X \leq 155.7) - P(X \leq 142.5) \approx 0.5 - 0.02275 \approx 0.4772$
+
+Implementación en Python:
+
+```python
+from statistics import NormalDist
+
+# Se calcula la función de distribución acumulada (CDF) en los puntos de interés
+cdf_p1 = NormalDist(155.7, 6.6).cdf(155.7)
+# cdf_p1 = 0.5, debido a la simetría de la distribución normal
+
+cdf_p2 = NormalDist(155.7, 6.6).cdf(142.5)
+# cdf_p2 ≈ 0.02275
+
+# Se obtiene la probabilidad del intervalo restando las probabilidades acumuladas
+diff = cdf_p1 - cdf_p2
+# diff ≈ 0.4772 = 47.72%
+```
+
+Por lo tanto, la probabilidad de que un valor de esta distribución normal se encuentre en
+el intervalo $[142.5, 155.7]$ es aproximadamente del 47.72%.
+
+:::
+
+#### 3.2.4. Distribución Exponencial
+
+La distribución exponencial se emplea para modelar el tiempo transcurrido entre eventos
+en un proceso de Poisson, donde los eventos ocurren de manera independiente y con una
+tasa constante. Se utiliza en el análisis de tiempos de espera, confiabilidad de sistemas
+y modelado de fallos en ingeniería.
+
+La función de densidad de probabilidad (PDF) está definida como:
+
+$$
+f(x; \lambda) = \lambda e^{-\lambda x}, \quad x \geq 0, \, \lambda > 0
+$$
+
+donde $\lambda$ indica la frecuencia con la que ocurren los eventos.
+
+La función de distribución acumulada (CDF) se expresa como:
+
+$$
+F(x) = 1 - e^{-\lambda x}, \quad x \geq 0
+$$
+
+La media de la distribución exponencial equivale a la **esperanza matemática** $E[X]$,
+que en probabilidad y estadística se define como:
+
+$$
+E[X] = \int_{-\infty}^{\infty} x f(x) \,dx
+$$
+
+En la distribución exponencial, se obtiene:
+
+$$
+\mu = E[X] = \frac{1}{\lambda}
+$$
+
+La varianza se expresa como:
+
+$$
+\sigma^2 = \frac{1}{\lambda^2}
+$$
+
+#### 3.2.5. Distribución Uniforme
+
+La distribución uniforme se caracteriza porque todos los valores dentro de un intervalo
+$[a, b]$ tienen la misma probabilidad de ocurrir. Se emplea en la generación de números
+aleatorios, simulaciones y situaciones en las que no hay preferencia por ningún valor
+específico dentro de un rango determinado.
+
+La función de densidad de probabilidad (PDF) para una distribución uniforme continua es:
+
+$$
+f(x) = \begin{cases} \frac{1}{b-a}, & a \leq x \leq b \\ 0, & \text{en otro caso}
+\end{cases}
+$$
+
+La función de distribución acumulada (CDF) está dada por:
+
+$$
+F(x) = \begin{cases} 0, & x < a \\ \frac{x-a}{b-a}, & a \leq x \leq b \\ 1, & x > b
+\end{cases}
+$$
+
+La media de la distribución uniforme es:
+
+$$
+\mu = E[X] = \frac{a + b}{2}
+$$
+
+Y su varianza se expresa como:
+
+$$
+\sigma^2 = \frac{(b-a)^2}{12}
+$$
