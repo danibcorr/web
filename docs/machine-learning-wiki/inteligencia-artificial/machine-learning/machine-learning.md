@@ -4,21 +4,35 @@ authors:
   - name: Daniel Bazo Correa
 description: Fundamentos del Machine Learning.
 title: Machine Learning
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 ## 1. Introducción
 
 ### 1.1. Definición
 
-El **aprendizaje automático** es una rama de la inteligencia artificial que se centra en
-el desarrollo y uso de algoritmos, también denominados modelos, capaces de identificar y
-comprender patrones en los datos de entrada con el objetivo de optimizar una métrica
-establecida. A diferencia de los enfoques tradicionales de programación, donde las reglas
-se definen explícitamente, en el aprendizaje automático los algoritmos ajustan sus
-parámetros automáticamente para mejorar su desempeño en función de los datos.
+<p align="center">
+  <img src="https://www.techspot.com/articles-info/2048/images/2020-07-07-image.jpg"/>
+  <br />
+  <em>Ilustración sobre los conjuntos que engloba la inteligencia artificial. [Link](https://www.techspot.com/articles-info/2048/images/2020-07-07-image.jpg)</em>
+</p>
 
-### 1.2. Técnicas más comunes
+El **aprendizaje automático** es una rama de la inteligencia artificial que se centra en
+el desarrollo y uso de algoritmos, también denominados **modelos**, capaces de
+identificar y comprender patrones en los datos de entrada con el objetivo de optimizar
+una métrica establecida.
+
+A diferencia de los enfoques tradicionales de programación, donde las reglas se definen
+explícitamente, en el aprendizaje automático los algoritmos ajustan sus parámetros
+automáticamente para mejorar su desempeño en función de los datos.
+
+### 1.2. Técnicas
+
+<p align="center">
+  <img src="https://www.sharpsightlabs.com/wp-content/uploads/2021/04/regression-vs-classification_simple-comparison-image_v3.png"/>
+  <br />
+  <em>Clasificación vs Regresión. [Link](https://www.sharpsightlabs.com/wp-content/uploads/2021/04/regression-vs-classification_simple-comparison-image_v3.png)</em>
+</p>
 
 Entre las técnicas más utilizadas se encuentran la **clasificación** y la **regresión**.
 La clasificación permite asignar etiquetas o categorías a los datos en función de sus
@@ -32,20 +46,26 @@ común consiste en evaluar múltiples algoritmos viables y compararlos para dete
 ofrece el mejor rendimiento. Esta comparación se basa en métricas de desempeño obtenidas
 a partir de los datos.
 
-El proceso de entrenamiento de los modelos requiere dividir el conjunto de datos en
-distintas partes: una para el entrenamiento del modelo, otra para la evaluación de su
-desempeño y, en algunos casos, una tercera partición para validar su capacidad de
-generalización antes de su implementación en entornos reales. Durante este proceso, el
+**El proceso de entrenamiento de los modelos requiere dividir el conjunto de datos en
+distintas partes**: una para el **entrenamiento** del modelo, otra para la **evaluación**
+de su desempeño y, en algunos casos, una tercera partición para **validar** su capacidad
+de generalización antes de su implementación en entornos reales. Durante este proceso, el
 algoritmo analiza las relaciones entre las características de los datos, identifica
 patrones y genera predicciones que se comparan con los valores reales. La diferencia
 entre las predicciones y las observaciones se mide mediante una métrica de error, lo que
 permite ajustar el modelo en cada iteración o **época**, es decir, cada vez que el
 algoritmo analiza completamente el conjunto de datos.
 
-Un modelo puede presentar **sobreajuste** (_overfitting_) cuando se ajusta demasiado a
-los datos de entrenamiento, logrando un alto rendimiento en estos pero fallando en datos
-nuevos. Este problema se conoce como el **compromiso entre sesgo y varianza**
-(_bias-variance tradeoff_), y su mitigación es esencial para obtener modelos que
+<p align="center">
+  <img src="https://miro.medium.com/max/1125/1*_7OPgojau8hkiPUiHoGK_w.png"/>
+  <br />
+  <em>Ejemplo de subajuste, ajuste adecuado y sobreajuste. [Link](https://miro.medium.com/max/1125/1*_7OPgojau8hkiPUiHoGK_w.png)</em>
+</p>
+
+Un modelo puede presentar **sobreajuste** (**_overfitting_**) cuando se ajusta demasiado
+a los datos de entrenamiento, logrando un alto rendimiento en estos pero fallando en
+datos nuevos. Este problema se conoce como el **compromiso entre sesgo y varianza**
+(**_bias-variance tradeoff_**), y su mitigación es esencial para obtener modelos que
 generalicen correctamente.
 
 ### 1.3. Tipos de datos
@@ -53,12 +73,18 @@ generalicen correctamente.
 #### 1.3.1. Variables dependientes e independientes
 
 En un conjunto de datos, cada atributo que varía entre muestras se denomina **variable**.
-Si una variable depende de otra, se considera **dependiente**; en caso contrario, se
+Si una variable depende de otra, se considera **dependiente**, en caso contrario, se
 clasifica como **independiente**. Las variables independientes, también llamadas
-**características** (_features_), son las utilizadas en el entrenamiento del modelo para
-predecir la variable dependiente.
+**características** (**_features_**), son las utilizadas en el entrenamiento del modelo
+para predecir la variable dependiente.
 
 #### 1.3.2. Datos continuos y discretos
+
+<p align="center">
+  <img src="https://agencyanalytics.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fdfcvkz6j859j%2F6k4gJrY1mvlPUxf7WZhqdp%2F9f2e800789b81fa6fe751fabf50e9069%2FDiscrete-vs-Continuous-Data-Supporting-Graphics-1.png&w=3840&q=75"/>
+  <br />
+  <em>Datos discretos vs datos continuos. [Link](https://agencyanalytics.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fdfcvkz6j859j%2F6k4gJrY1mvlPUxf7WZhqdp%2F9f2e800789b81fa6fe751fabf50e9069%2FDiscrete-vs-Continuous-Data-Supporting-Graphics-1.png&w=3840&q=75)</em>
+</p>
 
 Los datos pueden clasificarse en **continuos** o **discretos**. Los valores continuos
 pueden tomar cualquier número dentro de un rango, como la altura de una persona, ya que
@@ -66,33 +92,84 @@ pueden existir valores intermedios con una precisión arbitraria. En contraste, 
 valores discretos solo pueden asumir ciertos valores específicos, como la cantidad de
 páginas de un libro, donde no existen valores intermedios entre un número entero y otro.
 
-## 2. Estrategias para la selección y validación de datos en el aprendizaje automático
+## 2. Estrategias para la selección y validación de datos
+
+Los datos son un elemento esencial en los algoritmos de aprendizaje automático. Sin una
+selección adecuada, es posible obtener relaciones no significativas o incluso
+perjudiciales.
+
+No todos los datos o métricas son útiles, por lo que es fundamental ajustarse al
+problema, asegurar la coherencia dentro de la misma distribución y minimizar la presencia
+de valores atípicos. Una correcta selección de los datos permite desarrollar modelos más
+robustos. Para ello, se emplea la **validación cruzada**.
 
 ### 2.1. Validación cruzada
 
+<p align="center">
+  <img src="https://www.sharpsightlabs.com/wp-content/uploads/2024/02/cross-validation-explained_FEATURED-IMAGE.png"/>
+  <br />
+  <em>Esquema de funcionamiento de la validación cruzada. [Link](https://www.sharpsightlabs.com/wp-content/uploads/2024/02/cross-validation-explained_FEATURED-IMAGE.png)</em>
+</p>
+
 La selección de muestras para el entrenamiento y validación de un modelo puede resultar
-compleja, ya que una elección inadecuada puede generar sesgos en el modelo. Por ejemplo,
-en conjuntos de datos con dependencia temporal, como el tráfico de una red a lo largo del
-día, la distribución de las muestras en el conjunto de datos puede influir en el
-desempeño del modelo. Si los datos se registran en orden cronológico y las primeras
+compleja, ya que una elección inadecuada puede generar sesgos en el modelo.
+
+Por ejemplo, en conjuntos de datos con dependencia temporal, como el tráfico de una red a
+lo largo del día, la distribución de las muestras en el conjunto de datos puede influir
+en el desempeño del modelo. Si los datos se registran en orden cronológico y las primeras
 muestras corresponden a la mañana, mientras que las últimas a la noche, seleccionar las
-primeras muestras para entrenamiento y las últimas para prueba podría generar un modelo
-que no capture correctamente patrones generales. Para evitar este problema, se recomienda
-introducir aleatoriedad en la selección de las muestras y definir un porcentaje para cada
-partición del conjunto de datos.
+primeras muestras para entrenamiento y las últimas para prueba, podría generar un modelo
+que no capture correctamente patrones generales.
+
+Para evitar este problema, se recomienda introducir aleatoriedad en la selección de las
+muestras y definir un porcentaje para cada partición del conjunto de datos.
 
 :::note
 
 Es fundamental establecer una **semilla aleatoria** antes de cualquier proceso que
 requiera aleatorización, garantizando así la reproducibilidad de los resultados.
 
+Por ejemplo, el siguiente código establece semillas para las bibliotecas más utilizadas
+en Python para aprendizaje automático y profundo, garantizando la reproducibilidad de los
+experimentos:
+
+```python
+import random
+import numpy as np
+import tensorflow as tf
+import torch
+import sklearn.utils
+
+# Valor de la semilla
+SEED = 42
+
+# Establecer semilla en Python (random)
+random.seed(SEED)
+
+# Establecer semilla en NumPy
+np.random.seed(SEED)
+
+# Establecer semilla en TensorFlow
+tf.random.set_seed(SEED)
+
+# Establecer semilla en PyTorch
+torch.manual_seed(SEED)
+torch.cuda.manual_seed(SEED)  # Para GPUs
+torch.cuda.manual_seed_all(SEED)  # Para múltiples GPUs
+torch.backends.cudnn.deterministic = True  # Para reproducibilidad en CUDA
+torch.backends.cudnn.benchmark = False
+
+# Establecer semilla en Scikit-learn
+sklearn.utils.check_random_state(SEED)
+```
+
 :::
 
 Otra estrategia para la selección de datos es la **validación cruzada**, la cual consiste
 en dividir el conjunto de datos en múltiples partes y realizar iteraciones en las que se
 alternan los subconjuntos destinados a entrenamiento y prueba. Si se opta por una
-validación cruzada de 5 particiones (_5-fold cross-validation_), el modelo se entrena y
-evalúa cinco veces, cada vez utilizando un subconjunto distinto para prueba y los demás
+validación cruzada de 5 particiones (**_5-fold cross-validation_**), el modelo se entrena
+y evalúa cinco veces, cada vez utilizando un subconjunto distinto para prueba y los demás
 para entrenamiento. Posteriormente, los resultados obtenidos en cada iteración se
 promedian para obtener una evaluación más robusta del modelo.
 
@@ -107,14 +184,15 @@ leakage_**, que ocurre cuando características utilizadas en el entrenamiento ta
 están presentes en la fase de prueba, generando una evaluación artificialmente optimista
 del modelo.
 
-## 3. Estadística
+## 3. Conceptos de estadística
 
 ### 3.1. Distribuciones
 
 Antes de realizar predicciones, es fundamental recopilar datos. En muchas ocasiones, esta
-recopilación genera histogramas, que permiten visualizar la distribución de los datos. Un
-histograma se compone de dos ejes principales: el eje x, donde se representan los datos
-agrupados en categorías, y el eje y, que indica la frecuencia de cada categoría, es
+recopilación genera histogramas, que permiten visualizar la distribución de los datos.
+
+Un histograma se compone de dos ejes principales: el eje x, donde se representan los
+datos agrupados en categorías, y el eje y, que indica la frecuencia de cada categoría, es
 decir, el número de muestras que pertenecen a cada grupo. Las divisiones en el eje x para
 agrupar los datos en rangos similares se conocen como **_bins_** o contenedores.
 
@@ -128,16 +206,17 @@ comportamiento de los datos.
 La elección del número de _bins_ es crucial, ya que debe reflejar correctamente la
 distribución de los datos. Este tipo de histogramas resulta especialmente útil en
 algoritmos como **Naïve Bayes**, donde se generan distribuciones de probabilidad en cada
-iteración, permitiendo obtener valores como medias e intervalos de confianza, entre otros
-aspectos, que se analizarán más adelante.
+iteración, permitiendo obtener valores como medias e intervalos de confianza.
 
 :::
 
 El conjunto completo de datos recopilados se denomina **población** y se representa con
 la letra $N$. Un subconjunto de la población se denomina **muestra** y se representa con
-la letra $n$. La probabilidad de que un dato pertenezca a una determinada parte del
-histograma se calcula dividiendo el número de muestras en esa sección entre el número
-total de muestras en la población.
+la letra $n$.
+
+La probabilidad de que un dato pertenezca a una determinada parte del histograma se
+calcula dividiendo el número de muestras en esa sección entre el número total de muestras
+en la población.
 
 :::note
 
@@ -151,42 +230,45 @@ representa el grado de incertidumbre asociado a una probabilidad.
 
 La probabilidad está normalizada en un rango de 0 a 1, donde 0 indica imposibilidad y 1
 certeza absoluta. Cuando todos los resultados posibles tienen la misma probabilidad, se
-habla de equiprobabilidad. Además, la suma de todas las probabilidades de un sistema debe
-ser 1.
+habla de **equiprobabilidad**. Además, la suma de todas las probabilidades en un sistema
+debe ser 1.
 
-Si el número de datos disponibles es insuficiente, las estimaciones de probabilidad
-pueden no ser precisas. Sin embargo, recopilar más datos puede ser costoso en términos de
-tiempo, esfuerzo y dinero. Para abordar esta limitación, se modelan los datos utilizando
+Cuando el número de datos disponibles es insuficiente, las estimaciones de probabilidad
+pueden no ser precisas. No obstante, recopilar más datos puede resultar costoso en
+términos de tiempo, esfuerzo y dinero. Para mitigar esta limitación, se emplean
 **distribuciones de probabilidad**, que pueden ser **discretas** (cuando los datos toman
 valores específicos y finitos) o **continuas** (cuando los datos pueden tomar cualquier
 valor dentro de un rango determinado).
 
-#### 3.2.1. Distribución binomial discreta
+A continuación, se presentan algunas de las distribuciones más comunes.
+
+#### 3.2.1. Distribución binomial (discreta)
 
 Cuando se trabaja con datos discretos y se requiere calcular probabilidades en eventos
 independientes con solo dos posibles resultados, **éxito** o **fracaso** (representados
-por 1 y 0, respectivamente), se trata de un **problema binario**. Para modelar este tipo
-de situaciones, se utiliza la **distribución binomial**, que permite calcular la
-probabilidad de obtener una determinada cantidad de éxitos en una secuencia de ensayos
-independientes.
+por 1 y 0, respectivamente), se trata de un **problema binario**.
 
-La distribución binomial se expresa mediante la siguiente fórmula:
+Para modelar este tipo de situaciones, se utiliza la **distribución binomial**, que
+permite calcular la probabilidad de obtener una determinada cantidad de éxitos en una
+secuencia de ensayos independientes. La distribución binomial se expresa mediante la
+siguiente fórmula:
 
 $$
-P(X = k | n, p) = \binom{n}{k} \cdot p^k \cdot (1 - p)^{n - k}
+P(X = k | n, p) = \binom{n}{k} \cdot p^k \cdot (1 - p)^{n - k},
 $$
 
-Donde:
+donde:
 
 - $X$ representa el número de éxitos en los ensayos.
 - $n$ es el número total de ensayos.
 - $p$ es la probabilidad de éxito en un único ensayo.
 - $k$ es el número de éxitos deseados.
 - $\binom{n}{k}$ es el coeficiente binomial, que calcula de cuántas formas se pueden
-  obtener $k$ éxitos en $n$ ensayos, sin importar el orden:
+  obtener $k$ éxitos en $n$ ensayos, sin importar el orden. Se calcula mediante la
+  siguiente fórmula:
 
 $$
-\binom{n}{k} = \frac{n!}{k! \cdot (n-k)!}
+\binom{n}{k} = \frac{n!}{k! \cdot (n-k)!}.
 $$
 
 Esta distribución es útil en situaciones donde se realizan múltiples intentos
@@ -228,24 +310,22 @@ moneda equilibrada es del 31.25%.
 
 :::
 
-#### 3.2.2. Distribución de Poisson discreta
+#### 3.2.2. Distribución de Poisson (discreta)
 
 La **distribución de Poisson** se utiliza para modelar la probabilidad de que ocurra un
 número determinado de eventos en un intervalo de tiempo o espacio, siempre que los
 eventos ocurran de manera independiente y a una tasa promedio constante. Algunos ejemplos
-de aplicación incluyen:
-
-- El número de llamadas recibidas en una central telefónica durante una hora.
-- El número de accidentes en una intersección en un día.
-- La cantidad de errores tipográficos en una página de texto.
+de aplicación incluyen: el número de llamadas recibidas en una central telefónica durante
+una hora, el número de accidentes en una intersección en un día, o la cantidad de errores
+tipográficos en una página de texto.
 
 La distribución de Poisson se expresa mediante la siguiente fórmula:
 
 $$
-P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
+P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!},
 $$
 
-Donde:
+donde:
 
 - $X$ es el número de eventos que ocurren en un intervalo específico.
 - $\lambda$ es el número promedio de eventos en dicho intervalo.
@@ -275,7 +355,7 @@ Por lo tanto, la probabilidad de recibir exactamente 7 llamadas en una hora es d
 
 :::
 
-#### 3.2.3. Distribución Normal o Gaussiana Continua
+#### 3.2.3. Distribución Normal o Gaussiana (continua)
 
 La distribución normal, también denominada distribución gaussiana, se representa mediante
 una curva en forma de campana. En esta distribución, el eje $$y$$ indica la
@@ -314,20 +394,18 @@ determinada por dos parámetros: la media ($$\mu$$) y la desviación típica ($$
 
 La **desviación típica** ($$\sigma$$) mide la dispersión de los datos respecto a la
 media, mientras que la **varianza** ($$\sigma^2$$) es el cuadrado de la desviación
-típica.
-
-La varianza se calcula de la siguiente manera:
+típica. La varianza se puede calcular de las siguientes dos maneras:
 
 - **Varianza muestral**:
 
   $$
-  s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}
+  s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}.
   $$
 
 - **Varianza poblacional**:
 
   $$
-  \sigma^2 = \frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}
+  \sigma^2 = \frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}.
   $$
 
 Donde:
@@ -347,7 +425,7 @@ La **función de densidad de probabilidad** (_Probability Distribution Function_
 la distribución normal se define como:
 
 $$
-f(X|\mu, \sigma) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_i - \mu)^2}{2\sigma^2}}
+f(X|\mu, \sigma) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_i - \mu)^2}{2\sigma^2}}.
 $$
 
 En las distribuciones continuas, el cálculo de probabilidades requiere la integración de
@@ -366,21 +444,33 @@ el área bajo la curva de la función de densidad desde $$-\infty$$ hasta dicho 
 
 ##### 3.2.3.2. Propiedades de la Función de Densidad de Probabilidad
 
-Sea $F$ la función de distribución y $\mathbb{R}$ el conjunto de números reales, entonces
-se cumple que $F: \mathbb{R} \to [0,1]$. Esto implica que el rango de valores de la
-función de densidad de probabilidad está comprendido entre 0 y 1.
+Sea $F$ la función de distribución acumulada (CDF) y $\mathbb{R}$ el conjunto de números
+reales, entonces se cumple que $F: \mathbb{R} \to [0,1]$, lo que significa que el rango
+de valores de la función de distribución está comprendido entre 0 y 1.
+
+:::note
+
+Se usa mayúscula para $F(x)$ porque se refiere a la función matemática que mapea los
+valores de la variable aleatoria $X$ a la probabilidad acumulada, distinguiéndola de la
+función de densidad de probabilidad que se representa en minúscula, como $f(x)$.
+
+:::
 
 Algunas de sus propiedades fundamentales son:
 
-- $F(x) = P(A_x) = P(X \leq x)$
-- $P(X \leq x) = F(x)$, lo que equivale a realizar la CDF.
-- $P(X > x) = 1 - P(X \leq x) = 1 - F(x)$
-- $P(a < X \leq b) = F(b) - F(a)$
-- $P(X \geq a) = P(X > a) + P(X = a)$
-- $P(X = a) = F(a) - \lim_{h \to 0^+} F(a - h) = F(a) - P(X \leq a)$
+- $F(x) = P(A_x) = P(X \leq x)$, donde $A_x$ representa el evento $X \leq x$.
+- $P(X \leq x) = F(x)$, lo que corresponde a la función de distribución acumulada (CDF).
+- $P(X > x) = 1 - P(X \leq x) = 1 - F(x)$, es decir, la probabilidad complementaria a
+  $P(X \leq x)$.
+- $P(a < X \leq b) = F(b) - F(a)$, para calcular la probabilidad de que $X$ esté entre
+  dos valores $a$ y $b$.
+- $P(X \geq a) = P(X > a) + P(X = a)$, una forma de descomponer la probabilidad de que
+  $X$ sea mayor o igual que $a$.
+- $P(X = a) = F(a) - \lim\_{h \to 0^+} F(a - h) = F(a) - P(X \leq a)$, que calcula la
+  probabilidad de que $X$ tome el valor $a$.
 
-Estas propiedades permiten calcular probabilidades acumuladas y complementar el análisis
-de distribuciones de probabilidad continuas.
+Estas propiedades permiten calcular probabilidades acumuladas y facilitan el análisis de
+distribuciones de probabilidad continuas.
 
 :::tip Ejemplo
 
@@ -416,7 +506,7 @@ el intervalo $[142.5, 155.7]$ es aproximadamente del 47.72%.
 
 :::
 
-#### 3.2.4. Distribución Exponencial
+#### 3.2.4. Distribución Exponencial (continua)
 
 La distribución exponencial se emplea para modelar el tiempo transcurrido entre eventos
 en un proceso de Poisson, donde los eventos ocurren de manera independiente y con una
@@ -456,7 +546,7 @@ $$
 \sigma^2 = \frac{1}{\lambda^2}
 $$
 
-#### 3.2.5. Distribución Uniforme
+#### 3.2.5. Distribución Uniforme (continua)
 
 La distribución uniforme se caracteriza porque todos los valores dentro de un intervalo
 $[a, b]$ tienen la misma probabilidad de ocurrir. Se emplea en la generación de números
@@ -488,3 +578,190 @@ Y su varianza se expresa como:
 $$
 \sigma^2 = \frac{(b-a)^2}{12}
 $$
+
+### 3.3. Evaluación del error
+
+Los modelos de aprendizaje automático requieren datos de entrenamiento para establecer
+relaciones entre las variables y construir una función que se aproxime a la distribución
+de los datos. Un aspecto fundamental en este proceso es la evaluación del desempeño del
+modelo, lo cual se realiza mediante métricas estadísticas.
+
+#### 3.3.1. Suma de los Cuadrados de los Residuales (SSR)
+
+<p align="center">
+  <img src="https://images.squarespace-cdn.com/content/v1/5acbdd3a25bf024c12f4c8b4/1600368657769-5BJU5FK86VZ6UXZGRC1M/Mean+Squared+Error.png"/>
+  <br />
+  <em>Ejemplo de SSR. [Link](https://images.squarespace-cdn.com/content/v1/5acbdd3a25bf024c12f4c8b4/1600368657769-5BJU5FK86VZ6UXZGRC1M/Mean+Squared+Error.png)</em>
+</p>
+
+La **Suma de los Cuadrados de los Residuales (_Sum Square Residuals_, SSR)** mide la
+diferencia entre las predicciones del modelo y los valores reales. Se calcula sumando el
+cuadrado de estas diferencias, lo que permite evaluar qué tan buena es la predicción del
+modelo. Un valor bajo de SSR indica un mejor ajuste.
+
+Matemáticamente, la SSR se expresa como:
+
+$$
+SSR = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+$$
+
+donde:
+
+- $y_i$ es el valor real.
+- $\hat{y}_i$ es el valor estimado por el modelo.
+- $n$ es el número total de observaciones.
+
+Sin embargo, la SSR depende del número de datos, lo que puede dificultar la comparación
+entre modelos. Para abordar este problema, se emplea el **Error Cuadrático Medio (MSE)**.
+
+#### 3.3.2. Error Cuadrático Medio (MSE)
+
+El **Error Cuadrático Medio (MSE)** se obtiene dividiendo la SSR entre el número total de
+muestras. Su objetivo es promediar la magnitud del error para normalizarlo con respecto
+al tamaño del conjunto de datos. Se define como:
+
+$$
+MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+$$
+
+A pesar de que el MSE proporciona una medida más interpretable del error, sigue
+dependiendo de la escala de los datos. Para eliminar esta dependencia, se emplea el
+**Coeficiente de Determinación ($R^2$)**.
+
+#### 3.3.3. Coeficiente de Determinación
+
+El **Coeficiente de Determinación ($R^2$)** mide la capacidad del modelo para replicar
+los resultados observados y la proporción de variabilidad explicada por el modelo en
+comparación con la media de los datos. Se expresa como:
+
+$$
+R^2 = 1 - \frac{SSR}{SST} = 1 - \frac{SSR(\text{respecto al modelo})}{SSR(\text{respecto a la media})}
+$$
+
+donde:
+
+- $SST$ es la **Suma Total de los Cuadrados**, que representa la variabilidad total de
+  los datos en torno a la media.
+
+El coeficiente $R^2$ varía entre 0 y 1, donde un valor cercano a 1 indica que el modelo
+explica bien la varianza de los datos, lo que sugiere un buen ajuste. En cambio, un valor
+cercano a 0 sugiere que el modelo apenas mejora la predicción en comparación con la
+media. Si $R^2$ es negativo, el modelo tiene un mal ajuste y predice peor que la media.
+
+El coeficiente $R^2$ se emplea en problemas de regresión sobre datos continuos.
+
+:::note
+
+El coeficiente $R^2$ equivale al cuadrado del coeficiente de correlación de Pearson solo
+en el caso de la regresión lineal simple.
+
+:::
+
+#### 3.3.4. Coeficiente de Correlación de Pearson
+
+<p align="center">
+  <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.statisticshowto.com%2Fwp-content%2Fuploads%2F2012%2F10%2Fpearson-2-small.png&f=1&nofb=1&ipt=25bc8844d74e829cb2103b12684b70568fc8a54b572ffa6ac17a40d3e106789d&ipo=images"/>
+  <br />
+  <em>Ejemplo de la correlación para una nuve de puntos. [Link](http://www.statisticshowto.com/wp-content/uploads/2012/10/pearson-2-small.png)</em>
+</p>
+
+El **Coeficiente de Correlación de Pearson** mide la relación lineal entre dos variables
+cuantitativas y continuas. Se define como:
+
+$$
+r = \frac{\text{cov}(X,Y)}{\sigma_X \sigma_Y}
+$$
+
+donde:
+
+- $\text{cov}(X,Y)$ es la **covarianza** entre las variables $X$ e $Y$.
+- $\sigma_X$ y $\sigma_Y$ son las desviaciones típicas de $X$ e $Y$, respectivamente.
+
+La **covarianza** indica la relación entre dos variables:
+
+- Si la covarianza es **positiva**, un aumento en $X$ se asocia con un aumento en $ Y$
+  (relación directa).
+- Si la covarianza es **negativa**, un aumento en $X$ se asocia con una disminución en
+  $Y$ (relación inversa).
+- Una covarianza cercana a **0** sugiere que no existe relación lineal entre las
+  variables.
+
+Dado que la covarianza depende de la escala de las variables, se normaliza mediante el
+coeficiente de correlación de Pearson, que toma valores entre -1 y 1, donde:
+
+- **1**: correlación positiva perfecta.
+- **-1**: correlación negativa perfecta.
+- **0**: ausencia de correlación lineal.
+
+Este coeficiente permite evaluar la intensidad y dirección de la relación lineal entre
+las variables sin depender de su escala.
+
+## 4. Modelos clásicos
+
+Una vez comprendido el concepto de modelo de aprendizaje automático, donde se utilizan
+datos para modelar su distribución, analizar relaciones y extraer conocimiento, es
+posible aplicar estos modelos para realizar tareas como clasificación de nuevos datos,
+predicción de valores y otras aplicaciones. A continuación, se presentan algunos de los
+métodos más utilizados.
+
+:::tip
+
+A pesar del auge de los modelos de lenguaje basados en arquitecturas de **aprendizaje
+profundo (_Deep Learning_)**, su aplicación sigue siendo limitada en ciertos contextos
+debido a la gran cantidad de datos y capacidad de cómputo que requieren, así como a la
+necesidad de explicabilidad en sectores específicos. Por ello, los métodos tradicionales
+siguen desempeñando un papel fundamental, especialmente en el análisis de datos
+**tabulares**, los cuales representan la mayoría de los datos empresariales.
+
+Es recomendable iniciar con modelos más sencillos para comprender los resultados y
+evaluar su utilidad en función de los objetivos del análisis. A partir de esta base, y
+considerando factores como el tiempo y los recursos disponibles, se puede optar por
+soluciones más complejas que ofrezcan un mayor retorno de inversión (ROI).
+
+:::
+
+### 4.1. Regresión lineal
+
+### 4.2. Descenso del gradiente
+
+### 4.3. Regresión logística
+
+### 4.4. Naive Bayes
+
+### 4.5. Árboles de decisión
+
+### 4.6. Máquina de Vectores de Soporte
+
+## 5. Algoritmos de agrupación
+
+### 5.1. Tipos de algoritmos de agrupación
+
+#### 5.1.1. Métodos basados en particiones
+
+#### 5.1.2. Métodos basados en jerarquías
+
+#### 5.1.3. Métodos basados en densidad
+
+#### 5.1.4. Métodos basados en modelos (p.ej. GMM)
+
+#### 5.1.5. Métodos basados en grafos (p.ej. Spectral)
+
+### 5.2. Mecanismos en la elección de grupos
+
+## 6. Métodos de comparación de modelos
+
+### 6.1. Clasificación
+
+#### 6.1.1. Matrices de confusión
+
+### 6.2. Regresión
+
+## 7. Métodos para la reducción de la dimensionalidad
+
+### 7.1. PCA
+
+### 7.2. T-SNE
+
+### 7.3. UMAP
+
+### 7.4. Auto Encoders
