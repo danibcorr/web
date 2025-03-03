@@ -516,7 +516,7 @@ y modelado de fallos en ingeniería.
 La función de densidad de probabilidad (PDF) está definida como:
 
 $$
-f(x; \lambda) = \lambda e^{-\lambda x}, \quad x \geq 0, \, \lambda > 0
+f(x; \lambda) = \lambda e^{-\lambda x}, \quad x \geq 0, \, \lambda > 0,
 $$
 
 donde $\lambda$ indica la frecuencia con la que ocurren los eventos.
@@ -524,26 +524,59 @@ donde $\lambda$ indica la frecuencia con la que ocurren los eventos.
 La función de distribución acumulada (CDF) se expresa como:
 
 $$
-F(x) = 1 - e^{-\lambda x}, \quad x \geq 0
+F(x) = 1 - e^{-\lambda x}, \quad x \geq 0.
 $$
 
-La media de la distribución exponencial equivale a la **esperanza matemática** $E[X]$,
-que en probabilidad y estadística se define como:
+La media de la distribución exponencial equivale a la **esperanza matemática** $E[X]$.
+
+:::note
+
+La **esperanza matemática**, denotada como $E[X]$, es lo que comúnmente llamamos la
+**media** o el **valor esperado** de una variable aleatoria. Sin embargo, la
+interpretación de la esperanza matemática puede variar dependiendo del tipo de variable
+aleatoria y el contexto en el que se utilice.
+
+Para una variable aleatoria discreta $X$, cuya función de masa de probabilidad es
+$P(X = x_i)$, la esperanza matemática se calcula mediante la siguiente fórmula:
 
 $$
-E[X] = \int_{-\infty}^{\infty} x f(x) \,dx
+E[X] = \sum_{i} x_i \cdot P(X = x_i)
 $$
+
+En este caso, el valor esperado se obtiene sumando el producto de cada valor posible de
+$X$ y su probabilidad correspondiente.
+
+Para una variable aleatoria continua $X$, cuya función de densidad de probabilidad es
+$f(x)$, la esperanza matemática se calcula utilizando la integral de la siguiente manera:
+
+$$
+E[X] = \int_{-\infty}^{\infty} x \cdot f(x) \,dx
+$$
+
+Aquí, el valor esperado se obtiene integrando el producto de cada valor de $X$ y su
+densidad de probabilidad asociada.
+
+En teoría de probabilidad, la esperanza matemática se considera la media "teórica" de la
+distribución. **En distribuciones simétricas con un único pico, como la distribución
+normal, la esperanza matemática coincide con el centro de la distribución. Sin embargo,
+en distribuciones asimétricas, la esperanza matemática puede no coincidir con la mediana
+o la moda**. Por ejemplo, en una distribución sesgada a la derecha, como la distribución
+exponencial, la esperanza matemática es mayor que la mediana, lo que indica que los
+valores más altos de la variable aleatoria tienen una probabilidad significativa de
+ocurrir.
+
+:::
 
 En la distribución exponencial, se obtiene:
 
 $$
-\mu = E[X] = \frac{1}{\lambda}
+\mu = E[X] = \frac{1}{\lambda}.
 $$
 
 La varianza se expresa como:
 
 $$
-\sigma^2 = \frac{1}{\lambda^2}
+\sigma^2 = \frac{1}{\lambda^2}.
 $$
 
 #### 3.2.5. Distribución Uniforme (continua)
@@ -570,14 +603,72 @@ $$
 La media de la distribución uniforme es:
 
 $$
-\mu = E[X] = \frac{a + b}{2}
+\mu = E[X] = \frac{a + b}{2}.
 $$
 
 Y su varianza se expresa como:
 
 $$
-\sigma^2 = \frac{(b-a)^2}{12}
+\sigma^2 = \frac{(b-a)^2}{12}.
 $$
+
+:::tip ¿De dónde sale el 12 de la varianza de la distribución uniforme?
+
+La varianza de una variable aleatoria continua $X$ se define como:
+
+$$
+\text{Var}(X) = E[X^2] - (E[X])^2.
+$$
+
+Para una distribución uniforme continua $U(a, b)$, la esperanza, la cual coincide con la
+media, se obtiene con la fórmula:
+
+$$
+E[X] = \frac{a+b}{2}.
+$$
+
+Por tanto, el cálculo de $E[X^2]$ se calcula como:
+
+$$
+E[X^2] = \int_a^b x^2 \cdot f(x) \, dx = \int_a^b x^2 \cdot \frac{1}{b-a} \, dx.
+$$
+
+Resolviendo la integral:
+
+$$
+E[X^2] = \frac{1}{b-a} \int_a^b x^2 \, dx = \frac{1}{b-a} \cdot \left[ \frac{x^3}{3} \right]_{a}^{b}.
+$$
+
+Evaluando de $a$ a $b$:
+
+$$
+E[X^2] = \frac{1}{b-a} \left[ \frac{b^3}{3} - \frac{a^3}{3} \right] = \frac{b^3 -
+a^3}{3(b-a)}.
+$$
+
+Ahora, usando la fórmula de la varianza y sustituyendo los valores obtenemos:
+
+$$
+\text{Var}(X) = E[X^2] - (E[X])^2 = \frac{b^3 - a^3}{3(b-a)} - \left(\frac{a+b}{2} \right)^2.
+$$
+
+Aplicando las identidades algebraicas siguientes:
+
+$$
+(a+b)^{2}=a^2+b^2+2ab,
+$$
+
+$$
+b^3 - a^3 = (b-a)(b^2 + ab + a^2),
+$$
+
+Finalmente, después de desarrollar la expresión y simplificar, se obtiene la expresión:
+
+$$
+\text{Var}(X) = \frac{(b-a)^2}{12}
+$$
+
+:::
 
 ### 3.3. Evaluación del error
 
@@ -602,7 +693,7 @@ modelo. Un valor bajo de SSR indica un mejor ajuste.
 Matemáticamente, la SSR se expresa como:
 
 $$
-SSR = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+SSR = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2,
 $$
 
 donde:
@@ -621,7 +712,7 @@ muestras. Su objetivo es promediar la magnitud del error para normalizarlo con r
 al tamaño del conjunto de datos. Se define como:
 
 $$
-MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2.
 $$
 
 A pesar de que el MSE proporciona una medida más interpretable del error, sigue
@@ -635,17 +726,17 @@ los resultados observados y la proporción de variabilidad explicada por el mode
 comparación con la media de los datos. Se expresa como:
 
 $$
-R^2 = 1 - \frac{SSR}{SST} = 1 - \frac{SSR(\text{respecto al modelo})}{SSR(\text{respecto a la media})}
+R^2 = 1 - \frac{\text{SSR}}{SST} = 1 - \frac{\text{SSR}(\text{respecto al modelo})}{\text{SSR}(\text{respecto a la media})}
 $$
 
 donde:
 
-- $SST$ es la **Suma Total de los Cuadrados**, que representa la variabilidad total de
-  los datos en torno a la media.
+- $\text{SST}$ es la **Suma Total de los Cuadrados**, que representa la variabilidad
+  total de los datos en torno a la media.
 
-El coeficiente $R^2$ varía entre 0 y 1, donde un valor cercano a 1 indica que el modelo
-explica bien la varianza de los datos, lo que sugiere un buen ajuste. En cambio, un valor
-cercano a 0 sugiere que el modelo apenas mejora la predicción en comparación con la
+**El coeficiente $R^2$ varía entre 0 y 1, donde un valor cercano a 1 indica que el modelo
+explica bien la varianza de los datos, lo que sugiere un buen ajuste**. En cambio, un
+valor cercano a 0 sugiere que el modelo apenas mejora la predicción en comparación con la
 media. Si $R^2$ es negativo, el modelo tiene un mal ajuste y predice peor que la media.
 
 El coeficiente $R^2$ se emplea en problemas de regresión sobre datos continuos.
