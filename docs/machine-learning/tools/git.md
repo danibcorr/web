@@ -15,7 +15,7 @@ toc_max_heading_level: 4
 ## 1. Introducción
 
 <p align="center">  
-  <img src={require("../../img/git-logo.png").default}/>  
+  <img src={require("../../img/logos/git-logo.png").default}/>  
   <br />  
   <em>Logo de Git</em>  
 </p>
@@ -118,7 +118,7 @@ fundamentales y ejemplos de su uso:
 | **mv**    | Mueve o renombra un archivo o directorio.                    | `mv archivo.txt nueva_ubicacion/` - Mueve `archivo.txt` a la carpeta `nueva_ubicacion`. También puede usarse para renombrar archivos, por ejemplo: `mv archivo.txt archivo_nuevo.txt`.                                |
 
 Para obtener más información sobre Linux, se pueden
-[visitar los siguientes apuntes](../sistemas-operativos/linux.md).
+[visitar los siguientes apuntes](../operative-systems/linux.md).
 
 ### 3.2. Comandos para el control de versiones local
 

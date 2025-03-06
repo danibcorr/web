@@ -6,7 +6,7 @@ hide_table_of_contents: true
 ---
 
 <p align="center">
-  <img src={require("../img/machine-learning-wiki-logo.png").default} width="300"/>
+  <img src={require("../img/logos/machine-learning-wiki-logo.png").default} width="300"/>
   <br />
 </p>
 

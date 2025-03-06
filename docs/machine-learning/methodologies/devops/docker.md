@@ -16,7 +16,7 @@ toc_max_heading_level: 4
 ## 1. Introducción
 
 <p align="center">
-  <img src={require("../../../img/docker-logo.png").default} width="500"/>
+  <img src={require("../../../img/logos/docker-logo.png").default} width="500"/>
   <br />
   <em>Logo de Docker</em>
 </p>

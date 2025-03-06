@@ -16,7 +16,7 @@ toc_max_heading_level: 4
 ### 1. Introducción
 
 <p align="center">
-  <img src={require("../../../img/kubernetes-logo.png").default} width="500"/>
+  <img src={require("../../../img/logos/kubernetes-logo.png").default} width="500"/>
   <br />
   <em>Logo de Kubernetes</em>
 </p>

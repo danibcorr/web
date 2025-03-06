@@ -15,7 +15,7 @@ toc_max_heading_level: 4
 ## 1. Introducción
 
 <p align="center">
-  <img src={require("../../img/python-logo.png").default} height="250"/>
+  <img src={require("../../img/logos/python-logo.png").default} height="250"/>
   <br />
   <em>Logo de Python</em>
 </p>
@@ -53,7 +53,7 @@ documento. Las ventajas principales de los Jupyter Notebooks incluyen:
 Una vez instalado Miniconda, es necesario crear un entorno virtual configurando la
 versión de Python y los paquetes necesarios para cada proyecto. Para ello, puedes seguir
 los pasos del
-[apartado de herramientas, gestión de entornos en Python](../herramientas/entornos_python.md).
+[apartado de herramientas, gestión de entornos en Python](../tools/python-environments.md).
 
 ### 2.3. Comandos útiles para la terminal
 

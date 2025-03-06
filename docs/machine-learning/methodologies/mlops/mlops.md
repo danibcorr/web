@@ -26,7 +26,7 @@ a veces no me da tiempo para todo. ¡Espero pronto tener algo genial para ti!
 ## 1. Introducción
 
 <p align="center">
-  <img src={require("../../../img/mlops-logo.png").default} width="500"/>
+  <img src={require("../../../img/logos/mlops-logo.png").default} width="500"/>
   <br />
   <em>Ciclo de vide de un proyecto MLOps</em>
 </p>

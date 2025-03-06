@@ -163,7 +163,7 @@ const config = {
             },
             {
               type: "doc",
-              docId: "impresion-3d",
+              docId: "3d-printing",
               label: "Impresión 3D",
               docsPluginId: "others-3d-printing",
             },

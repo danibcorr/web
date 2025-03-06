@@ -16,7 +16,7 @@ toc_max_heading_level: 4
 ## 1.1. Motivación
 
 <p align="center">
-  <img src={require("../../../img/onnx-logo.png").default} width="500"/>
+  <img src={require("../../../img/logos/onnx-logo.png").default} width="500"/>
   <br />
   <em>Logo de ONNX.</em>
 </p>

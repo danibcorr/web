@@ -18,7 +18,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 ## 1. Introducción
 
 <p align="center">
-  <img src={require("../../img/anaconda-logo.png").default} width="500"/>
+  <img src={require("../../img/logos/anaconda-logo.png").default} width="500"/>
   <br />
   <em>Logo de Anaconda</em>
 </p>
