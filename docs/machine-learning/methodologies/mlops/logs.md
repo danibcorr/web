@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Creación y uso de logs en Python.
 title: Logs
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 ## 1. Creación y registro de logs con Loguru

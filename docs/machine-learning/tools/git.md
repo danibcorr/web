@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Controla versiones de tu código con Git.
 title: Git
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 ## Bibliografía

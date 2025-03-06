@@ -3,7 +3,7 @@ sidebar_position: 1
 authors:
   - name: Daniel Bazo Correa
 title: Tensorflow
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 <div align="justify">

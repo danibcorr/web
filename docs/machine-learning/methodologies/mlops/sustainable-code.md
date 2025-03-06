@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Conoce las claves esenciales para crear código sostenible.
 title: Código sostenible
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 ## 1. Código sostenible

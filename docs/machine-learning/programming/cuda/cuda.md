@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Conoce la plataforma de CUDA de NVIDIA para sus GPUs.
 title: CUDA
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 ## Bibliografía

@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Exportación de modelos para inferencia con ONNX.
 title: ONNX
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 ## Bibliografía

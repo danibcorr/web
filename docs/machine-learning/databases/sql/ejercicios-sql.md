@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Ejercicios típicos de entrevistas de trabajo.
 title: Ejercicios SQL
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 # Ejercicios básicos de SQL

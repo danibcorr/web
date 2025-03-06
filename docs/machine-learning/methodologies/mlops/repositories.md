@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Crea y almacena tus artefactos en repositorios.
 title: Gestión y publicación de repositorios
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 ## 1. Publicación de un paquete de Python en PyPI

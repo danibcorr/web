@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Estructuras de datos y algoritmos de programación.
 title: Estructuras de datos y algoritmos
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 ## Bibliografía

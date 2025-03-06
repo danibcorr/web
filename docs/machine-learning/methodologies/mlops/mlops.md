@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Conceptos básicos de MLOps.
 title: MLOps
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 :::danger **Este contenido aún está en desarrollo**

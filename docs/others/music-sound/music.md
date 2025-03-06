@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Aprende lo necesario de audio.
 title: Audio/Música
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 ## Bibliografía

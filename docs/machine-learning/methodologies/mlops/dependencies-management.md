@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Aprender a gestionar las dependencias de tus proyectos en Python.
 title: Gestión de dependencias
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 ## 1. Gestión de las dependencias con Poetry

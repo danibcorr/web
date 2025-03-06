@@ -4,5 +4,5 @@ authors:
   - name: Daniel Bazo Correa
 description: Crea y almacena tus artefactos en repositorios.
 title: Creacion de APIs
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---

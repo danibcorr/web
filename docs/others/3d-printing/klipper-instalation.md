@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Instalación de Klipper para la Ender 3 S1.
 title: Instalación de Klipper
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 # Instalación de Klipper en Ender 3 S1

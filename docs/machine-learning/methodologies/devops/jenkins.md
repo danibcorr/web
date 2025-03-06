@@ -4,5 +4,5 @@ authors:
   - name: Daniel Bazo Correa
 description: Herramientas necesarias para DevOps.
 title: Jenkins
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---

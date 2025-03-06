@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Aprende lo necesario de impresión 3D.
 title: Impresión 3D
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 # Conocimientos de impresión 3D

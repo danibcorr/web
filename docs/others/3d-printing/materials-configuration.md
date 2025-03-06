@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Configuración de materiales para impresión.
 title: Configuración de materiales
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 # Configuración de materiales para el Slicer

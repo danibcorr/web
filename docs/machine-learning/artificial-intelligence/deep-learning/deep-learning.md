@@ -4,7 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Fundamentos del Deep Learning.
 title: Deep Learning
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 
 ## Inteligencia artificial
