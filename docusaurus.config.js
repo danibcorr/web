@@ -68,9 +68,9 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "machine-learning-wiki",
-        path: "docs/machine-learning-wiki",
-        routeBasePath: "docs/machine-learning-wiki",
+        id: "machine-learning",
+        path: "docs/machine-learning",
+        routeBasePath: "docs/machine-learning",
         sidebarPath: require.resolve("./sidebars.js"),
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
@@ -82,9 +82,23 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "otros",
-        path: "docs/otros",
-        routeBasePath: "docs/otros",
+        id: "others-3d-printing",
+        path: "docs/others/3d-printing",
+        routeBasePath: "docs/others/3d-printing",
+        sidebarPath: require.resolve("./sidebars.js"),
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+        showLastUpdateTime: true,
+        showLastUpdateAuthor: true,
+        breadcrumbs: true,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "others-music-sound",
+        path: "docs/others/music-sound",
+        routeBasePath: "docs/others/music-sound",
         sidebarPath: require.resolve("./sidebars.js"),
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
@@ -111,7 +125,7 @@ const config = {
     colorMode: {
       disableSwitch: false,
       defaultMode: "light",
-      respectPrefersColorScheme: false,
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: "Inicio",
@@ -122,23 +136,38 @@ const config = {
       },
       items: [
         {
-          type: "doc",
-          docId: "intro",
+          label: "Machine Learning",
           position: "left",
-          label: "Wiki de Machine Learning",
-          docsPluginId: "machine-learning-wiki",
+          items: [
+            {
+              type: "doc",
+              docId: "intro",
+              label: "Machine Learning Wiki",
+              docsPluginId: "machine-learning",
+            },
+            {
+              to: "blog",
+              label: "Posts",
+            },
+          ],
         },
         {
-          type: "doc",
-          docId: "intro",
+          label: "Otros",
           position: "left",
-          label: "Recursos Adicionales",
-          docsPluginId: "otros",
-        },
-        {
-          to: "blog",
-          label: "Blog",
-          position: "left",
+          items: [
+            {
+              type: "doc",
+              docId: "music",
+              label: "Música/Sonido",
+              docsPluginId: "others-music-sound",
+            },
+            {
+              type: "doc",
+              docId: "impresion-3d",
+              label: "Impresión 3D",
+              docsPluginId: "others-3d-printing",
+            },
+          ],
         },
         {
           type: "localeDropdown",

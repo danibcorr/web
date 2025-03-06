@@ -7,9 +7,6 @@ on:
     branches:
       - main
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # Allow one concurrent deployment
 concurrency:
   group: "pages"
@@ -32,7 +29,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 23.X
+          node-version: 22.X
           cache: yarn
 
       # Cache Node.js dependencies
