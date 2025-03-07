@@ -107,6 +107,20 @@ const config = {
         breadcrumbs: true,
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "others-telecom",
+        path: "docs/others/telecom",
+        routeBasePath: "docs/others/telecom",
+        sidebarPath: require.resolve("./sidebars.js"),
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+        showLastUpdateTime: true,
+        showLastUpdateAuthor: true,
+        breadcrumbs: true,
+      },
+    ],
   ],
 
   themeConfig: {
@@ -166,6 +180,12 @@ const config = {
               docId: "3d-printing",
               label: "Impresión 3D",
               docsPluginId: "others-3d-printing",
+            },
+            {
+              type: "doc",
+              docId: "telecom",
+              label: "Redes Móviles",
+              docsPluginId: "others-telecom",
             },
           ],
         },
