@@ -183,7 +183,7 @@ const config = {
             },
             {
               type: "doc",
-              docId: "telecom",
+              docId: "mobile-network-architecture",
               label: "Redes Móviles",
               docsPluginId: "others-telecom",
             },
