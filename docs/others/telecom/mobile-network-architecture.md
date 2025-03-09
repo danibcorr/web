@@ -3,7 +3,7 @@ sidebar_position: 2
 authors:
   - name: Daniel Bazo Correa
 description: Aprende lo necesario sobre las arquitecturas de redes móviles.
-title: Arquitectura de Redes móviles
+title: Arquitectura de Redes Móviles
 toc_max_heading_level: 3
 ---
 
