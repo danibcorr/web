@@ -7,186 +7,250 @@ title: Deep Learning
 toc_max_heading_level: 3
 ---
 
-## Inteligencia artificial
+## 1. Introducción
 
-En la última década, el ámbito de la inteligencia artificial ha experimentado un
-crecimiento significativo, impulsado por la acumulación masiva de datos digitalizados y
-los avances en _hardware_. Factores clave en este crecimiento han sido los avances en la
-paralelización de procesos, el desarrollo acelerado de unidades de procesamiento gráfico
-(GPU) más eficientes y potentes, y la implementación de algoritmos más avanzados.
+### 1.1. Inteligencia Artificial
 
-La inteligencia artificial se define como la capacidad de desarrollar sistemas y
-algoritmos que emulan la inteligencia humana, con el objetivo de identificar patrones y
-tomar decisiones a través de la computación. Dentro de la inteligencia artificial, el
-aprendizaje automático juega un papel fundamental y se clasifica en cuatro tipos
-principales: aprendizaje supervisado, no supervisado, autosupervisado y por refuerzo [1,
-2, 3]. El aprendizaje profundo, una subcategoría del aprendizaje automático, utiliza
-redes neuronales avanzadas para modelar datos complejos y es aplicable a los cuatro tipos
-mencionados. En este trabajo, se emplean técnicas de aprendizaje supervisado para abordar
-el problema planteado.
+En la última década, el campo de la inteligencia artificial ha experimentado un
+crecimiento significativo, impulsado por la acumulación masiva de datos y los avances en
+_hardware_. Factores clave en este desarrollo incluyen la paralelización de procesos, la
+mejora en la eficiencia y potencia de las unidades de procesamiento gráfico (GPU) y la
+implementación de algoritmos más sofisticados.
 
-El aprendizaje supervisado, ilustrado en la Figura 1, se fundamenta en un conjunto de
-datos etiquetados. El propósito es entrenar un modelo que pueda predecir la salida
-correcta para datos nunca vistos. Entre los algoritmos que utilizan el aprendizaje
-supervisado se encuentran la regresión lineal, la regresión logística, las máquinas de
-vectores de soporte y las redes neuronales. A su vez, los algoritmos supervisados pueden
-clasificarse en dos tipos: a) algoritmos de clasificación, donde el resultado obtenido a
-la salida del modelo es la probabilidad de que el dato introducido pertenezca a una clase
-determinada, y b) algoritmos de regresión, donde se modela la relación entre las
-variables independientes y una variable dependiente para entrenar un modelo utilizando
-datos de entrenamiento, con el que posteriormente se predicen valores numéricos en nuevos
-conjuntos de datos.
+La inteligencia artificial se define como la capacidad de diseñar sistemas y algoritmos
+que emulan la inteligencia humana, con el objetivo de identificar patrones y tomar
+decisiones mediante la computación.
 
-### Aprendizaje profundo
+### 1.2. Aprendizaje Profundo
 
-Primero, es esencial definir el concepto de neurona artificial. Una neurona artificial,
-también conocida como perceptrón, es un nodo de procesamiento que aplica una función a un
-dato de entrada y produce un resultado de salida. Una red neuronal es una combinación de
-neuronas interconectadas que conforman una arquitectura que simula la estructura de las
-redes neuronales biológicas del cerebro humano. Cada neurona de la red artificial aplica
-la siguiente función:
+Dentro de la inteligencia artificial, el aprendizaje profundo es una subcategoría del
+aprendizaje automático que se caracteriza por el uso de redes neuronales avanzadas para
+modelar datos complejos. Al igual que el aprendizaje automático en general, desempeña un
+papel fundamental en el desarrollo de sistemas inteligentes y se clasifica en tres tipos
+principales: el aprendizaje supervisado, el aprendizaje no supervisado y el aprendizaje
+por refuerzo.
 
-$$
-\widehat{y} = f\left( \mathbf{W}^{\top}\mathbf{X} + b \right)
-$$
+En los últimos años, han surgido nuevas metodologías que amplían las capacidades del
+aprendizaje automático, como el _self-supervised learning_ y el _self-unsupervised
+learning_ Estas técnicas permiten que los modelos aprendan representaciones útiles de los
+datos sin depender de grandes volúmenes de información etiquetada. Un ejemplo destacado
+es el _self-supervised learning_, que ha sido fundamental en el desarrollo de modelos de
+procesamiento de lenguaje natural, como los modelos de predicción de palabras en textos,
+utilizados en sistemas de generación automática de texto. De manera similar, el
+_self-unsupervised learning_ ha sido clave en el avance de la visión por computadora,
+permitiendo a los modelos aprender a reconocer objetos sin supervisión humana.
 
-donde $\widehat{y}$ es la salida predicha por la neurona del conjunto de características
-de entrada $\mathbf{X}$, $\mathbf{W}$ es la matriz de los pesos de la neurona, $b$ es el
-sesgo, que permite controlar y ajustar la salida de la neurona, y $f$ es la función de
-activación que introduce una no linealidad y define el rango de valores en el que se
-encontrará la salida.
+Estos enfoques han impulsado avances significativos en múltiples áreas, como la
+generación de contenido mediante inteligencia artificial, la síntesis de imágenes
+realistas, la predicción de estructuras de proteínas para el desarrollo de fármacos y la
+optimización de procesos industriales. Gracias a estas innovaciones, el aprendizaje
+profundo continúa expandiendo sus aplicaciones y redefiniendo los límites de lo que las
+máquinas pueden lograr, consolidándose como una de las áreas más influyentes de la
+inteligencia artificial moderna.
 
-El uso de una sola neurona presenta limitaciones para la realización de tareas complejas.
-Por lo tanto, se utilizan redes neuronales con múltiples capas, lo que da lugar al
-aprendizaje profundo, como se ilustra en la Figura 2. Una red neuronal, en general,
-consta de una capa de entrada, capas ocultas y una capa de salida. La capa de entrada es
-la que recibe los datos que se introducen en el modelo. La capa de salida, por su parte,
-es la que proporciona los resultados del modelo. Las capas ocultas, situadas entre la
-capa de entrada y la capa de salida, procesan la información recibida y transmitida entre
-estas dos capas. Aumentar el número de capas en la red permite realizar operaciones más
-complejas, pero también puede provocar problemas de sobreajuste si el conjunto de datos
-es limitado. Por ello, es importante considerar otras alternativas para optimizar el
-rendimiento y evitar el sobreajuste.
+El rendimiento de los modelos de aprendizaje profundo suele mejorar con el aumento de la
+cantidad de datos, la capacidad de cómputo (por lo general, mediante el uso de más GPUs)
+y el tamaño del modelo, medido en términos del número de parámetros. En la actualidad,
+los recursos computacionales son lo suficientemente accesibles y la cantidad de datos es
+tan extensa que es posible incluso memorizar toda la información disponible. Se ha
+alcanzado un punto en el que es viable entrenar modelos de propósito general con grandes
+volúmenes de datos diversos para luego refinarlos en tareas específicas. Estos modelos,
+conocidos como modelos fundacionales, constituyen la base de los modelos de lenguaje de
+gran tamaño (_Large Language Models_, LLMs). Posteriormente, estos modelos pueden ser
+sometidos a técnicas de ajuste fino (_fine-tuning_), cuantización y otras optimizaciones
+para reducir su consumo de recursos, mejorar el rendimiento y adaptarse a dispositivos
+con menores prestaciones.
 
-#### a) Parámetros e hiperparámetros
+El proceso de aprendizaje de un modelo puede entenderse como un problema de optimización,
+en el que se buscan los mejores valores para los parámetros del modelo dentro de un
+espacio de soluciones definido. Este tipo de modelos, conocidos como modelos
+diferenciables, emplean técnicas matemáticas basadas en derivadas para ajustar
+iterativamente sus parámetros hasta alcanzar un objetivo determinado. Este ajuste se
+realiza mediante un proceso denominado descenso del gradiente, el cual permite optimizar
+la función objetivo del modelo minimizando su error de predicción.
 
-Los parámetros son variables internas del modelo que se aprenden durante el proceso de
-entrenamiento, como los pesos y sesgos. Por otro lado, los hiperparámetros son variables
-externas que se definen antes del proceso de entrenamiento y tienen un impacto en el
-proceso de aprendizaje y generalización del modelo. Ejemplos de hiperparámetros incluyen
-el número de capas, el número de neuronas en cada capa, el número de iteraciones para
-entrenar el modelo y las funciones de activación, entre otros.
+## 2. Fundamentos Matemáticos del Aprendizaje Automático
 
-La función de activación juega un papel crucial al determinar la transformación que
-experimentan los parámetros de entrada dentro de la neurona. En un modelo, pueden
-utilizarse diferentes funciones de activación en cada capa. Las funciones de activación
-son derivables, ya que forman parte del algoritmo de propagación hacia atrás empleado
-durante el proceso de entrenamiento. Existe una amplia variedad de funciones de
-activación, algunas de las cuales se ilustran en la Figura 3, incluyendo la función
-sigmoide, la tangente hiperbólica, ReLU y sus variantes, entre otras.
+### 2.1. Álgebra lineal
 
-#### b) División del conjunto de datos
+Un **tensor** es una estructura multidimensional de datos con elementos del mismo tipo.
+Se caracteriza por su **forma (shape)**, que define sus dimensiones. Un tensor de
+dimensión cero es un **escalar**, un tensor de dimensión uno es un **vector**, y un
+tensor de dimensión dos es una **matriz**. Los tensores permiten cálculos altamente
+paralelizables, lo que los hace adecuados para su implementación en hardware
+especializado como **GPUs** o **TPUs**.
 
-Los conjuntos de datos utilizados suelen dividirse en tres subconjuntos:
+Los tensores pueden ser indexados para obtener subconjuntos llamados **slices**, lo que
+facilita la manipulación de datos. En el caso de vectores, estos pueden representarse
+como **vectores fila** o **vectores columna**. En muchas implementaciones, un vector de
+una dimensión se representa con un shape de $(n,)$, mientras que un vector columna suele
+representarse como una matriz de shape $(n, 1)$, lo que puede requerir operaciones como
+`expand_dims` para ajustarlos en ciertos cálculos.
 
-- **Conjunto de entrenamiento**: Es el conjunto principal de datos utilizado en el
-  proceso de aprendizaje, por lo que son datos que ve el modelo y de los que deberá
-  obtener patrones.
-- **Conjunto de validación o desarrollo**: Este conjunto de datos se utiliza para evaluar
-  el rendimiento obtenido a la salida del modelo con diferentes valores de
-  hiperparámetros, hasta obtener los valores óptimos.
-- **Conjunto de pruebas**: Se utiliza para evaluar el rendimiento final del modelo, una
-  vez entrenado.
+### 2.2. Operaciones con Vectores
 
-#### c) Funciones de coste y pérdida
-
-La función de pérdida, representada como $\mathcal{L}$, evalúa el rendimiento del modelo
-por cada iteración, mientras que la función de coste, representada como $\mathcal{J}$, se
-define como la media de la función de pérdida en todo el conjunto de datos. Durante el
-entrenamiento, se minimiza la función de pérdida para ajustar los parámetros del modelo
-con el objetivo de mejorar su capacidad para hacer predicciones. Dependiendo del tipo de
-problema, se utilizan diferentes funciones de pérdida y coste [6, 7].
-
-Para problemas de regresión, se suelen utilizar funciones de pérdida como el error
-cuadrático medio (MSE) o el error absoluto medio (MAE). El MSE calcula la media de los
-cuadrados de las diferencias entre las predicciones y los valores reales, penalizando más
-los errores grandes. Por otro lado, el MAE calcula la media de las diferencias absolutas
-entre las predicciones y los valores reales, siendo más robusto frente a valores
-atípicos.
-
-Para problemas de clasificación, se utilizan funciones de pérdida como la entropía
-cruzada, que mide la diferencia entre dos distribuciones de probabilidad, la predicha y
-la real. Esta función es común en problemas de clasificación binaria y multiclase.
-
-#### d) Entrenamiento
-
-El entrenamiento de una red neuronal implica dos algoritmos: a) la propagación hacia
-adelante, que transmite los datos de entrada a la salida, y b) la propagación hacia
-atrás, que ajusta los pesos y sesgos mediante derivadas para optimizar la salida y
-minimizar la pérdida.
-
-El objetivo es mejorar el rendimiento ajustando los pesos y sesgos con el descenso del
-gradiente, donde el modelo evalúa la dirección de la función de coste en un punto y
-converge a un mínimo. Sin embargo, existen alternativas al descenso del gradiente, como
-los algoritmos evolutivos [8] o la optimización por enjambre de partículas [9].
-
-La actualización de los parámetros de peso y sesgo, respectivamente, se realiza mediante
-las reglas:
+Un vector en un espacio euclidiano puede representarse como un punto en dicho espacio. Su
+distancia al origen se obtiene mediante la **norma euclidiana** o **norma $L_2$**,
+definida como:
 
 $$
-\mathbf{W} := \mathbf{W} - \alpha\frac{\partial \mathcal{J}(\mathbf{W}, b)}{\partial \mathbf{W}}
+\|\mathbf{x}\|_2 = \sqrt{\sum_{i=1}^{n} x_i^2}.
 $$
 
+Con ello podemos realizar el **producto punto** entre vectores, definido como:
+
 $$
-b := b - \alpha\frac{\partial \mathcal{J}(\mathbf{W}, b)}{\partial b}
+\left\langle \mathbf{x}, \mathbf{y} \right\rangle = \mathbf{x}^T \mathbf{y} = \sum_{i=1}^{n} x_i y_i.
 $$
 
-donde $\frac{\partial \mathcal{J}(\mathbf{W}, b)}{\partial \mathbf{W}}$ y
-$\frac{\partial \mathcal{J}(\mathbf{W}, b)}{\partial b}$ son la derivada parcial de la
-función de coste $\mathcal{J}(\mathbf{W}, b)$ con respecto a las variables $\mathbf{W}$ y
-$b$, respectivamente. El parámetro $\alpha$ se define como el ratio de aprendizaje, el
-cual determina el tamaño de paso en cada iteración durante el proceso de descenso del
-gradiente.
+:::note
 
-Técnicas como _Momentum_, RMSprop y Adam mejoran la técnica del descenso del gradiente.
-_Momentum_ suaviza las oscilaciones, RMSprop ajusta la tasa de aprendizaje dinámicamente
-y Adam combina ambas técnicas.
+La **transpuesta** de un vector $\mathbf{v}$, denotada como $\mathbf{v}^T$, consiste en
+cambiar su orientación. Si $\mathbf{v}$ es un vector columna, su transpuesta
+$\mathbf{v}^T$ será un vector fila, y viceversa.
 
-La evaluación del modelo se realiza verificando su capacidad de generalización en datos
-no visualizados durante el entrenamiento. En esta situación pueden darse diferentes
-casos. El sobreajuste se produce cuando el modelo se ajusta demasiado a los datos de
-entrenamiento y presenta un rendimiento bajo en nuevos datos, mientras que el infraajuste
-ocurre cuando el modelo es demasiado simple o el conjunto de datos es insuficiente. La
-Figura b) de la Figura representa una correcta generalización.
+:::
 
-#### e) Optimización
+Desde un punto de vista geométrico, el producto punto está relacionado con el ángulo
+entre los vectores:
 
-Los métodos de optimización, entre los que se incluyen la regularización, la
-normalización de datos, la inicialización de pesos y el uso de lotes, son fundamentales
-para combatir el sobreajuste y acelerar el aprendizaje.
+$$
+\left\langle \mathbf{x}, \mathbf{y} \right\rangle = \mathbf{\|x\|}\mathbf{\|y\|} \cos(\alpha),
+$$
 
-La regularización, que tiene como objetivo reducir el valor global de los pesos, abarca
-técnicas como la regularización $L_1$ y $L_2$. Estas penalizan respectivamente la suma de
-los valores absolutos y la suma de los cuadrados de los pesos. Otra técnica relevante es
-el Dropout, que durante el proceso de aprendizaje suprime aleatoriamente neuronas, lo que
-disminuye la posibilidad de sobreajuste.
+donde $\alpha$ es el ángulo entre ambos vectores. Si los vectores están normalizados (es
+decir, tienen norma 1), el producto punto es equivalente al coseno del ángulo entre
+ellos. Esta medida, conocida como **similitud del coseno**, se encuentra en el rango
+$[-1, 1]$, donde:
 
-La normalización de los datos de entrada facilita la optimización de la función de coste.
-Esta práctica implica escalar las características de los datos para que tengan una media
-de $0$ y varianza $1$, o reescalar las características para que se encuentren en un rango
-específico, como $[0, 1]$. Este procedimiento mejora la convergencia de los algoritmos de
-optimización al reducir la dispersión de los datos.
+- $1$ indica que los vectores apuntan en la misma dirección.
+- $-1$ indica que los vectores son opuestos.
+- $0$ indica que los vectores son ortogonales (ángulo de 90°).
 
-Una inicialización adecuada de los pesos es también esencial para un entrenamiento
-eficaz. Por ejemplo, la inicialización Glorot ajusta los pesos iniciales de tal manera
-que se mantenga la varianza de las activaciones a lo largo de las capas, evitando
-problemas de desvanecimiento o explosión de gradientes. Otra estrategia consiste en la
-inicialización de los pesos mediante el uso de modelos preentrenados, que emplea pesos de
-redes previamente entrenadas en grandes conjuntos de datos, acelerando el entrenamiento y
-mejorando el rendimiento en tareas específicas.
+La similitud del coseno se utiliza ampliamente en sistemas basados en aprendizaje
+profundo, mediante la obtención de los **_embeddings_**, para medir similitudes entre
+representaciones vectoriales de imágenes o textos, entre otros.
 
-Además, la división de conjuntos de datos grandes en lotes permite avanzar antes de
-procesar la totalidad del conjunto de datos, lo que acelera el entrenamiento y reduce el
-uso de memoria. Los métodos de optimización basados en lotes, como el descenso de
-gradiente estocástico (SGD) y sus variantes (p. ej., Adam y RMSprop), se benefician de
-esta división, permitiendo actualizaciones de los pesos más frecuentes y estables.
+Otra métrica relevante es la distancia euclidiana, que mide la separación entre dos
+vectores:
+
+$$
+d(\mathbf{x}, \mathbf{y}) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2}
+$$
+
+### 2.3. Operaciones Matriciales
+
+Una matriz es una estructura bidimensional compuesta por vectores dispuestos en filas o
+columnas. En muchas aplicaciones, las matrices se utilizan para representar **lotes
+(_batches_)** de datos, permitiendo el procesamiento simultáneo de múltiples entradas en
+hardware optimizado.
+
+Una de las operaciones más comunes es la multiplicación matricial. Dada una matriz $A$,
+de dimensión $(m, n)$, y una matriz $B$, de dimensión $(n, p)$, su producto $ C $ es una
+matriz de dimensión $(m, p)$, calculada como:
+
+$$
+C_{ij} =  \left\langle \mathrm{\textbf{A}}_i,\mathrm{\textbf{B}}_j^{T} \right\rangle = \sum_{k=1}^{n} A_{ik} B_{kj}.
+$$
+
+Cuando se multiplica una matriz por un vector, la operación puede representarse como el
+producto de la matriz por la transpuesta del vector. Esta operación permite una
+computación más eficiente y vectorizada, ya que se pueden aplicar técnicas de
+optimización.
+
+Formalmente, si $\mathbf{A}$ es una matriz de dimensión $(m, n)$ y $\mathbf{v}$ es un
+vector columna de dimensión $(n, 1)$, entonces el producto de $\mathbf{A}$ por
+$\mathbf{v}$ se puede representar como:
+
+$$
+\mathbf{z} = \mathbf{A} \mathbf{v},
+$$
+
+donde $\mathbf{z}$ es un vector columna de dimensión $(m, 1)$.
+
+Sin embargo, si representamos el vector $\mathbf{v}$ como su transpuesta $\mathbf{v}^T$,
+un vector fila de dimensión $(1, n)$, la operación puede realizarse de manera más
+eficiente. Es decir, si tenemos una matriz $\mathbf{A}$ de dimensión $(m, n)$ y un vector
+fila $\mathbf{v}^T$, la multiplicación se representa como:
+
+$$
+\mathbf{z} = \mathbf{v}^T \mathbf{A},
+$$
+
+donde $\mathbf{z}$ será un vector fila de dimensión $(1, m)$, lo que permite realizar la
+operación de manera vectorizada y optimizada para hardware especializado como **GPUs** o
+**TPUs**. Esto se debe a que la transposición del vector facilita la paralelización de la
+multiplicación y reduce el costo computacional en ciertas implementaciones.
+
+Otra operación común es la multiplicación elemento a elemento (_Hadamard product_), que
+se define como:
+
+$$
+(A \odot B)_{ij} = A_{ij} B_{ij}.
+$$
+
+Esta operación se emplea en modelos de aprendizaje profundo para técnicas como el
+enmascaramiento de ciertos valores en capas neuronales, la normalización de datos y
+escalado de características.
+
+### 2.4. Notación de Einstein
+
+La notación de Einstein es una forma concisa de representar operaciones entre tensores
+mediante una sintaxis basada en índices sumados implícitamente. Esta notación elimina la
+necesidad de escribir explícitamente los bucles de suma, lo que la convierte en una
+herramienta poderosa para expresar operaciones complejas de manera compacta y eficiente.
+Su principal ventaja es que es independiente del framework utilizado (como
+**TensorFlow**, **PyTorch** o **JAX**), ya que se basa únicamente en reglas algebraicas.
+Esta notación es ampliamente utilizada en publicaciones académicas para representar
+operaciones tensoriales de manera clara y eficiente.
+
+La función **`einsum`** permite realizar operaciones con la notación de Einstein de
+manera explícita. La multiplicación matricial representada en notación de Einstein como:
+
+$$
+C_{ij} = A_{ik} B_{kj},
+$$
+
+se puede implementar eficientemente utilizando `einsum` en diferentes frameworks.
+
+En **TensorFlow**, podemos utilizar `tf.einsum` para realizar la multiplicación de
+matrices $A$ y $B$ siguiendo la notación de Einstein:
+
+```python
+import tensorflow as tf
+
+A = tf.random.normal([3, 4])  # Matriz 3x4
+B = tf.random.normal([4, 5])  # Matriz 4x5
+
+# Producto matricial usando einsum (notación de Einstein: C_{ij} = A_{ik} B_{kj})
+C = tf.einsum('ik,kj->ij', A, B)
+```
+
+En este caso, `tf.einsum('ik,kj->ij', A, B)` realiza la multiplicación de las matrices
+$A$ (dimensión $3 \times 4$) y $B$ (dimensión $4 \times 5$), resultando en una matriz $C$
+de dimensión $3 \times 5$.
+
+En **PyTorch**, la operación equivalente se puede realizar utilizando `torch.einsum`:
+
+```python
+import torch
+
+A = torch.randn(3, 4)  # Matriz 3x4
+B = torch.randn(4, 5)  # Matriz 4x5
+
+# Producto matricial usando einsum (notación de Einstein: C_{ij} = A_{ik} B_{kj})
+C = torch.einsum('ik,kj->ij', A, B)
+```
+
+Del mismo modo, en **JAX**, utilizamos `jax.numpy.einsum` para realizar la multiplicación
+matricial de manera eficiente y con la notación de Einstein:
+
+```python
+import jax.numpy as jnp
+
+A = jnp.random.normal(size=(3, 4))  # Matriz 3x4
+B = jnp.random.normal(size=(4, 5))  # Matriz 4x5
+
+# Producto matricial usando einsum (notación de Einstein: C_{ij} = A_{ik} B_{kj})
+C = jnp.einsum('ik,kj->ij', A, B)
+```
