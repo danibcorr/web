@@ -5,30 +5,12 @@ import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 import Translate from "@docusaurus/Translate";
 
-const features = [
-  {
-    title: "Daniel Bazo Correa",
-    description: (
-      <Translate id="perfil.descripcion">
-        Hola, soy Dani! 👋 Soy Ingeniero de Sistemas Electrónicos y Científico
-        de Datos en el área de investigación de Ericsson. Me apasiona la
-        inteligencia artificial, los datos y sus aplicaciones para potenciar las
-        capacidades humanas.
-      </Translate>
-    ),
-    image: "https://avatars.githubusercontent.com/u/77023868?v=4",
-    links: [
-      { label: <FaGithub />, url: "https://github.com/danibcorr" },
-      { label: <FaLinkedin />, url: "https://linkedin.com/in/danibcorr" },
-    ],
-  },
-];
-
-const projects = [
+// Categorías de proyectos
+const projectCategories = [
   {
     title: (
       <Translate id="bloque.proyectos.ia">
-        Proyectos de Datos e Inteligencia Artificial
+        Datos e Inteligencia Artificial
       </Translate>
     ),
     description: (
@@ -41,7 +23,7 @@ const projects = [
   {
     title: (
       <Translate id="bloque.proyectos.electronica">
-        Proyectos de Electrónica y Robótica
+        Electrónica y Robótica
       </Translate>
     ),
     description: (
@@ -53,6 +35,179 @@ const projects = [
   },
 ];
 
+// Proyectos de datos e IA
+const dataAiProjects = [
+  {
+    title: (
+      <Translate id="proyectos.ia.wiki">🏫 Wiki de Aprendizaje Automático</Translate>
+    ),
+    description: (
+      <Translate id="proyectos.ia.wiki.descripcion">
+        Una wiki en español para almacenar y compartir aprendizajes, notas y código en un
+        solo lugar, con un enfoque en el aprendizaje automático.
+      </Translate>
+    ),
+    links: [
+      { label: <FaGithub />, url: "https://github.com/danibcorr/machine-learning-wiki" },
+      {
+        label: <TbWorld />,
+        url: "https://danibcorr.github.io/web/docs/machine-learning-wiki/intro",
+      },
+    ],
+  },
+  {
+    title: (
+      <Translate id="proyectos.ia.musica">
+        🎵 Clasificador de Géneros Musicales
+      </Translate>
+    ),
+    description: (
+      <Translate id="proyectos.ia.musica.descripcion">
+        Clasificador de géneros musicales para parámetros de ecualización automática de
+        JamesDSP, utilizando Redes Neuronales Convolucionales con Transformers.
+      </Translate>
+    ),
+    links: [
+      { label: <FaGithub />, url: "https://github.com/danibcorr/MusicGenreClassifier" },
+    ],
+  },
+  {
+    title: <Translate id="proyectos.ia.ventas">💸 Suite de Ventas Streamlit</Translate>,
+    description: (
+      <Translate id="proyectos.ia.ventas.descripcion">
+        Plataforma web integral para análisis y visualización de datos, impulsada con
+        Streamlit, complementada con un clasificador automatizado de ítems.
+      </Translate>
+    ),
+    links: [
+      { label: <FaGithub />, url: "https://github.com/danibcorr/streamlit-sales-suite" },
+    ],
+  },
+  {
+    title: <Translate id="proyectos.ia.papers">📄 Papers con Código</Translate>,
+    description: (
+      <Translate id="proyectos.ia.papers.descripcion">
+        Implementaciones de artículos de aprendizaje automático y profundo en código.
+      </Translate>
+    ),
+    links: [
+      { label: <FaGithub />, url: "https://github.com/danibcorr/papers-with-code" },
+    ],
+  },
+  {
+    title: <Translate id="proyectos.ia.universidad">🎓 MorphX</Translate>,
+    description: (
+      <Translate id="proyectos.ia.universidad.descripcion">
+        MorphX es una herramienta basada en Streamlit que permite modificar metadatos,
+        convertir archivos a Markdown, transcribir audio y más.
+      </Translate>
+    ),
+    links: [{ label: <FaGithub />, url: "https://github.com/danibcorr/morphx" }],
+  },
+  {
+    title: <Translate id="proyectos.ia.wattpad">📚 Tu Compañero de Wattpad</Translate>,
+    description: (
+      <Translate id="proyectos.ia.wattpad.descripcion">
+        Herramienta para obtener información de Wattpad y conocer usuarios con los mismos
+        gustos.
+      </Translate>
+    ),
+    links: [{ label: <FaGithub />, url: "https://github.com/danibcorr/wattpad-mate" }],
+  },
+];
+
+// Proyectos de electrónica y robótica
+const electronicsProjects = [
+  {
+    title: (
+      <Translate id="proyectos.ia.sistema-monitoreo">
+        🏔️ Sistema de Monitoreo Ambiental
+      </Translate>
+    ),
+    description: (
+      <Translate id="proyectos.ia.sistema-monitoreo.descripcion">
+        Sistema de monitoreo IoT para comunicaciones inalámbricas utilizando Arduino y
+        ESP32.
+      </Translate>
+    ),
+    links: [
+      {
+        label: <FaGithub />,
+        url: "https://github.com/danibcorr/monitoreo-ambiental-IoT",
+      },
+    ],
+  },
+  {
+    title: (
+      <Translate id="proyectos.ia.electronica-tiva">🎛️ Electrónica con Tiva C</Translate>
+    ),
+    description: (
+      <Translate id="proyectos.ia.electronica-tiva.descripcion">
+        Proyecto de sistemas embebidos con Tiva C utilizando comunicaciones UART e I2C.
+      </Translate>
+    ),
+    links: [
+      {
+        label: <FaGithub />,
+        url: "https://github.com/danibcorr/electronics-with-tivac",
+      },
+    ],
+  },
+  {
+    title: (
+      <Translate id="proyectos.ia.electronica-arduino">
+        🎛️ Electrónica con Arduino
+      </Translate>
+    ),
+    description: (
+      <Translate id="proyectos.ia.electronica-arduino.descripcion">
+        Repositorio con proyectos de Arduino y Processing para el curso de Electrónica
+        Creativa en la UMA.
+      </Translate>
+    ),
+    links: [
+      {
+        label: <FaGithub />,
+        url: "https://github.com/danibcorr/electronics-with-arduino-uma",
+      },
+      {
+        label: <TbWorld />,
+        url: "https://www.instructables.com/Robotic-Arm-Ft-Arduino-Mega-TheGHIZmo-Aarav-G/",
+      },
+      { label: <FaYoutube />, url: "https://www.youtube.com/watch?v=XPU3eNG0Fps" },
+    ],
+  },
+  {
+    title: (
+      <Translate id="proyectos.ia.controlador-kinect">
+        👀 Controlador Kinect para PowerPoint
+      </Translate>
+    ),
+    description: (
+      <Translate id="proyectos.ia.controlador-kinect.descripcion">
+        Desarrollo de un programa que permite el control natural de presentaciones de
+        PowerPoint utilizando gestos y voz.
+      </Translate>
+    ),
+    links: [
+      { label: <FaGithub />, url: "https://github.com/danibcorr/kinect-power-point" },
+    ],
+  },
+  {
+    title: <Translate id="proyectos.ia.microbot-sumo">🤖 Microbot Sumo</Translate>,
+    description: (
+      <Translate id="proyectos.ia.microbot-sumo.descripcion">
+        Diseño de un microbot para lucha de sumo.
+      </Translate>
+    ),
+    links: [
+      { label: <FaGithub />, url: "https://github.com/JeyJeysp/Microbotics_UMA" },
+      { label: <FaYoutube />, url: "https://www.youtube.com/watch?v=QDrDcFWdLiE" },
+    ],
+  },
+];
+
+// Componente principal
 function HomepageFeatures() {
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -68,6 +223,7 @@ function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
+        {/* Información de perfil */}
         <div className={styles.featureContainer}>
           {features.map(({ title, description, image, links }) => (
             <div className={clsx(styles.feature)} key={title}>
@@ -75,7 +231,7 @@ function HomepageFeatures() {
                 <img src={image} className={styles.featureImage} alt={title} />
               </div>
               <div className={styles.textContainer}>
-                <h2>{title}</h2>
+                <h1>{title}</h1>
                 <p>{description}</p>
                 <div className={styles.socialLinks}>
                   {links.map((link) => (
@@ -94,19 +250,20 @@ function HomepageFeatures() {
           ))}
         </div>
 
+        {/* Título de sección de proyectos */}
         <h1 className={styles.projectsTitle}>
           <Translate id="bloque.proyectos">Proyectos</Translate>
         </h1>
+
+        {/* Categorías de proyectos */}
         <div className={styles.projectsContainer}>
-          {projects.map(({ title, description, anchorId }) => (
+          {projectCategories.map(({ title, description, anchorId }) => (
             <div className={styles.project} key={anchorId}>
               <h3>{title}</h3>
               <p>{description}</p>
               <button
                 onClick={() =>
-                  setSelectedProject(
-                    selectedProject === anchorId ? null : anchorId,
-                  )
+                  setSelectedProject(selectedProject === anchorId ? null : anchorId)
                 }
                 className={styles.projectButton}
               >
@@ -116,356 +273,125 @@ function HomepageFeatures() {
           ))}
         </div>
 
-        <div className={styles.projectsDetailSection}>
-          {selectedProject === "data-ai" && (
-            <div
-              id="data-ai"
-              className={clsx(
-                styles.projectDetail,
-                selectedProject === "data-ai" && styles.visible,
-              )}
-            >
-              <h3>Proyectos de Datos e Inteligencia Artificial</h3>
-
-              <div className={styles.projectItem}>
-                <h4 className={styles.projectTitle}>
-                  <Translate id="proyectos.ia.wiki">
-                    🏫 Wiki de Aprendizaje Automático
-                  </Translate>
-                </h4>
-                <p className={styles.projectDescription}>
-                  <Translate id="proyectos.ia.wiki.descripcion">
-                    Una wiki en español para almacenar y compartir aprendizajes,
-                    notas y código en un solo lugar, con un enfoque en el
-                    aprendizaje automático.
-                  </Translate>
-                </p>
-                <div className={styles.projectLinks}>
-                  <a
-                    href="https://github.com/danibcorr/machine-learning-wiki"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub />
-                  </a>
-                  <a
-                    href="https://danibcorr.github.io/web/docs/machine-learning-wiki/intro"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <TbWorld />
-                  </a>
+        {/* Proyectos de datos e IA */}
+        {selectedProject === "data-ai" && (
+          <div className={clsx(styles.projectsGrid, styles.visible)}>
+            {dataAiProjects.map((project, index) => (
+              <div key={index} className={styles.projectCard}>
+                <div className={styles.projectIcon}>
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <circle
+                      cx="12"
+                      cy="8"
+                      r="2"
+                      stroke="currentColor"
+                      fill="none"
+                      strokeWidth="1.5"
+                    />
+                    <path
+                      d="M5,21V15C5,11.5,8,9,12,9s7,2.5,7,6v6"
+                      stroke="currentColor"
+                      fill="none"
+                      strokeWidth="1.5"
+                    />
+                  </svg>
+                </div>
+                <div className={styles.projectContent}>
+                  <h4 className={styles.projectTitle}>{project.title}</h4>
+                  <p className={styles.projectDescription}>{project.description}</p>
+                  <div className={styles.projectFooter}>
+                    <button className={styles.projectCardButton}>
+                      <Translate id="bloque.ver.mas">Ver más</Translate>
+                    </button>
+                    <div className={styles.projectLinks}>
+                      {project.links.map((link, linkIndex) => (
+                        <a
+                          key={linkIndex}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+        )}
 
-              <div className={styles.projectItem}>
-                <h4 className={styles.projectTitle}>
-                  <Translate id="proyectos.ia.musica">
-                    🎵 Clasificador de Géneros Musicales
-                  </Translate>
-                </h4>
-                <p className={styles.projectDescription}>
-                  <Translate id="proyectos.ia.musica.descripcion">
-                    Clasificador de géneros musicales para parámetros de
-                    ecualización automática de JamesDSP, utilizando Redes
-                    Neuronales Convolucionales con Transformers.
-                  </Translate>
-                </p>
-                <div className={styles.projectLinks}>
-                  <a
-                    href="https://github.com/danibcorr/MusicGenreClassifier"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub />
-                  </a>
+        {/* Proyectos de electrónica y robótica */}
+        {selectedProject === "electronics" && (
+          <div className={clsx(styles.projectsGrid, styles.visible)}>
+            {electronicsProjects.map((project, index) => (
+              <div key={index} className={styles.projectCard}>
+                <div className={styles.projectIcon}>
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <circle
+                      cx="12"
+                      cy="8"
+                      r="2"
+                      stroke="currentColor"
+                      fill="none"
+                      strokeWidth="1.5"
+                    />
+                    <path
+                      d="M5,21V15C5,11.5,8,9,12,9s7,2.5,7,6v6"
+                      stroke="currentColor"
+                      fill="none"
+                      strokeWidth="1.5"
+                    />
+                  </svg>
+                </div>
+                <div className={styles.projectContent}>
+                  <h4 className={styles.projectTitle}>{project.title}</h4>
+                  <p className={styles.projectDescription}>{project.description}</p>
+                  <div className={styles.projectFooter}>
+                    <button className={styles.projectCardButton}>
+                      <Translate id="bloque.ver.mas">Ver más</Translate>
+                    </button>
+                    <div className={styles.projectLinks}>
+                      {project.links.map((link, linkIndex) => (
+                        <a
+                          key={linkIndex}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div className={styles.projectItem}>
-                <h4 className={styles.projectTitle}>
-                  <Translate id="proyectos.ia.ventas">
-                    💸 Suite de Ventas Streamlit
-                  </Translate>
-                </h4>
-                <p className={styles.projectDescription}>
-                  <Translate id="proyectos.ia.ventas.descripcion">
-                    Plataforma web integral para análisis y visualización de
-                    datos, impulsada con Streamlit, complementada con un
-                    clasificador automatizado de ítems que optimiza la
-                    asignación de etiquetas.
-                  </Translate>
-                </p>
-                <div className={styles.projectLinks}>
-                  <a
-                    href="https://github.com/danibcorr/streamlit-sales-suite"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub />
-                  </a>
-                </div>
-              </div>
-
-              <div className={styles.projectItem}>
-                <h4 className={styles.projectTitle}>
-                  <Translate id="proyectos.ia.papers">
-                    📄 Papers con Código
-                  </Translate>
-                </h4>
-                <p className={styles.projectDescription}>
-                  <Translate id="proyectos.ia.papers.descripcion">
-                    Implementaciones de artículos de aprendizaje automático y
-                    profundo en código.
-                  </Translate>
-                </p>
-                <div className={styles.projectLinks}>
-                  <a
-                    href="https://github.com/danibcorr/papers-with-code"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub />
-                  </a>
-                </div>
-              </div>
-
-              <div className={styles.projectItem}>
-                <h4 className={styles.projectTitle}>
-                  <Translate id="proyectos.ia.universidad">🎓 MorphX</Translate>
-                </h4>
-                <p className={styles.projectDescription}>
-                  <Translate id="proyectos.ia.universidad.descripcion">
-                    MorphX es una herramienta basada en Streamlit que permite
-                    modificar metadatos, convertir archivos a Markdown,
-                    transcribir audio y más, todo desde una interfaz web
-                    intuitiva.
-                  </Translate>
-                </p>
-                <div className={styles.projectLinks}>
-                  <a
-                    href="https://github.com/danibcorr/morphx"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ver repositorio en GitHub"
-                  >
-                    <FaGithub />
-                  </a>
-                </div>
-              </div>
-
-              <div className={styles.projectItem}>
-                <h4 className={styles.projectTitle}>
-                  <Translate id="proyectos.ia.wattpad">
-                    📚 Tu Compañero de Wattpad
-                  </Translate>
-                </h4>
-                <p className={styles.projectDescription}>
-                  <Translate id="proyectos.ia.wattpad.descripcion">
-                    Herramienta para obtener información de Wattpad y conocer
-                    usuarios con los mismos gustos y accesibles para interactuar
-                    con ellos.
-                  </Translate>
-                </p>
-                <div className={styles.projectLinks}>
-                  <a
-                    href="https://github.com/danibcorr/wattpad-mate"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub />
-                  </a>
-                </div>
-              </div>
-
-              <div className={styles.projectItem}>
-                <h4 className={styles.projectTitle}>
-                  <Translate id="proyectos.ia.musica">
-                    🏗️ Plantilla en Python para producción
-                  </Translate>
-                </h4>
-                <p className={styles.projectDescription}>
-                  <Translate id="proyectos.ia.musica.descripcion">
-                    Una plantilla en Python diseñada para agilizar el desarrollo
-                    de proyectos, facilitando la transición de prototipos a
-                    productos o aplicaciones funcionales.
-                  </Translate>
-                </p>
-                <div className={styles.projectLinks}>
-                  <a
-                    href="https://github.com/danibcorr/python-project-template"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ver repositorio en GitHub"
-                  >
-                    <FaGithub />
-                  </a>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {selectedProject === "electronics" && (
-            <div
-              id="electronics"
-              className={clsx(
-                styles.projectDetail,
-                selectedProject === "electronics" && styles.visible,
-              )}
-            >
-              <h3>
-                <Translate id="proyectos.electronica.robótica">
-                  Proyectos de Electrónica y Robótica
-                </Translate>
-              </h3>
-
-              <div className={styles.projectItem}>
-                <h4 className={styles.projectTitle}>
-                  <Translate id="proyectos.ia.sistema-monitoreo">
-                    🏔️ Sistema de Monitoreo Ambiental
-                  </Translate>
-                </h4>
-                <p className={styles.projectDescription}>
-                  <Translate id="proyectos.ia.sistema-monitoreo.descripcion">
-                    Sistema de monitoreo IoT para comunicaciones inalámbricas
-                    utilizando Arduino y ESP32. Propuesta realizada para el
-                    proyecto final del Máster en Telemática y Redes de
-                    Telecomunicación de la UMA, en la asignatura de Ingeniería
-                    de Software para el Internet de las Cosas.
-                  </Translate>
-                </p>
-                <div className={styles.projectLinks}>
-                  <a
-                    href="https://github.com/danibcorr/monitoreo-ambiental-IoT"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub />
-                  </a>
-                </div>
-              </div>
-
-              <div className={styles.projectItem}>
-                <h4 className={styles.projectTitle}>
-                  <Translate id="proyectos.ia.electronica-tiva">
-                    🎛️ Electrónica con Tiva C
-                  </Translate>
-                </h4>
-                <p className={styles.projectDescription}>
-                  <Translate id="proyectos.ia.electronica-tiva.descripcion">
-                    Proyecto de sistemas embebidos con Tiva C utilizando
-                    comunicaciones UART e I2C.
-                  </Translate>
-                </p>
-                <div className={styles.projectLinks}>
-                  <a
-                    href="https://github.com/danibcorr/electronics-with-tivac"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub />
-                  </a>
-                </div>
-              </div>
-
-              <div className={styles.projectItem}>
-                <h4 className={styles.projectTitle}>
-                  <Translate id="proyectos.ia.electronica-arduino">
-                    🎛️ Electrónica con Arduino
-                  </Translate>
-                </h4>
-                <p className={styles.projectDescription}>
-                  <Translate id="proyectos.ia.electronica-arduino.descripcion">
-                    Repositorio que contiene una colección de proyectos de
-                    Arduino y Processing desarrollados para el curso de
-                    Electrónica Creativa en la Universidad de Málaga (UMA).
-                    Enfoque principal en un proyecto de brazo robótico, con
-                    trabajos adicionales en sensores piezoeléctricos y lámparas
-                    LED.
-                  </Translate>
-                </p>
-                <div className={styles.projectLinks}>
-                  <a
-                    href="https://github.com/danibcorr/electronics-with-arduino-uma"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub />
-                  </a>
-                  <a
-                    href="https://www.instructables.com/Robotic-Arm-Ft-Arduino-Mega-TheGHIZmo-Aarav-G/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <TbWorld />
-                  </a>
-                  <a
-                    href="https://www.youtube.com/watch?v=XPU3eNG0Fps"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaYoutube />
-                  </a>
-                </div>
-              </div>
-
-              <div className={styles.projectItem}>
-                <h4 className={styles.projectTitle}>
-                  <Translate id="proyectos.ia.controlador-kinect">
-                    👀 Controlador Kinect para PowerPoint
-                  </Translate>
-                </h4>
-                <p className={styles.projectDescription}>
-                  <Translate id="proyectos.ia.controlador-kinect.descripcion">
-                    Desarrollo de un programa que permite el control natural de
-                    presentaciones de PowerPoint utilizando gestos y voz.
-                  </Translate>
-                </p>
-                <div className={styles.projectLinks}>
-                  <a
-                    href="https://github.com/danibcorr/kinect-power-point"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub />
-                  </a>
-                </div>
-              </div>
-
-              <div className={styles.projectItem}>
-                <h4 className={styles.projectTitle}>
-                  <Translate id="proyectos.ia.microbot-sumo">
-                    🤖 Microbot Sumo
-                  </Translate>
-                </h4>
-                <p className={styles.projectDescription}>
-                  <Translate id="proyectos.ia.microbot-sumo.descripcion">
-                    Diseño de un microbot para lucha de sumo.
-                  </Translate>
-                </p>
-                <div className={styles.projectLinks}>
-                  <a
-                    href="https://github.com/JeyJeysp/Microbotics_UMA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub />
-                  </a>
-                  <a
-                    href="https://www.youtube.com/watch?v=QDrDcFWdLiE"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaYoutube />
-                  </a>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
 }
+
+// Variable features (no modificada respecto a tu código original)
+const features = [
+  {
+    title: "Daniel Bazo Correa",
+    description: (
+      <Translate id="perfil.descripcion">
+        Hola, soy Dani! 👋 Soy Ingeniero de Sistemas Electrónicos y Científico de Datos
+        en el área de investigación de Ericsson. Me apasiona la inteligencia artificial,
+        los datos y sus aplicaciones para potenciar las capacidades humanas.
+      </Translate>
+    ),
+    image: "https://avatars.githubusercontent.com/u/77023868?v=4",
+    links: [
+      { label: <FaGithub />, url: "https://github.com/danibcorr" },
+      { label: <FaLinkedin />, url: "https://linkedin.com/in/danibcorr" },
+    ],
+  },
+];
 
 export default HomepageFeatures;

@@ -73,6 +73,11 @@
   color: var(--colorLinkSelection);
 }
 
+/* Eliminar la flecha en los menús desplegables */
+.dropdown > .navbar__link:after {
+  display: none;
+}
+
 .card {
   /* Fondo de la tarjeta */
   background-color: var(--colorTarjetas);
