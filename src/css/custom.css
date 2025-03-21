@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 :root {
   --ifm-color-primary: #171717;
   --ifm-color-primary-dark: #151515;
@@ -6,7 +8,7 @@
   --ifm-color-primary-light: #191919;
   --ifm-color-primary-lighter: #1a1a1a;
   --ifm-color-primary-lightest: #1e1e1e;
-  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: "Montserrat", sans-serif;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --colorFondoDoc: #fdfdf7;
   --colorTarjetas: #ffffff;
@@ -29,7 +31,7 @@
   --ifm-color-primary-light: #f6f6f6;
   --ifm-color-primary-lighter: #ffffff;
   --ifm-color-primary-lightest: #ffffff;
-  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: "Montserrat", sans-serif;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --colorFondoDoc: #15191d;
   --colorTarjetas: #313b4b;

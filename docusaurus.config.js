@@ -142,7 +142,6 @@ const config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "Inicio",
       logo: {
         alt: "Logo",
         src: "img/logo motivo.svg",
@@ -166,7 +165,7 @@ const config = {
           ],
         },
         {
-          label: "Otros",
+          label: "Otros Intereses",
           position: "left",
           items: [
             {
@@ -193,15 +192,10 @@ const config = {
           type: "localeDropdown",
           position: "right",
         },
-        {
-          href: `https://github.com/${organizationName}/${projectName}`,
-          label: "GitHub",
-          position: "right",
-        },
       ],
     },
     footer: {
-      copyright: `Copyright © ${new Date().getFullYear()} Daniel Bazo Correa. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Daniel Bazo Correa`,
     },
     prism: {
       theme: lightCodeTheme,
