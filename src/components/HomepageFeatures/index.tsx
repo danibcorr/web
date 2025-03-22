@@ -9,9 +9,7 @@ import Translate from "@docusaurus/Translate";
 const projectCategories = [
   {
     title: (
-      <Translate id="bloque.proyectos.ia">
-        Datos e Inteligencia Artificial
-      </Translate>
+      <Translate id="bloque.proyectos.ia">Datos e Inteligencia Artificial</Translate>
     ),
     description: (
       <Translate id="bloque.proyectos.ia.descripcion">
@@ -22,9 +20,7 @@ const projectCategories = [
   },
   {
     title: (
-      <Translate id="bloque.proyectos.electronica">
-        Electrónica y Robótica
-      </Translate>
+      <Translate id="bloque.proyectos.electronica">Electrónica y Robótica</Translate>
     ),
     description: (
       <Translate id="bloque.proyectos.electronica.descripcion">
@@ -39,14 +35,12 @@ const projectCategories = [
 const dataAiProjects = [
   {
     title: (
-      <Translate id="proyectos.ia.wiki">
-        🏫 Wiki de Aprendizaje Automático
-      </Translate>
+      <Translate id="proyectos.ia.wiki">🏫 Wiki de Aprendizaje Automático</Translate>
     ),
     description: (
       <Translate id="proyectos.ia.wiki.descripcion">
-        Una wiki en español para almacenar y compartir aprendizajes, notas y
-        código en un solo lugar, con un enfoque en el aprendizaje automático.
+        Una wiki en español para almacenar y compartir aprendizajes, notas y código en un
+        solo lugar, con un enfoque en el aprendizaje automático.
       </Translate>
     ),
     links: [
@@ -68,9 +62,8 @@ const dataAiProjects = [
     ),
     description: (
       <Translate id="proyectos.ia.musica.descripcion">
-        Clasificador de géneros musicales para parámetros de ecualización
-        automática de JamesDSP, utilizando Redes Neuronales Convolucionales con
-        Transformers.
+        Clasificador de géneros musicales para parámetros de ecualización automática de
+        JamesDSP, utilizando Redes Neuronales Convolucionales con Transformers.
       </Translate>
     ),
     links: [
@@ -81,16 +74,11 @@ const dataAiProjects = [
     ],
   },
   {
-    title: (
-      <Translate id="proyectos.ia.ventas">
-        💸 Suite de Ventas Streamlit
-      </Translate>
-    ),
+    title: <Translate id="proyectos.ia.ventas">💸 Suite de Ventas Streamlit</Translate>,
     description: (
       <Translate id="proyectos.ia.ventas.descripcion">
-        Plataforma web integral para análisis y visualización de datos,
-        impulsada con Streamlit, complementada con un clasificador automatizado
-        de ítems.
+        Plataforma web integral para análisis y visualización de datos, impulsada con
+        Streamlit, complementada con un clasificador automatizado de ítems.
       </Translate>
     ),
     links: [
@@ -104,8 +92,7 @@ const dataAiProjects = [
     title: <Translate id="proyectos.ia.papers">📄 Papers con Código</Translate>,
     description: (
       <Translate id="proyectos.ia.papers.descripcion">
-        Implementaciones de artículos de aprendizaje automático y profundo en
-        código.
+        Implementaciones de artículos de aprendizaje automático y profundo en código.
       </Translate>
     ),
     links: [
@@ -119,29 +106,21 @@ const dataAiProjects = [
     title: <Translate id="proyectos.ia.universidad">🎓 MorphX</Translate>,
     description: (
       <Translate id="proyectos.ia.universidad.descripcion">
-        MorphX es una herramienta basada en Streamlit que permite modificar
-        metadatos, convertir archivos a Markdown, transcribir audio y más.
+        MorphX es una herramienta basada en Streamlit que permite modificar metadatos,
+        convertir archivos a Markdown, transcribir audio y más.
       </Translate>
     ),
-    links: [
-      { label: <FaGithub />, url: "https://github.com/danibcorr/morphx" },
-    ],
+    links: [{ label: <FaGithub />, url: "https://github.com/danibcorr/morphx" }],
   },
   {
-    title: (
-      <Translate id="proyectos.ia.wattpad">
-        📚 Tu Compañero de Wattpad
-      </Translate>
-    ),
+    title: <Translate id="proyectos.ia.wattpad">📚 Tu Compañero de Wattpad</Translate>,
     description: (
       <Translate id="proyectos.ia.wattpad.descripcion">
-        Herramienta para obtener información de Wattpad y conocer usuarios con
-        los mismos gustos.
+        Herramienta para obtener información de Wattpad y conocer usuarios con los mismos
+        gustos.
       </Translate>
     ),
-    links: [
-      { label: <FaGithub />, url: "https://github.com/danibcorr/wattpad-mate" },
-    ],
+    links: [{ label: <FaGithub />, url: "https://github.com/danibcorr/wattpad-mate" }],
   },
 ];
 
@@ -155,8 +134,8 @@ const electronicsProjects = [
     ),
     description: (
       <Translate id="proyectos.ia.sistema-monitoreo.descripcion">
-        Sistema de monitoreo IoT para comunicaciones inalámbricas utilizando
-        Arduino y ESP32.
+        Sistema de monitoreo IoT para comunicaciones inalámbricas utilizando Arduino y
+        ESP32.
       </Translate>
     ),
     links: [
@@ -168,14 +147,11 @@ const electronicsProjects = [
   },
   {
     title: (
-      <Translate id="proyectos.ia.electronica-tiva">
-        🎛️ Electrónica con Tiva C
-      </Translate>
+      <Translate id="proyectos.ia.electronica-tiva">🎛️ Electrónica con Tiva C</Translate>
     ),
     description: (
       <Translate id="proyectos.ia.electronica-tiva.descripcion">
-        Proyecto de sistemas embebidos con Tiva C utilizando comunicaciones UART
-        e I2C.
+        Proyecto de sistemas embebidos con Tiva C utilizando comunicaciones UART e I2C.
       </Translate>
     ),
     links: [
@@ -193,8 +169,8 @@ const electronicsProjects = [
     ),
     description: (
       <Translate id="proyectos.ia.electronica-arduino.descripcion">
-        Repositorio con proyectos de Arduino y Processing para el curso de
-        Electrónica Creativa en la UMA.
+        Repositorio con proyectos de Arduino y Processing para el curso de Electrónica
+        Creativa en la UMA.
       </Translate>
     ),
     links: [
@@ -220,8 +196,8 @@ const electronicsProjects = [
     ),
     description: (
       <Translate id="proyectos.ia.controlador-kinect.descripcion">
-        Desarrollo de un programa que permite el control natural de
-        presentaciones de PowerPoint utilizando gestos y voz.
+        Desarrollo de un programa que permite el control natural de presentaciones de
+        PowerPoint utilizando gestos y voz.
       </Translate>
     ),
     links: [
@@ -232,9 +208,7 @@ const electronicsProjects = [
     ],
   },
   {
-    title: (
-      <Translate id="proyectos.ia.microbot-sumo">🤖 Microbot Sumo</Translate>
-    ),
+    title: <Translate id="proyectos.ia.microbot-sumo">🤖 Microbot Sumo</Translate>,
     description: (
       <Translate id="proyectos.ia.microbot-sumo.descripcion">
         Diseño de un microbot para lucha de sumo.
@@ -309,9 +283,7 @@ function HomepageFeatures() {
               <p>{description}</p>
               <button
                 onClick={() =>
-                  setSelectedProject(
-                    selectedProject === anchorId ? null : anchorId,
-                  )
+                  setSelectedProject(selectedProject === anchorId ? null : anchorId)
                 }
                 className={styles.projectButton}
               >
@@ -346,9 +318,7 @@ function HomepageFeatures() {
                 </div>
                 <div className={styles.projectContent}>
                   <h4 className={styles.projectTitle}>{project.title}</h4>
-                  <p className={styles.projectDescription}>
-                    {project.description}
-                  </p>
+                  <p className={styles.projectDescription}>{project.description}</p>
                   <div className={styles.projectFooter}>
                     <div className={styles.projectLinks}>
                       {project.links.map((link, linkIndex) => (
@@ -394,9 +364,7 @@ function HomepageFeatures() {
                 </div>
                 <div className={styles.projectContent}>
                   <h4 className={styles.projectTitle}>{project.title}</h4>
-                  <p className={styles.projectDescription}>
-                    {project.description}
-                  </p>
+                  <p className={styles.projectDescription}>{project.description}</p>
                   <div className={styles.projectFooter}>
                     <div className={styles.projectLinks}>
                       {project.links.map((link, linkIndex) => (
@@ -427,16 +395,15 @@ const features = [
     title: "Daniel Bazo Correa",
     description: (
       <Translate id="perfil.descripcion">
-        Hola, soy Dani! 👋 Soy Ingeniero de Sistemas Electrónicos y Científico
-        de Datos en el área de investigación de Ericsson. Me apasiona la
-        inteligencia artificial, los datos y sus aplicaciones para potenciar las
-        capacidades humanas.
+        Hola, soy Dani! 👋 Soy Ingeniero de Sistemas Electrónicos y Científico de Datos
+        en el área de investigación de Ericsson. Me apasiona la inteligencia artificial,
+        los datos y sus aplicaciones para potenciar las capacidades humanas.
       </Translate>
     ),
     image: "https://avatars.githubusercontent.com/u/77023868?v=4",
     links: [
       { label: <FaGithub />, url: "https://github.com/danibcorr" },
-      { label: <FaLinkedin />, url: "https://linkedin.com/in/danibcorr" },
+      { label: <FaLinkedin />, url: "https://es.linkedin.com/in/danibcorr" },
     ],
   },
 ];

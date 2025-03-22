@@ -2,12 +2,13 @@
 
 /* Variables de color y tamaño */
 :root {
-  --primaryColor: #d6c0b3;
+  --colorBotones: #d2d2c8;
+  --colorSeleccionBotones: #af8f6f;
   --colorLinkSelection: #af8f6f;
-  --accentColor: #171717;
-  --borderColor: #e0e0e0;
-  --colorTarjetas: #ffffff;
-  --shadowColor: rgba(0, 0, 0, 0.1);
+  --accentColor: #000000;
+  --colorBordesTarjetas: #d2d2c8;
+  --colorTarjetas: #f0f3ef;
+  --shadowColor: #0000001a;
   --transitionTime: 0.3s;
   --fontSize: 1rem;
   --containerMaxWidth: 830px;
@@ -23,12 +24,13 @@
 
 /* Dark Mode Variables */
 [data-theme="dark"] {
-  --primaryColor: #313b4b;
-  --colorLinkSelection: #d6c0b3;
+  --colorBotones: #313b4b;
+  --colorSeleccionBotones: #af8f6f;
+  --colorLinkSelection: #af8f6f;
   --accentColor: #e0e0e0;
-  --borderColor: #e0e0e0;
+  --colorBordesTarjetas: #313b4b;
   --colorTarjetas: #212529;
-  --shadowColor: #e0e0e0;
+  --shadowColor: #e0e0e01a;
   --transitionTime: 0.3s;
   --fontSize: 1rem;
   --containerMaxWidth: 830px;
@@ -92,7 +94,7 @@
   margin-top: var(--marginRest);
   margin-bottom: var(--marginRest);
   max-width: var(--containerMaxWidth);
-  width: 100%;
+  width: var(--maxWidth);
   gap: var(--marginGap);
   margin-left: auto;
   margin-right: auto;
@@ -102,7 +104,7 @@
 .project {
   background-color: var(--colorTarjetas);
   color: var(--accentColor);
-  border: 1px solid var(--borderColor);
+  border: 1px solid var(--colorBordesTarjetas);
   border-radius: var(--border-radius);
   padding: 15px;
   flex: 1;
@@ -117,11 +119,11 @@
   display: block;
   margin-top: auto;
   padding: 10px 15px;
-  background-color: var(--primaryColor);
+  background-color: var(--colorBotones);
   color: var(--accentColor);
   border: none;
   border-radius: var(--border-radius);
-  width: 100%;
+  width: var(--maxWidth);
   font-size: var(--fontSize);
   text-align: center;
   cursor: pointer;
@@ -132,7 +134,7 @@
 
 /* Efecto hover en botón de proyecto */
 .projectButton:hover {
-  background-color: #c0a695;
+  background-color: var(--colorSeleccionBotones);
   color: var(--colorTarjetas);
 }
 
@@ -183,7 +185,7 @@
   display: flex;
   flex-direction: column;
   background-color: var(--colorTarjetas);
-  border: 1px solid var(--borderColor);
+  border: 1px solid var(--colorBordesTarjetas);
   border-radius: var(--border-radius);
   overflow: hidden;
   transition:
@@ -330,7 +332,7 @@
   .project {
     margin: 20px 0;
     padding: 15px;
-    width: 100%;
+    width: var(--maxWidth);
   }
 }
 

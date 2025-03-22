@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 :root {
+  --ifm-font-family-base: "Montserrat", sans-serif;
   --ifm-color-primary: #171717;
   --ifm-color-primary-dark: #151515;
   --ifm-color-primary-darker: #141414;
@@ -8,22 +9,17 @@
   --ifm-color-primary-light: #191919;
   --ifm-color-primary-lighter: #1a1a1a;
   --ifm-color-primary-lightest: #1e1e1e;
-  --ifm-font-family-base: "Montserrat", sans-serif;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --colorFondoDoc: #fdfdf7;
-  --colorTarjetas: #ffffff;
-  --colorLetraFooter: #191919;
-  --primaryColor: #d6c0b3;
+  --colorFondoDoc: #f0f5ef;
+  --ifm-link-color: #af8f6f;
   --colorLinkSelection: #af8f6f;
-  --accentColor: #171717;
-  --borderColor: #e0e0e0;
+  --colorLetraFooter: #000000;
   --transitionTime: 0.3s;
   --maxWidth: 100%;
-  --ifm-link-color: #b37940;
 }
 
-/* Dark Mode Variables */
 [data-theme="dark"] {
+  --ifm-font-family-base: "Montserrat", sans-serif;
   --ifm-color-primary: #e0e0e0;
   --ifm-color-primary-dark: #cacaca;
   --ifm-color-primary-darker: #bebebe;
@@ -31,31 +27,24 @@
   --ifm-color-primary-light: #f6f6f6;
   --ifm-color-primary-lighter: #ffffff;
   --ifm-color-primary-lightest: #ffffff;
-  --ifm-font-family-base: "Montserrat", sans-serif;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --colorFondoDoc: #15191d;
-  --colorTarjetas: #313b4b;
-  --colorLetraFooter: #e0e0e0;
-  --primaryColor: #e0e0e0;
-  --colorLinkSelection: #6f6f6f;
-  --accentColor: #e0e0e0;
-  --borderColor: #555555;
+  --ifm-link-color: #af8f6f;
+  --colorLinkSelection: #af8f6f;
+  --colorLetraFooter: #ffffff;
   --transitionTime: 0.3s;
   --maxWidth: 100%;
-  --ifm-link-color: #a7b847;
 }
 
 .main-wrapper {
   /* Permite cambiar el color del fondo */
   background-color: var(--colorFondoDoc);
-  color: var(--accentColor);
 }
 
 .footer {
-  /* Cambiar el fondo del footer */
-  background-color: var(--primaryColor);
   /* Cambiar el color del texto del footer */
   color: var(--colorLetraFooter);
+  background-color: var(--colorFondoDoc);
 }
 
 .navbar {
@@ -63,32 +52,14 @@
   background-color: var(--colorFondoDoc);
 }
 
-.navbar__link {
-  /* Cambiar el color de los enlaces en la navbar */
-  color: var(--accentColor);
-}
-
 .navbar__link:hover {
   /* Cambiar el color de los enlaces al pasar el ratón */
   color: var(--colorLinkSelection);
 }
 
-/* Eliminar la flecha en los menús desplegables */
 .dropdown > .navbar__link:after {
+  /* Eliminar la flecha en los menús desplegables */
   display: none;
-}
-
-.card {
-  /* Fondo de la tarjeta */
-  background-color: var(--colorTarjetas);
-  /* Borde de la tarjeta */
-  border: 1px solid var(--borderColor);
-  border-radius: 8px;
-  /* Sombra para darle relieve */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Animación al pasar el ratón */
-  transition: transform var(--transitionTime) ease;
-  color: var(--accentColor);
 }
 
 .markdown table {
