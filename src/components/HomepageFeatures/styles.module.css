@@ -8,16 +8,17 @@
   --borderColor: #e0e0e0;
   --colorTarjetas: #ffffff;
   --shadowColor: rgba(0, 0, 0, 0.1);
-  
   --transitionTime: 0.3s;
   --fontSize: 1rem;
-  --containerMaxWidth: 800px;
+  --containerMaxWidth: 830px;
   --maxWidth: 100%;
   --border-radius: 8px;
   --heightImage: 220px;
   --widthImage: 220px;
   --borderRadiusImage: 50%;
   --marginTop: 40px;
+  --marginRest: 30px;
+  --marginGap: 20px;
 }
 
 /* Dark Mode Variables */
@@ -36,35 +37,34 @@
   --heightImage: 220px;
   --widthImage: 220px;
   --borderRadiusImage: 50%;
-  --marginTop: 30px;
+  --marginTop: 40px;
+  --marginRest: 30px;
 }
 
-/* Sección de características */
+/* Esta es la sección de mi foto y descripción */
 .features {
-  padding: 30px 0;
+  padding: var(--marginRest) 0;
   text-align: center;
 }
 
-/* Contenedor de características */
+/* Contenedor de características de mi foto y la descripción*/
 .featureContainer {
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 /* Característica individual */
 .feature {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  margin: 30px 0;
+  margin: var(--marginRest) 0;
   max-width: var(--containerMaxWidth);
   text-align: left;
 }
 
 /* Contenedor de imagen */
 .imageContainer {
-  margin-right: 30px;
+  margin-right: var(--marginRest);
 }
 
 /* Imagen */
@@ -89,10 +89,11 @@
 /* Contenedor de proyectos */
 .projectsContainer {
   display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  max-width: 830px;
+  margin-top: var(--marginRest);
+  margin-bottom: var(--marginRest);
+  max-width: var(--containerMaxWidth);
+  width: 100%;
+  gap: var(--marginGap);
   margin-left: auto;
   margin-right: auto;
 }
@@ -104,7 +105,6 @@
   border: 1px solid var(--borderColor);
   border-radius: var(--border-radius);
   padding: 15px;
-  margin: 0 15px;
   flex: 1;
   text-align: left;
   box-shadow: 0 2px 5px var(--shadowColor);
@@ -120,9 +120,7 @@
   background-color: var(--primaryColor);
   color: var(--accentColor);
   border: none;
-  outline: none;
   border-radius: var(--border-radius);
-  text-decoration: none;
   width: 100%;
   font-size: var(--fontSize);
   text-align: center;
@@ -142,13 +140,13 @@
 .projectsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: var(--marginGap);
   max-width: var(--containerMaxWidth);
-  margin: 0 auto 30px;
+  margin: 0 auto var(--marginRest);
   opacity: 0;
   visibility: hidden;
-  transition: 
-    opacity 0.5s ease, 
+  transition:
+    opacity 0.5s ease,
     visibility 0s linear 0.5s;
 }
 
@@ -188,7 +186,9 @@
   border: 1px solid var(--borderColor);
   border-radius: var(--border-radius);
   overflow: hidden;
-  transition: transform var(--transitionTime), box-shadow var(--transitionTime);
+  transition:
+    transform var(--transitionTime),
+    box-shadow var(--transitionTime);
 }
 
 .projectCard:hover {
@@ -241,23 +241,6 @@
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
-}
-
-/* Botón de tarjeta de proyecto */
-.projectCardButton {
-  padding: 8px 12px;
-  background-color: var(--primaryColor);
-  color: var(--accentColor);
-  border: none;
-  outline: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: background-color var(--transitionTime);
-  font-size: 0.9rem;
-}
-
-.projectCardButton:hover {
-  background-color: #c0a695;
 }
 
 /* Enlaces de proyecto */
@@ -355,7 +338,7 @@
   .projectsGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .projectCard {
     margin-bottom: 20px;
   }
