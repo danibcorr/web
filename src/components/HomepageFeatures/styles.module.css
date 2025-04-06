@@ -198,18 +198,14 @@
   box-shadow: 0 5px 15px var(--shadowColor);
 }
 
-/* Icono del proyecto */
+/* Modifica el contenedor de icono existente */
 .projectIcon {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  background-color: #f5f5f5;
-  color: var(--accentColor);
-}
-
-[data-theme="dark"] .projectIcon {
-  background-color: #2d2d2d;
+  background-color: transparent;
+  /* Quita el padding para que la imagen ocupe todo el espacio */
+  padding: 0;
 }
 
 /* Contenido del proyecto */

@@ -5,6 +5,12 @@ import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 import Translate from "@docusaurus/Translate";
 
+import ML_WIKI_IMG from "/static/img/projects/ml_wiki.png";
+import MUSIC_GENRE_IMG from "/static/img/projects/music_genre_classifier.png";
+import PAPERS_CODE_IMG from "/static/img/projects/papers_with_code.png";
+import SALES_SUITE_IMG from "/static/img/projects/streamline_sales_suite.png";
+
+
 // Categorías de proyectos
 const projectCategories = [
   {
@@ -43,6 +49,7 @@ const dataAiProjects = [
         solo lugar, con un enfoque en el aprendizaje automático.
       </Translate>
     ),
+    image: ML_WIKI_IMG,
     links: [
       {
         label: <FaGithub />,
@@ -66,6 +73,7 @@ const dataAiProjects = [
         JamesDSP, utilizando Redes Neuronales Convolucionales con Transformers.
       </Translate>
     ),
+    image: MUSIC_GENRE_IMG,
     links: [
       {
         label: <FaGithub />,
@@ -81,6 +89,7 @@ const dataAiProjects = [
         Streamlit, complementada con un clasificador automatizado de ítems.
       </Translate>
     ),
+    image: SALES_SUITE_IMG,
     links: [
       {
         label: <FaGithub />,
@@ -95,6 +104,7 @@ const dataAiProjects = [
         Implementaciones de artículos de aprendizaje automático y profundo en código.
       </Translate>
     ),
+    image: PAPERS_CODE_IMG,
     links: [
       {
         label: <FaGithub />,
@@ -110,6 +120,7 @@ const dataAiProjects = [
         convertir archivos a Markdown, transcribir audio y más.
       </Translate>
     ),
+    image: ML_WIKI_IMG,
     links: [{ label: <FaGithub />, url: "https://github.com/danibcorr/morphx" }],
   },
   {
@@ -120,6 +131,7 @@ const dataAiProjects = [
         gustos.
       </Translate>
     ),
+    image: ML_WIKI_IMG,
     links: [{ label: <FaGithub />, url: "https://github.com/danibcorr/wattpad-mate" }],
   },
 ];
@@ -138,6 +150,7 @@ const electronicsProjects = [
         ESP32.
       </Translate>
     ),
+    image: ML_WIKI_IMG,
     links: [
       {
         label: <FaGithub />,
@@ -154,6 +167,7 @@ const electronicsProjects = [
         Proyecto de sistemas embebidos con Tiva C utilizando comunicaciones UART e I2C.
       </Translate>
     ),
+    image: ML_WIKI_IMG,
     links: [
       {
         label: <FaGithub />,
@@ -173,6 +187,7 @@ const electronicsProjects = [
         Creativa en la UMA.
       </Translate>
     ),
+    image: ML_WIKI_IMG,
     links: [
       {
         label: <FaGithub />,
@@ -200,6 +215,7 @@ const electronicsProjects = [
         PowerPoint utilizando gestos y voz.
       </Translate>
     ),
+    image: ML_WIKI_IMG,
     links: [
       {
         label: <FaGithub />,
@@ -214,6 +230,7 @@ const electronicsProjects = [
         Diseño de un microbot para lucha de sumo.
       </Translate>
     ),
+    image: ML_WIKI_IMG,
     links: [
       {
         label: <FaGithub />,
@@ -299,22 +316,7 @@ function HomepageFeatures() {
             {dataAiProjects.map((project, index) => (
               <div key={index} className={styles.projectCard}>
                 <div className={styles.projectIcon}>
-                  <svg viewBox="0 0 24 24" width="24" height="24">
-                    <circle
-                      cx="12"
-                      cy="8"
-                      r="2"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeWidth="1.5"
-                    />
-                    <path
-                      d="M5,21V15C5,11.5,8,9,12,9s7,2.5,7,6v6"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeWidth="1.5"
-                    />
-                  </svg>
+                  <img src={project.image} className={styles.projectIcon} />
                 </div>
                 <div className={styles.projectContent}>
                   <h4 className={styles.projectTitle}>{project.title}</h4>
@@ -345,22 +347,7 @@ function HomepageFeatures() {
             {electronicsProjects.map((project, index) => (
               <div key={index} className={styles.projectCard}>
                 <div className={styles.projectIcon}>
-                  <svg viewBox="0 0 24 24" width="24" height="24">
-                    <circle
-                      cx="12"
-                      cy="8"
-                      r="2"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeWidth="1.5"
-                    />
-                    <path
-                      d="M5,21V15C5,11.5,8,9,12,9s7,2.5,7,6v6"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeWidth="1.5"
-                    />
-                  </svg>
+                  <img src={project.image} className={styles.projectIcon} />
                 </div>
                 <div className={styles.projectContent}>
                   <h4 className={styles.projectTitle}>{project.title}</h4>
