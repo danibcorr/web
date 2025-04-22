@@ -5,17 +5,25 @@ import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 import Translate from "@docusaurus/Translate";
 
+// Imagenes datos
 import ML_WIKI_IMG from "/static/img/projects/ml_wiki.png";
 import MUSIC_GENRE_IMG from "/static/img/projects/music_genre_classifier.png";
 import PAPERS_CODE_IMG from "/static/img/projects/papers_with_code.png";
 import SALES_SUITE_IMG from "/static/img/projects/streamline_sales_suite.png";
+import MORPHX_IMG from "/static/img/projects/morphx.png";
+import WATTPAD_IMG from "/static/img/projects/wattpad.png";
 
+// Imagenes electronica
+import IOT_IMG from "/static/img/projects/arduino_iot.png";
+import TIVA_IMG from "/static/img/projects/tivac_projects.png";
 
 // Categorías de proyectos
 const projectCategories = [
   {
     title: (
-      <Translate id="bloque.proyectos.ia">Datos e Inteligencia Artificial</Translate>
+      <Translate id="bloque.proyectos.ia">
+        Datos e Inteligencia Artificial
+      </Translate>
     ),
     description: (
       <Translate id="bloque.proyectos.ia.descripcion">
@@ -26,7 +34,9 @@ const projectCategories = [
   },
   {
     title: (
-      <Translate id="bloque.proyectos.electronica">Electrónica y Robótica</Translate>
+      <Translate id="bloque.proyectos.electronica">
+        Electrónica y Robótica
+      </Translate>
     ),
     description: (
       <Translate id="bloque.proyectos.electronica.descripcion">
@@ -120,7 +130,7 @@ const dataAiProjects = [
         convertir archivos a Markdown, transcribir audio y más.
       </Translate>
     ),
-    image: ML_WIKI_IMG,
+    image: MORPHX_IMG,
     links: [{ label: <FaGithub />, url: "https://github.com/danibcorr/morphx" }],
   },
   {
@@ -131,7 +141,7 @@ const dataAiProjects = [
         gustos.
       </Translate>
     ),
-    image: ML_WIKI_IMG,
+    image: WATTPAD_IMG,
     links: [{ label: <FaGithub />, url: "https://github.com/danibcorr/wattpad-mate" }],
   },
 ];
@@ -150,7 +160,7 @@ const electronicsProjects = [
         ESP32.
       </Translate>
     ),
-    image: ML_WIKI_IMG,
+    image: IOT_IMG,
     links: [
       {
         label: <FaGithub />,
@@ -167,7 +177,7 @@ const electronicsProjects = [
         Proyecto de sistemas embebidos con Tiva C utilizando comunicaciones UART e I2C.
       </Translate>
     ),
-    image: ML_WIKI_IMG,
+    image: TIVA_IMG,
     links: [
       {
         label: <FaGithub />,
@@ -300,7 +310,9 @@ function HomepageFeatures() {
               <p>{description}</p>
               <button
                 onClick={() =>
-                  setSelectedProject(selectedProject === anchorId ? null : anchorId)
+                  setSelectedProject(
+                    selectedProject === anchorId ? null : anchorId,
+                  )
                 }
                 className={styles.projectButton}
               >
@@ -320,7 +332,9 @@ function HomepageFeatures() {
                 </div>
                 <div className={styles.projectContent}>
                   <h4 className={styles.projectTitle}>{project.title}</h4>
-                  <p className={styles.projectDescription}>{project.description}</p>
+                  <p className={styles.projectDescription}>
+                    {project.description}
+                  </p>
                   <div className={styles.projectFooter}>
                     <div className={styles.projectLinks}>
                       {project.links.map((link, linkIndex) => (
@@ -351,7 +365,9 @@ function HomepageFeatures() {
                 </div>
                 <div className={styles.projectContent}>
                   <h4 className={styles.projectTitle}>{project.title}</h4>
-                  <p className={styles.projectDescription}>{project.description}</p>
+                  <p className={styles.projectDescription}>
+                    {project.description}
+                  </p>
                   <div className={styles.projectFooter}>
                     <div className={styles.projectLinks}>
                       {project.links.map((link, linkIndex) => (
@@ -382,9 +398,10 @@ const features = [
     title: "Daniel Bazo Correa",
     description: (
       <Translate id="perfil.descripcion">
-        Hola, soy Dani! 👋 Soy Ingeniero de Sistemas Electrónicos y Científico de Datos
-        en el área de investigación de Ericsson. Me apasiona la inteligencia artificial,
-        los datos y sus aplicaciones para potenciar las capacidades humanas.
+        Hola, soy Dani! 👋 Soy Ingeniero de Sistemas Electrónicos y Científico
+        de Datos en el área de investigación de Ericsson. Me apasiona la
+        inteligencia artificial, los datos y sus aplicaciones para potenciar las
+        capacidades humanas.
       </Translate>
     ),
     image: "https://avatars.githubusercontent.com/u/77023868?v=4",
