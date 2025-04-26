@@ -2,7 +2,7 @@
 sidebar_position: 2
 authors:
   - name: Daniel Bazo Correa
-description: Controla versiones de tu código con Git.
+description: Control de versiones con Git.
 title: Git
 toc_max_heading_level: 3
 ---
@@ -11,6 +11,7 @@ toc_max_heading_level: 3
 
 - [Git](https://git-scm.com/)
 - [Git Hooks](https://githooks.com/)
+- [Learning Git: A Hands-On and Visual Guide to the Basics of Git](https://www.oreilly.com/library/view/learning-git/9781098133900/)
 
 ## 1. Introducción
 
@@ -25,53 +26,87 @@ historial de cambios en proyectos de software. Facilita la colaboración entre
 desarrolladores, el seguimiento de modificaciones en el código y la administración de
 distintas versiones del código a lo largo del tiempo.
 
+Originalmente, Git se diseña para la línea de comandos en relación con el kernel de
+Linux, por lo que mantiene una estrecha vinculación con la interfaz de línea de comandos
+(CLI - **_Command Line Interface_**).
+
+Plataformas como **GitHub** o **GitLab** utilizan Git para facilitar la gestión de
+proyectos y la colaboración en línea, ofreciendo interfaces gráficas y funcionalidades
+adicionales como la integración continua, la gestión de problemas y la colaboración entre
+equipos.
+
 ## 2. Control de versiones
 
 El control de versiones gestiona los cambios en archivos a lo largo del tiempo,
-permitiendo la recuperación de versiones anteriores cuando sea necesario.
-
-Aquí tienes una mejor explicación de estos términos con un lenguaje más claro y ejemplos
-para alguien que no tiene conocimientos previos sobre Git:
+permitiendo la recuperación de versiones anteriores cuando es necesario.
 
 ### 2.1. Terminología
 
-- **Repositorio local**: Es como una carpeta en tu ordenador donde guardas todos los
-  archivos de tu proyecto y sus versiones anteriores. Git te permite hacer un seguimiento
-  de los cambios en estos archivos sin necesidad de conexión a internet.
+- **Repositorio local**: Espacio en el ordenador donde se almacenan todos los archivos de
+  un proyecto y sus versiones anteriores. Git permite hacer un seguimiento de los cambios
+  en estos archivos sin necesidad de conexión a internet.
 
-- **Repositorio remoto**: Es una copia del repositorio local, pero almacenada en internet
-  o en una red externa. Plataformas como GitHub, GitLab o Bitbucket permiten que varias
-  personas trabajen en el mismo proyecto desde diferentes lugares. Es útil para compartir
-  el código y hacer copias de seguridad.
+- **Repositorio remoto**: Copia del repositorio local almacenada en internet o en una red
+  externa. Plataformas como GitHub, GitLab o Bitbucket permiten que varias personas
+  trabajen en el mismo proyecto desde diferentes ubicaciones. Es útil para compartir el
+  código y realizar copias de seguridad.
 
-- **Histórico (_Log_)**: Es un registro que muestra todos los cambios realizados en el
-  proyecto a lo largo del tiempo. Cada vez que guardas un cambio en Git (lo que se llama
-  un **_commit_**), queda registrado en este historial con información como la fecha, el
-  autor del cambio y una descripción de lo que se modificó.
+- **Histórico (_Log_)**: Registro que muestra todos los cambios realizados en el proyecto
+  a lo largo del tiempo. Cada vez que se guarda un cambio en Git (un **_commit_**), queda
+  registrado en este historial con información como la fecha, el autor del cambio y una
+  descripción de lo modificado. También se conoce como **_Commit History_**, siendo el
+  lugar donde se almacenan todos los **_commits_** realizados.
 
-- **Conflicto**: Ocurre cuando Git no puede combinar automáticamente los cambios de
-  diferentes personas en un mismo archivo. Por ejemplo, si dos personas editan la misma
-  línea de un archivo y luego intentan guardar sus cambios en el repositorio remoto, Git
-  no sabe cuál versión debe mantener y marca un "conflicto". En ese caso, alguien debe
-  revisar y decidir qué cambios conservar.
+- **Conflicto**: Situación que ocurre cuando Git no puede combinar automáticamente los
+  cambios de diferentes personas en un mismo archivo. Por ejemplo, si dos personas editan
+  la misma línea de un archivo y luego intentan guardar sus cambios en el repositorio
+  remoto, Git no puede determinar qué versión debe mantener y marca un conflicto. En ese
+  caso, es necesario revisar y decidir manualmente qué cambios conservar.
 
-### 2.2. Estados de un archivo en Git
+### 2.2. Áreas
 
 <p align="center">  
   <img src={require("../../img/git-stages.png").default}/>  
   <br />  
-  <em>Logo de Git. [Link](https://ihcantabria.github.io/ApuntesGit/_images/comandos-workflow.png)</em>  
+  <em>Áreas de trabajo en Git. [Link](https://ihcantabria.github.io/ApuntesGit/_images/comandos-workflow.png)</em>  
 </p>
+
+En Git existen dos partes esenciales para el manejo de repositorios: el repositorio
+local, que se encuentra en el equipo u ordenador, y el repositorio remoto, que se ubica
+en un servidor externo como GitHub, GitLab o Bitbucket.
+
+Dentro del sistema Git se distinguen diferentes áreas:
+
+1. **_Working Directory_**: Es el directorio de trabajo donde se modifican los archivos.
+   Cuando se añaden nuevos archivos en esta área, para Git están en estado _untracked_
+   (sin seguimiento) hasta que se añadan explícitamente.
+
+2. **_Staging Area_**: Funciona como un espacio de borrador donde se preparan los cambios
+   para el siguiente _commit_. Se representa físicamente mediante un fichero llamado
+   `index` dentro de la carpeta `.git` en la raíz del repositorio. Los archivos añadidos
+   a esta área pasan a estar _tracked_ (con seguimiento).
+
+3. **_Commit History_**: Área donde se almacenan todas las versiones confirmadas del
+   proyecto.
+
+4. **_Local Repository_**: Contiene toda la información del proyecto y su historial de
+   cambios a nivel local.
+
+El flujo de trabajo típico consiste en modificar archivos en el _Working Directory_,
+añadirlos al _Staging Area_ mediante `git add`, confirmarlos al _Commit History_ con
+`git commit` y finalmente subirlos al repositorio remoto con `git push`.
+
+### 2.3. Estados de un archivo en Git
 
 Durante su ciclo de vida en Git, un archivo puede pasar por diferentes estados:
 
 1. **Sin seguimiento (_Untracked_)**: El archivo es nuevo y Git aún no lo está
-   rastreando. Esto significa que no se guardará en el historial del repositorio hasta
-   que se agregue manualmente con `git add`.
+   rastreando. No se guarda en el historial del repositorio hasta que se agregue
+   manualmente con `git add`.
 
-2. **Ignorado (_Ignored_)**: Algunos archivos, como configuraciones personales o archivos
-   temporales, pueden estar en una lista especial llamada `.gitignore`. Git los omitirá y
-   no los agregará al repositorio.
+2. **Ignorado (_Ignored_)**: Archivos como configuraciones personales o temporales pueden
+   estar en una lista especial llamada `.gitignore`. Git los omite y no los agrega al
+   repositorio.
 
 3. **Modificado (_Modified_)**: El archivo ha sido editado después de su última
    confirmación (_commit_), pero esos cambios aún no han sido registrados en Git.
@@ -80,15 +115,17 @@ Durante su ciclo de vida en Git, un archivo puede pasar por diferentes estados:
    entra en estado _staged_. Esto significa que está listo para ser guardado en la
    próxima confirmación.
 
-5. **Confirmado (_Committed_)**: Cuando ejecutas `git commit`, los cambios preparados se
-   guardan en la base de datos de Git, registrándolos en el historial del repositorio de
-   manera permanente.
+5. **Confirmado (_Committed_)**: Cuando se ejecuta `git commit`, los cambios preparados
+   se guardan en la base de datos de Git, registrándolos en el historial del repositorio
+   de manera permanente.
 
-### 2.3. Operaciones
+### 2.4. Operaciones básicas
 
 - **Clone**: Crea una copia local de un repositorio remoto.
-- **Add**: Añade cambios al área de preparación.
-- **Commit**: Registra una nueva versión en el repositorio local.
+- **Add**: Añade cambios al área de preparación (_Staging Area_).
+- **Commit**: Registra una nueva versión en el repositorio local. Puede considerarse como
+  una versión del proyecto. Cada _commit_ tiene un hash único compuesto por 40
+  caracteres, aunque solo se necesitan los 5 primeros para referirse a dicho _commit_.
 - **Push**: Sincroniza cambios locales con un repositorio remoto.
 - **Pull**: Actualiza el repositorio local con cambios del repositorio remoto.
 - **Fork**: Crea una copia de un proyecto para modificarla independientemente.
@@ -96,60 +133,69 @@ Durante su ciclo de vida en Git, un archivo puede pasar por diferentes estados:
 
 ## 3. Git
 
-Plataformas como **GitHub** o **GitLab** utilizan Git para facilitar la gestión de
-proyectos y la colaboración en línea, ofreciendo interfaces gráficas y funcionalidades
-adicionales como la integración continua, la gestión de problemas y la colaboración entre
-equipos.
-
 ### 3.1. Comandos básicos de Linux para Git Bash
 
 **Git Bash** es una interfaz de línea de comandos que permite la interacción con Git
 mediante el uso de comandos de Linux, facilitando la gestión del sistema de archivos y la
-ejecución de diversas operaciones. A continuación, se describen algunos comandos
-fundamentales y ejemplos de su uso:
+ejecución de diversas operaciones.
 
-| Comando   | Función                                                      | Ejemplo de uso                                                                                                                                                                                                        |
-| --------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **pwd**   | Muestra la ruta completa del directorio actual.              | `pwd` - Este comando muestra la ruta completa, por ejemplo: `/home/usuario/`                                                                                                                                          |
-| **mkdir** | Crea un nuevo directorio en la ubicación deseada.            | `mkdir nuevo_directorio` - Crea un directorio llamado `nuevo_directorio`.                                                                                                                                             |
-| **cd**    | Cambia al directorio especificado.                           | `cd nuevo_directorio` - Cambia al directorio `nuevo_directorio`.                                                                                                                                                      |
-| **ls**    | Lista los archivos y subdirectorios en el directorio actual. | `ls` - Muestra los archivos del directorio actual. `ls -la` - Muestra detalles adicionales, como permisos y fechas de modificación. `ls -a`- Muestra todos los archivos del directorio incluso los que están ocultos. |
-| **rm**    | Elimina el archivo o directorio especificado.                | `rm archivo.txt` - Elimina el archivo `archivo.txt`. Para eliminar directorios, usar `rm -r directorio/`.                                                                                                             |
-| **mv**    | Mueve o renombra un archivo o directorio.                    | `mv archivo.txt nueva_ubicacion/` - Mueve `archivo.txt` a la carpeta `nueva_ubicacion`. También puede usarse para renombrar archivos, por ejemplo: `mv archivo.txt archivo_nuevo.txt`.                                |
+A continuación, se describen algunos comandos fundamentales y ejemplos de su uso:
 
-Para obtener más información sobre Linux, se pueden
-[visitar los siguientes apuntes](../operative-systems/linux.md).
+| Comando   | Función                                                      | Ejemplo de uso                                                                                                                                                                                                         |
+| --------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **pwd**   | Muestra la ruta completa del directorio actual.              | `pwd` - El comando proviene de _*print working directory*_. Muestra el directorio actual en el que se está trabajando, por ejemplo: `/home/usuario/`                                                                   |
+| **mkdir** | Crea un nuevo directorio en la ubicación deseada.            | `mkdir nuevo_directorio` - Crea un directorio llamado `nuevo_directorio`.                                                                                                                                              |
+| **cd**    | Cambia al directorio especificado.                           | `cd nuevo_directorio` - Cambia al directorio `nuevo_directorio`.                                                                                                                                                       |
+| **ls**    | Lista los archivos y subdirectorios en el directorio actual. | `ls` - Muestra los archivos del directorio actual. `ls -la` - Muestra detalles adicionales, como permisos y fechas de modificación. `ls -a` - Muestra todos los archivos del directorio incluso los que están ocultos. |
+| **rm**    | Elimina el archivo o directorio especificado.                | `rm archivo.txt` - Elimina el archivo `archivo.txt`. Para eliminar directorios, usar `rm -r directorio/`.                                                                                                              |
+| **mv**    | Mueve o renombra un archivo o directorio.                    | `mv archivo.txt nueva_ubicacion/` - Mueve `archivo.txt` a la carpeta `nueva_ubicacion`. También puede usarse para renombrar archivos, por ejemplo: `mv archivo.txt archivo_nuevo.txt`.                                 |
 
 ### 3.2. Comandos para el control de versiones local
 
-A continuación se presentan algunos de los comandos más utilizados para la gestión del
-control de versiones de manera local en un repositorio Git, acompañados de ejemplos de
-uso:
+Un comando de Git está compuesto por tres partes: el comando en sí de Git (`git`), el
+subcomando que indica la acción específica, y opcionalmente, opciones y argumentos. Por
+ejemplo:
 
-| Comando                | Función                                                                                        | Ejemplo de uso                                                                                                                        |
-| ---------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| **git init**           | Crea un nuevo repositorio local.                                                               | `git init` - Inicializa un repositorio en el directorio actual.                                                                       |
-| **git clone**          | Clona un repositorio existente en una ubicación local.                                         | `git clone https://github.com/usuario/repositorio.git` - Clona el repositorio desde la URL indicada.                                  |
-| **git add**            | Prepara archivos para su confirmación (_staging_).                                             | `git add archivo.txt` - Añade `archivo.txt` al área de preparación (_staging_).                                                       |
-| **git commit**         | Confirma los cambios en el repositorio local.                                                  | `git commit -m "Mensaje del commit"` - Confirma los cambios con el mensaje `Mensaje del commit`.                                      |
-| **git reset HEAD**     | Revierte la preparación de archivos que estaban listos para ser confirmados.                   | `git reset HEAD archivo.txt` - Deshace la preparación de `archivo.txt`.                                                               |
-| **git commit --amend** | Modifica la última confirmación, permitiendo cambiar el mensaje o añadir archivos adicionales. | `git commit --amend -m "Mensaje corregido"` - Modifica el mensaje del último commit.                                                  |
-| **git status**         | Muestra el estado actual de los archivos en el repositorio.                                    | `git status` - Muestra los archivos modificados, no preparados o pendientes de confirmación.                                          |
-| **git checkout**       | Cambia entre ramas o descarta cambios en archivos específicos.                                 | `git checkout rama-nueva` - Cambia a la rama `rama-nueva`.<br />`git checkout -- archivo.txt` - Deshace los cambios en `archivo.txt`. |
-| **git branch**         | Gestiona las ramas del repositorio local.                                                      | `git branch` - Lista las ramas existentes en el repositorio.<br />`git branch rama-nueva` - Crea una nueva rama llamada `rama-nueva`. |
-| **git merge**          | Fusiona una rama con la rama actual.                                                           | `git merge rama-nueva` - Fusiona la rama `rama-nueva` con la rama en la que te encuentres actualmente.                                |
-| **git fetch**          | Descarga los cambios desde el repositorio remoto, pero no los fusiona.                         | `git fetch origin` - Descarga los cambios del repositorio remoto llamado `origin`, pero no los aplica.                                |
-| **git pull**           | Descarga y fusiona los cambios del repositorio remoto con la rama actual.                      | `git pull origin main` - Descarga y fusiona los cambios de la rama `main` del repositorio remoto `origin`.                            |
-| **git push**           | Sube los cambios confirmados a un repositorio remoto.                                          | `git push origin main` - Sube los cambios locales confirmados a la rama `main` del repositorio remoto `origin`.                       |
-| **git log**            | Muestra el historial de confirmaciones del repositorio.                                        | `git log` - Muestra el historial de commits.<br />`git log --oneline` - Muestra el historial de commits de manera resumida.           |
-| **git diff**           | Muestra las diferencias entre los archivos modificados y los confirmados.                      | `git diff` - Muestra las diferencias entre los archivos modificados en el área de trabajo.                                            |
-| **git stash**          | Almacena temporalmente los cambios no confirmados para limpiarlos del área de trabajo.         | `git stash` - Guarda los cambios en un área temporal.<br />`git stash pop` - Recupera los cambios guardados en el stash.              |
-| **git rm**             | Elimina archivos del repositorio y del área de preparación.                                    | `git rm archivo.txt` - Elimina el archivo `archivo.txt` del repositorio y del área de trabajo.                                        |
+```
+git commit -m "Esto es un commit"
+```
+
+En el comando anterior, `git commit` es el comando de Git, `-m` es la opción relacionada
+con el comando, y `"Esto es un commit"` es el argumento que forma parte de la opción del
+comando `git commit`.
+
+A continuación se presentan algunos de los comandos más utilizados para la gestión del
+control de versiones de manera local en un repositorio Git:
+
+| Comando            | Función                                                                                                                                                                                                                                    | Ejemplo de uso                                                                                                                                      |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **git init**       | Inicializa un repositorio local utilizando la carpeta actual, creando una carpeta oculta `.git` en la raíz con toda la configuración necesaria para el control de versiones. Por defecto, la rama principal que se crea es la rama `main`. | `git init` - Inicializa un repositorio en el directorio actual.                                                                                     |
+| **git remote**     | Permite conectar un repositorio local con un repositorio remoto.                                                                                                                                                                           | `git remote add origin url_repo` - Este comando establece una relación con el repositorio remoto con _shortname_ `origin` y la URL del repositorio. |
+| **git clone**      | Clona un repositorio existente en una ubicación local.                                                                                                                                                                                     | `git clone https://github.com/usuario/repositorio.git` - Clona el repositorio desde la URL indicada.                                                |
+| **git add**        | Prepara archivos para su confirmación. Es importante señalar que git add no mueve un fichero del _Working Directory_ al _Staging Area_, sino que copia los ficheros.                                                                       | `git add archivo.txt` - Añade `archivo.txt` al área de preparación (_staging_).                                                                     |
+| **git commit**     | Confirma los cambios en el repositorio local.                                                                                                                                                                                              | `git commit -m "Mensaje del commit"` - Confirma los cambios con el mensaje `Mensaje del commit`.                                                    |
+| **git reset HEAD** | Revierte la preparación de archivos que estaban listos para ser confirmados.                                                                                                                                                               | `git reset HEAD archivo.txt` - Deshace la preparación de `archivo.txt`.                                                                             |
+| **git commit**     | Modifica la última confirmación, permitiendo cambiar el mensaje o añadir archivos adicionales.                                                                                                                                             | `git commit -m "Mensaje corregido"` - Modifica el mensaje del último commit.                                                                        |
+| **git status**     | Muestra el estado actual de los archivos en el repositorio.                                                                                                                                                                                | `git status` - Muestra los archivos modificados, no preparados o pendientes de confirmación.                                                        |
+| **git checkout**   | Cambia entre ramas o descarta cambios en archivos específicos. También es posible utilizar git switch para cambiar de rama.                                                                                                                | `git checkout rama-nueva` - Cambia a la rama `rama-nueva`.<br />`git checkout -- archivo.txt` - Deshace los cambios en `archivo.txt`.               |
+| **git branch**     | Gestiona las ramas del repositorio local.                                                                                                                                                                                                  | `git branch` - Lista las ramas existentes en el repositorio.<br />`git branch rama-nueva` - Crea una nueva rama llamada `rama-nueva`.               |
+| **git merge**      | Fusiona una rama con la rama actual.                                                                                                                                                                                                       | `git merge rama-nueva` - Fusiona la rama `rama-nueva` con la rama en la que se encuentra actualmente.                                               |
+| **git fetch**      | Descarga los cambios desde el repositorio remoto, pero no los fusiona.                                                                                                                                                                     | `git fetch origin` - Descarga los cambios del repositorio remoto llamado `origin`, pero no los aplica.                                              |
+| **git pull**       | Descarga y fusiona los cambios del repositorio remoto con la rama actual.                                                                                                                                                                  | `git pull origin main` - Descarga y fusiona los cambios de la rama `main` del repositorio remoto `origin`.                                          |
+| **git push**       | Sube los cambios confirmados a un repositorio remoto.                                                                                                                                                                                      | `git push origin main` - Sube los cambios locales confirmados a la rama `main` del repositorio remoto `origin`.                                     |
+| **git log**        | Muestra el historial de confirmaciones del repositorio en orden cronológico.                                                                                                                                                               | `git log` - Muestra el historial de commits.<br />`git log --oneline` - Muestra el historial de commits de manera resumida.                         |
+| **git diff**       | Muestra las diferencias entre los archivos modificados y los confirmados.                                                                                                                                                                  | `git diff` - Muestra las diferencias entre los archivos modificados en el área de trabajo.                                                          |
+| **git stash**      | Almacena temporalmente los cambios no confirmados para limpiarlos del área de trabajo.                                                                                                                                                     | `git stash` - Guarda los cambios en un área temporal.<br />`git stash pop` - Recupera los cambios guardados en el stash.                            |
+| **git rm**         | Elimina archivos del repositorio y del área de preparación.                                                                                                                                                                                | `git rm archivo.txt` - Elimina el archivo `archivo.txt` del repositorio y del área de trabajo.                                                      |
 
 ### 3.3. Configuración básica de Git
 
-Antes de trabajar con GitHub o GitLab, es necesario configurar tu entorno de Git local.
-Esto incluye establecer tu identidad y configurar autenticación con las plataformas.
+Antes de trabajar con GitHub o GitLab, es necesario configurar el entorno de Git local.
+Esto incluye establecer la identidad y configurar la autenticación con las plataformas.
+
+Con `git config --global --list` se pueden listar todas las variables en la configuración
+global de Git y sus valores. Esta configuración es necesaria para establecer el usuario y
+el correo electrónico al que estarán asociados todos los commits realizados.
 
 #### 3.3.1. Configurar nombre de usuario y correo
 
@@ -213,11 +259,37 @@ GitHub/GitLab y usarlo como contraseña al clonar o realizar _push_. Para config
 
 ## 4. Estrategia de control de versiones
 
-Tanto **Trunk-Based Development** como **Git Flow** son estrategias populares de control
-de versiones, cada una con sus propias ventajas y casos de uso. A continuación, se
-presenta una comparación detallada de ambas metodologías.
+### 4.1. Ramas
 
-### 4.1. Trunk-Based Development
+Las estrategias relacionadas con Git están estrechamente vinculadas con la forma en que
+se crean, desarrollan y combinan las diferentes ramas dentro de un mismo repositorio. El
+uso de ramas permite trabajar en un mismo proyecto de diferentes maneras y facilita que
+distintas personas colaboren en un proyecto simultáneamente.
+
+Una de las metodologías más básicas o estándares de Git consiste en utilizar una rama
+principal conocida como `main` o `master`, que es la que se lleva a producción y debe
+estar siempre disponible. Adicionalmente, se cuenta con una rama de desarrollo (`dev`)
+que incorpora las nuevas características o funcionalidades que posteriormente se añadirán
+a la rama principal. A partir de estas, es posible crear diferentes subramas que permiten
+implementar cada característica por separado, aunque esto dependerá de la metodología de
+trabajo utilizada.
+
+En Git existe el concepto de `HEAD`, un puntero que indica la rama que se está utilizando
+y apunta a un commit específico. Es posible encontrarse en un commit que no está siendo
+apuntado por una rama, situación conocida como **Detached HEAD State**.
+
+Tanto **Trunk-Based Development** como **Git Flow** son estrategias populares de control
+de versiones, cada una con sus propias ventajas y casos de uso.
+
+### 4.2. Merge y pull requests
+
+Para combinar los cambios de una rama a otra se utilizan los merges o pull requests en
+los repositorios. En este proceso intervienen dos ramas: la rama "_source_" y la rama
+"_target_". La rama _source_ contiene los cambios que se desean incorporar, mientras que
+la _target_ es la rama donde se introducirán dichos cambios. Por ejemplo, la rama
+_source_ puede ser la rama `dev` y la _target_ puede ser la rama `main` o `master`.
+
+### 4.3. Trunk-Based Development
 
 <p align="center">
   <img src={require("../../img/trunk-based-git.png").default}/>
@@ -232,7 +304,7 @@ Las principales ventajas de esta estrategia son:
 
 - **Facilita la Integración Continua (CI) y el Despliegue Continuo (CD)**: Esta
   metodología es ideal para entornos donde se practican CI/CD, permitiendo despliegues
-  rápidos y frecuentes. Esto se debe al fusionar cambios pequeños y frecuentes.
+  rápidos y frecuentes gracias a la fusión de cambios pequeños y frecuentes.
 - **Fomenta la iteración rápida y la colaboración**: Los desarrolladores pueden trabajar
   en paralelo y fusionar sus cambios rápidamente, lo que acelera el ciclo de desarrollo.
 
@@ -244,7 +316,7 @@ Sin embargo, presenta las siguientes desventajas:
   comparación con Git Flow, lo que puede dificultar la identificación de problemas
   específicos.
 
-### 4.2. Git Flow
+### 4.4. Git Flow
 
 <p align="center">
   <img src={require("../../img/git-flow-git.png").default} width="500"/>
@@ -271,7 +343,7 @@ Sin embargo, presenta las siguientes desventajas:
 - **Ralentización del desarrollo**: Si no se gestiona correctamente, puede ralentizar el
   proceso de desarrollo debido a la necesidad de mantener y fusionar múltiples ramas.
 
-### 4.3. Cuándo usar Trunk-Based Development o Git Flow
+### 4.5. Cuándo usar Trunk-Based Development o Git Flow
 
 - **Trunk-Based Development**: Es ideal para equipos que practican CI/CD, necesitan
   iteraciones rápidas y trabajan en proyectos con actualizaciones frecuentes. Es
@@ -519,80 +591,3 @@ Al escribir y gestionar Git Hooks, es recomendable seguir estas pautas:
   facilitar su comprensión y mantenimiento.
 - **Evitar modificaciones automáticas no deseadas**: Los _hooks_ no deben alterar el
   código sin la aprobación del desarrollador, ya que esto podría generar conflictos.
-
-## 6. Casos de uso práctico
-
-### 6.1. Errores comunes
-
-#### 6.1.1. Conflictos de fusión (Merge Conflicts)
-
-Estos conflictos surgen cuando dos personas modifican la misma línea de un archivo o
-realizan cambios que no son compatibles.
-
-Solución:
-
-- Utiliza herramientas de fusión (_merge tools_) para resolver los conflictos de manera
-  eficiente.
-- Coordina con el equipo para gestionar mejor los cambios y minimizar conflictos.
-
-#### 6.1.2. Branches divergentes
-
-Ocurre cuando las ramas se separan tanto que la integración se vuelve complicada.
-
-Solución:
-
-- Integra cambios con frecuencia (_continuous integration_) para evitar divergencias
-  significativas.
-- Implementa estrategias de gestión de ramas como GitFlow o GitHub Flow para mantener el
-  código sincronizado.
-- Revisa y valida los cambios antes de fusionar ramas altamente divergentes.
-
-#### 6.1.3. Ramas abandonadas
-
-Ramas antiguas y sin uso permanecen en el repositorio, generando desorden.
-
-Solución:
-
-- Elimina ramas locales y remotas que ya no se necesiten con `git branch -d` y
-  `git push origin --delete`.
-- Mantén un registro organizado de las ramas activas y sus propósitos.
-- Realiza limpiezas periódicas en el repositorio para mantenerlo ordenado y eficiente.
-
-#### 6.1.4. Código no versionado
-
-No realizar commits con regularidad puede resultar en la pérdida de trabajo o de cambios
-importantes.
-
-Solución:
-
-- Haz commits frecuentes y significativos para proteger el progreso del proyecto.
-- Usa `git stash` para guardar cambios temporales sin alterar el historial del proyecto.
-- Implementa herramientas de gestión de tareas para vincular los commits con actividades
-  o requerimientos específicos.
-
-#### 6.1.5. Desincronización entre local y remoto
-
-Cuando el repositorio local no está sincronizado con el remoto, se pueden presentar
-problemas de integración.
-
-Solución:
-
-- Realiza `git pull` regularmente para mantener tu copia local actualizada con el remoto.
-- Usa `git push` para enviar tus cambios al repositorio remoto, evitando
-  desincronizaciones.
-- Configura alertas o notificaciones para estar al tanto de actualizaciones en el
-  repositorio remoto.
-
-#### 6.1.7. Pérdida de historial de cambios
-
-Ocurre cuando se realizan cambios directamente en el repositorio remoto, omitiendo el
-historial de commits en local.
-
-Solución:
-
-- Emplea `git fetch` y `git rebase` para integrar los cambios remotos en el historial
-  local de forma adecuada.
-- Evita hacer modificaciones directamente en la rama principal sin seguir un proceso de
-  revisión adecuado.
-- Utiliza pull requests para realizar revisiones y fusiones, asegurando un historial de
-  cambios claro y ordenado.

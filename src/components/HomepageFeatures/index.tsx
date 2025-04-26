@@ -6,16 +6,19 @@ import { TbWorld } from "react-icons/tb";
 import Translate from "@docusaurus/Translate";
 
 // Imagenes datos
-import ML_WIKI_IMG from "/static/img/projects/ml_wiki.png";
-import MUSIC_GENRE_IMG from "/static/img/projects/music_genre_classifier.png";
-import PAPERS_CODE_IMG from "/static/img/projects/papers_with_code.png";
-import SALES_SUITE_IMG from "/static/img/projects/streamline_sales_suite.png";
-import MORPHX_IMG from "/static/img/projects/morphx.png";
-import WATTPAD_IMG from "/static/img/projects/wattpad.png";
+import ML_WIKI_IMG from "/static/img/projects/ml_wiki.jpg";
+import MUSIC_GENRE_IMG from "/static/img/projects/music_genre_classifier.jpg";
+import PAPERS_CODE_IMG from "/static/img/projects/papers_with_code.jpg";
+import SALES_SUITE_IMG from "/static/img/projects/streamline_sales_suite.jpg";
+import MORPHX_IMG from "/static/img/projects/morphx.jpg";
+import WATTPAD_IMG from "/static/img/projects/wattpad.jpg";
 
 // Imagenes electronica
-import IOT_IMG from "/static/img/projects/arduino_iot.png";
-import TIVA_IMG from "/static/img/projects/tivac_projects.png";
+import IOT_IMG from "/static/img/projects/arduino_iot.jpg";
+import TIVA_IMG from "/static/img/projects/tivac_projects.jpg";
+import ARDUINO_IMG from "/static/img/projects/creativa.jpg";
+import KINECT_IMG from "/static/img/projects/kinect.jpg";
+import SUMO_IMG from "/static/img/projects/tivac_sumo.jpg";
 
 // Categorías de proyectos
 const projectCategories = [
@@ -217,7 +220,7 @@ const electronicsProjects = [
         Electrónica Creativa en la UMA.
       </Translate>
     ),
-    image: ML_WIKI_IMG,
+    image: ARDUINO_IMG,
     links: [
       {
         label: <FaGithub />,
@@ -245,7 +248,7 @@ const electronicsProjects = [
         presentaciones de PowerPoint utilizando gestos y voz.
       </Translate>
     ),
-    image: ML_WIKI_IMG,
+    image: KINECT_IMG,
     links: [
       {
         label: <FaGithub />,
@@ -262,7 +265,7 @@ const electronicsProjects = [
         Diseño de un microbot para lucha de sumo.
       </Translate>
     ),
-    image: ML_WIKI_IMG,
+    image: SUMO_IMG,
     links: [
       {
         label: <FaGithub />,
