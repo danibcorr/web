@@ -51,12 +51,14 @@ const projectCategories = [
 const dataAiProjects = [
   {
     title: (
-      <Translate id="proyectos.ia.wiki">🏫 Wiki de Aprendizaje Automático</Translate>
+      <Translate id="proyectos.ia.wiki">
+        🏫 Wiki de Aprendizaje Automático
+      </Translate>
     ),
     description: (
       <Translate id="proyectos.ia.wiki.descripcion">
-        Una wiki en español para almacenar y compartir aprendizajes, notas y código en un
-        solo lugar, con un enfoque en el aprendizaje automático.
+        Una wiki en español para almacenar y compartir aprendizajes, notas y
+        código en un solo lugar, con un enfoque en el aprendizaje automático.
       </Translate>
     ),
     image: ML_WIKI_IMG,
@@ -79,8 +81,9 @@ const dataAiProjects = [
     ),
     description: (
       <Translate id="proyectos.ia.musica.descripcion">
-        Clasificador de géneros musicales para parámetros de ecualización automática de
-        JamesDSP, utilizando Redes Neuronales Convolucionales con Transformers.
+        Clasificador de géneros musicales para parámetros de ecualización
+        automática de JamesDSP, utilizando Redes Neuronales Convolucionales con
+        Transformers.
       </Translate>
     ),
     image: MUSIC_GENRE_IMG,
@@ -92,11 +95,16 @@ const dataAiProjects = [
     ],
   },
   {
-    title: <Translate id="proyectos.ia.ventas">💸 Suite de Ventas Streamlit</Translate>,
+    title: (
+      <Translate id="proyectos.ia.ventas">
+        💸 Suite de Ventas Streamlit
+      </Translate>
+    ),
     description: (
       <Translate id="proyectos.ia.ventas.descripcion">
-        Plataforma web integral para análisis y visualización de datos, impulsada con
-        Streamlit, complementada con un clasificador automatizado de ítems.
+        Plataforma web integral para análisis y visualización de datos,
+        impulsada con Streamlit, complementada con un clasificador automatizado
+        de ítems.
       </Translate>
     ),
     image: SALES_SUITE_IMG,
@@ -111,7 +119,8 @@ const dataAiProjects = [
     title: <Translate id="proyectos.ia.papers">📄 Papers con Código</Translate>,
     description: (
       <Translate id="proyectos.ia.papers.descripcion">
-        Implementaciones de artículos de aprendizaje automático y profundo en código.
+        Implementaciones de artículos de aprendizaje automático y profundo en
+        código.
       </Translate>
     ),
     image: PAPERS_CODE_IMG,
@@ -126,23 +135,31 @@ const dataAiProjects = [
     title: <Translate id="proyectos.ia.universidad">🎓 MorphX</Translate>,
     description: (
       <Translate id="proyectos.ia.universidad.descripcion">
-        MorphX es una herramienta basada en Streamlit que permite modificar metadatos,
-        convertir archivos a Markdown, transcribir audio y más.
+        MorphX es una herramienta basada en Streamlit que permite modificar
+        metadatos, convertir archivos a Markdown, transcribir audio y más.
       </Translate>
     ),
     image: MORPHX_IMG,
-    links: [{ label: <FaGithub />, url: "https://github.com/danibcorr/morphx" }],
+    links: [
+      { label: <FaGithub />, url: "https://github.com/danibcorr/morphx" },
+    ],
   },
   {
-    title: <Translate id="proyectos.ia.wattpad">📚 Tu Compañero de Wattpad</Translate>,
+    title: (
+      <Translate id="proyectos.ia.wattpad">
+        📚 Tu Compañero de Wattpad
+      </Translate>
+    ),
     description: (
       <Translate id="proyectos.ia.wattpad.descripcion">
-        Herramienta para obtener información de Wattpad y conocer usuarios con los mismos
-        gustos.
+        Herramienta para obtener información de Wattpad y conocer usuarios con
+        los mismos gustos.
       </Translate>
     ),
     image: WATTPAD_IMG,
-    links: [{ label: <FaGithub />, url: "https://github.com/danibcorr/wattpad-mate" }],
+    links: [
+      { label: <FaGithub />, url: "https://github.com/danibcorr/wattpad-mate" },
+    ],
   },
 ];
 
@@ -156,8 +173,8 @@ const electronicsProjects = [
     ),
     description: (
       <Translate id="proyectos.ia.sistema-monitoreo.descripcion">
-        Sistema de monitoreo IoT para comunicaciones inalámbricas utilizando Arduino y
-        ESP32.
+        Sistema de monitoreo IoT para comunicaciones inalámbricas utilizando
+        Arduino y ESP32.
       </Translate>
     ),
     image: IOT_IMG,
@@ -170,11 +187,14 @@ const electronicsProjects = [
   },
   {
     title: (
-      <Translate id="proyectos.ia.electronica-tiva">🎛️ Electrónica con Tiva C</Translate>
+      <Translate id="proyectos.ia.electronica-tiva">
+        🎛️ Electrónica con Tiva C
+      </Translate>
     ),
     description: (
       <Translate id="proyectos.ia.electronica-tiva.descripcion">
-        Proyecto de sistemas embebidos con Tiva C utilizando comunicaciones UART e I2C.
+        Proyecto de sistemas embebidos con Tiva C utilizando comunicaciones UART
+        e I2C.
       </Translate>
     ),
     image: TIVA_IMG,
@@ -193,8 +213,8 @@ const electronicsProjects = [
     ),
     description: (
       <Translate id="proyectos.ia.electronica-arduino.descripcion">
-        Repositorio con proyectos de Arduino y Processing para el curso de Electrónica
-        Creativa en la UMA.
+        Repositorio con proyectos de Arduino y Processing para el curso de
+        Electrónica Creativa en la UMA.
       </Translate>
     ),
     image: ML_WIKI_IMG,
@@ -221,8 +241,8 @@ const electronicsProjects = [
     ),
     description: (
       <Translate id="proyectos.ia.controlador-kinect.descripcion">
-        Desarrollo de un programa que permite el control natural de presentaciones de
-        PowerPoint utilizando gestos y voz.
+        Desarrollo de un programa que permite el control natural de
+        presentaciones de PowerPoint utilizando gestos y voz.
       </Translate>
     ),
     image: ML_WIKI_IMG,
@@ -234,7 +254,9 @@ const electronicsProjects = [
     ],
   },
   {
-    title: <Translate id="proyectos.ia.microbot-sumo">🤖 Microbot Sumo</Translate>,
+    title: (
+      <Translate id="proyectos.ia.microbot-sumo">🤖 Microbot Sumo</Translate>
+    ),
     description: (
       <Translate id="proyectos.ia.microbot-sumo.descripcion">
         Diseño de un microbot para lucha de sumo.
