@@ -69,9 +69,9 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "machine-learning",
-        path: "docs/machine-learning",
-        routeBasePath: "docs/machine-learning",
+        id: "machine_learning_engineering",
+        path: "docs/machine_learning_engineering",
+        routeBasePath: "docs/machine_learning_engineering",
         sidebarPath: require.resolve("./sidebars.js"),
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
@@ -83,9 +83,9 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "others-3d-printing",
-        path: "docs/others/3d-printing",
-        routeBasePath: "docs/others/3d-printing",
+        id: "others_3d_printing",
+        path: "docs/others/3d_printing",
+        routeBasePath: "docs/others/3d_printing",
         sidebarPath: require.resolve("./sidebars.js"),
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
@@ -97,9 +97,9 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "others-music-sound",
-        path: "docs/others/music-sound",
-        routeBasePath: "docs/others/music-sound",
+        id: "others_music_sound",
+        path: "docs/others/music_sound",
+        routeBasePath: "docs/others/music_sound",
         sidebarPath: require.resolve("./sidebars.js"),
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
@@ -111,7 +111,7 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "others-telecom",
+        id: "others_telecom",
         path: "docs/others/telecom",
         routeBasePath: "docs/others/telecom",
         sidebarPath: require.resolve("./sidebars.js"),
@@ -157,7 +157,7 @@ const config = {
               type: "doc",
               docId: "intro",
               label: "Machine Learning Wiki",
-              docsPluginId: "machine-learning",
+              docsPluginId: "machine_learning_engineering",
             },
             {
               to: "blog",
@@ -173,19 +173,19 @@ const config = {
               type: "doc",
               docId: "music",
               label: "Música/Sonido",
-              docsPluginId: "others-music-sound",
+              docsPluginId: "others_music_sound",
             },
             {
               type: "doc",
-              docId: "3d-printing",
+              docId: "3d_printing",
               label: "Impresión 3D",
-              docsPluginId: "others-3d-printing",
+              docsPluginId: "others_3d_printing",
             },
             {
               type: "doc",
-              docId: "mobile-network-architecture",
+              docId: "mobile_network_architecture",
               label: "Redes Móviles",
-              docsPluginId: "others-telecom",
+              docsPluginId: "others_telecom",
             },
           ],
         },
