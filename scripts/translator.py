@@ -79,9 +79,7 @@ def translate_markdown(file_path: str, output_path: str) -> None:
 
 
 def translate_folder(
-    input_path: str, 
-    output_path: str, 
-    folders_to_include: Optional[List[str]] = None
+    input_path: str, output_path: str, folders_to_include: Optional[List[str]] = None
 ) -> None:
     """
     Traduce todos los archivos Markdown de una carpeta y sus subcarpetas.
@@ -96,7 +94,11 @@ def translate_folder(
     for root, dirs, files in os.walk(input_path):
         # Filtra las carpetas si es necesario
         relative_root = os.path.relpath(root, input_path)
-        if folders_to_include and relative_root not in folders_to_include and relative_root != ".":
+        if (
+            folders_to_include
+            and relative_root not in folders_to_include
+            and relative_root != "."
+        ):
             continue
 
         for file in files:

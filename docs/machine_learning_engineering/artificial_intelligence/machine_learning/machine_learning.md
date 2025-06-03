@@ -819,7 +819,50 @@ soluciones más complejas que ofrezcan un mayor retorno de inversión (ROI).
 
 ### 4.4. Naive Bayes
 
-### 4.5. Árboles de decisión
+### 4.5. Árboles de Decisión
+
+#### 4.5.X. Random Forest
+
+Random Forest es una técnica de ensamblado basada en árboles de decisión que mejora la
+capacidad de generalización de estos últimos. Aunque los árboles de decisión clásicos son
+fácilmente interpretables y eficientes en el ajuste a los datos de entrenamiento,
+presentan una alta varianza que los hace poco robustos frente a nuevas muestras. Random
+Forest soluciona esta limitación mediante un enfoque basado en el aprendizaje conjunto de
+múltiples árboles de decisión.
+
+El proceso de construcción de un modelo Random Forest se compone de tres etapas
+fundamentales:
+
+1. **Generación de conjuntos de entrenamiento mediante bootstrap**: A partir del conjunto
+   de datos original, se crean múltiples subconjuntos de entrenamiento mediante muestreo
+   aleatorio con reemplazo. Este procedimiento se conoce como _bootstrap sampling_. Como
+   consecuencia, algunas observaciones pueden repetirse dentro de un subconjunto,
+   mientras que otras no serán seleccionadas.
+
+2. **Construcción de árboles de decisión**: Cada subconjunto generado se utiliza para
+   entrenar un árbol de decisión independiente. A diferencia del procedimiento habitual,
+   en cada división del árbol se selecciona aleatoriamente un subconjunto de
+   características (_features_) en lugar de utilizar todas. Esta estrategia introduce
+   diversidad entre los árboles y reduce la correlación entre ellos, lo que mejora el
+   rendimiento general del modelo.
+
+3. **Agregación de predicciones (bagging)**: El término _bagging_ (de _bootstrap
+   aggregating_) hace referencia a la combinación de múltiples modelos entrenados sobre
+   diferentes subconjuntos de datos. En Random Forest, esto se implementa promediando
+   (para regresión) o votando (para clasificación) las predicciones generadas por cada
+   árbol.
+
+Durante el entrenamiento, algunas muestras no se utilizan en la construcción de un árbol
+determinado. Estas observaciones, conocidas como _out-of-bag samples_, se emplean para
+evaluar el rendimiento del modelo de manera interna, sin necesidad de un conjunto de
+validación adicional. Al calcular el porcentaje de muestras _out-of-bag_ clasificadas
+incorrectamente por el conjunto de árboles, se obtiene el llamado _out-of-bag error_, que
+actúa como una estimación fiable del error de generalización.
+
+Por último, el número de características consideradas en cada división puede ajustarse
+como hiperparámetro del modelo. Este control permite optimizar el equilibrio entre sesgo
+y varianza, mejorando la precisión y robustez del Random Forest frente a los árboles de
+decisión individuales.
 
 ### 4.6. Máquina de Vectores de Soporte
 
@@ -856,3 +899,59 @@ soluciones más complejas que ofrezcan un mayor retorno de inversión (ROI).
 ### 7.3. UMAP
 
 ### 7.4. Auto Encoders
+
+## 8. Métodos para la imputación de datos
+
+La imputación de datos es una técnica fundamental en la preparación de datos,
+especialmente cuando se enfrentan valores faltantes en un conjunto. Dependiendo del tipo
+de variable (numérica o categórica), se aplican diferentes estrategias para completar los
+valores ausentes de manera coherente y eficiente.
+
+### 8.1. Imputación simple
+
+Para variables **numéricas**, se emplean habitualmente medidas de tendencia central como
+la **media** o la **mediana**. No obstante, la **mediana** es preferida en contextos
+reales debido a su mayor robustez frente a valores atípicos o fuera de distribución. La
+decisión entre usar media o mediana puede fundamentarse en un análisis estadístico
+preliminar, como el estudio de la función de distribución acumulada (CDF) y el **rango
+intercuartílico (IQR)**, que corresponde a la diferencia entre el percentil 75 y el
+percentil 25. Esta evaluación permite identificar valores anómalos y decidir si deben
+eliminarse o si la imputación debe ajustarse a una medida más robusta como la mediana.
+
+Para variables **categóricas**, la imputación más común se realiza mediante la **moda**,
+es decir, el valor más frecuente en la columna correspondiente. Cabe destacar que estas
+imputaciones se aplican **por columna**, es decir, por cada característica (_feature_)
+del conjunto de datos.
+
+### 8.2. Imputación basada en vecinos
+
+Una estrategia más avanzada es el uso de métodos basados en los **vecinos más cercanos**,
+como el algoritmo **k-Nearest Neighbors (k-NN)**. Este enfoque consiste en identificar,
+para una muestra con valores faltantes, las muestras más similares (vecinas) utilizando
+métricas de distancia, como la distancia euclidiana. Una vez determinadas las _k_
+muestras más cercanas, el valor faltante se imputa en función de las características de
+esas vecinas, por ejemplo, mediante la media, la mediana o la moda de los valores
+presentes en ese grupo. Esta técnica permite imputar valores de forma contextualizada,
+mejorando la precisión respecto a métodos globales.
+
+### 8.3. Imputación con modelos predictivos
+
+#### 8.3.1. MissForest
+
+Un enfoque aún más sofisticado es **MissForest**, que emplea algoritmos de aprendizaje
+automático como **Random Forest** para imputar valores faltantes. El proceso consiste en:
+
+1. Realizar una imputación inicial de los valores faltantes utilizando técnicas simples
+   (media, mediana o moda según el tipo de variable).
+2. Entrenar un modelo Random Forest con las características completas para predecir los
+   valores ausentes de cada característica incompleta.
+3. Actualizar los valores imputados con las predicciones obtenidas.
+4. Repetir iterativamente el proceso hasta que se alcanza la convergencia o un número
+   máximo de iteraciones.
+
+MissForest es especialmente útil en contextos donde las relaciones entre variables son
+complejas y no lineales, ofreciendo un balance entre precisión y robustez.
+
+En resumen, la selección del método de imputación más adecuado depende de la naturaleza
+de los datos, del patrón de ausencia y del nivel de precisión requerido en el análisis
+posterior.

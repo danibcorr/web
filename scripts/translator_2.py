@@ -17,6 +17,7 @@ OUTPUT_BLOG_PATH = "i18n/en/docusaurus-plugin-content-blog"
 
 TRANSLATABLE_FOLDERS = ["machine-learning-wiki", "otros"]
 
+
 def split_text(text: str, max_length: int = 400) -> List[str]:
     """
     Divide un texto largo en fragmentos más pequeños para evitar
@@ -45,6 +46,7 @@ def split_text(text: str, max_length: int = 400) -> List[str]:
 
     return chunks
 
+
 def translate_text(text: str) -> str:
     """
     Traduce texto del español al inglés usando el modelo.
@@ -55,9 +57,12 @@ def translate_text(text: str) -> str:
     Returns:
         str: Texto traducido al inglés.
     """
-    inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True).to("cuda")
+    inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True).to(
+        "cuda"
+    )
     outputs = model.generate(**inputs, max_length=512)
     return tokenizer.batch_decode(outputs, skip_special_tokens=True)[0]
+
 
 def preserve_markdown_structure(content: str) -> List[dict]:
     """
@@ -95,6 +100,7 @@ def preserve_markdown_structure(content: str) -> List[dict]:
 
     return blocks
 
+
 def translate_markdown(file_path: str, output_path: str) -> None:
     """
     Traduce un archivo Markdown del español al inglés.
@@ -129,10 +135,9 @@ def translate_markdown(file_path: str, output_path: str) -> None:
     with open(output_path, "w", encoding="utf-8") as output_file:
         output_file.write(f"{frontmatter}\n{translated_body}")
 
+
 def translate_folder(
-    input_path: str,
-    output_path: str,
-    folders_to_include: Optional[List[str]] = None
+    input_path: str, output_path: str, folders_to_include: Optional[List[str]] = None
 ) -> None:
     """
     Traduce todos los archivos Markdown en una carpeta.
@@ -145,7 +150,11 @@ def translate_folder(
     files_to_translate = []
     for root, dirs, files in os.walk(input_path):
         relative_root = os.path.relpath(root, input_path)
-        if folders_to_include and relative_root not in folders_to_include and relative_root != ".":
+        if (
+            folders_to_include
+            and relative_root not in folders_to_include
+            and relative_root != "."
+        ):
             continue
 
         for file in files:
@@ -155,8 +164,11 @@ def translate_folder(
                 output_file_path = os.path.join(output_path, relative_path)
                 files_to_translate.append((input_file_path, output_file_path))
 
-    for input_file_path, output_file_path in tqdm(files_to_translate, desc="Translating files", unit="file"):
+    for input_file_path, output_file_path in tqdm(
+        files_to_translate, desc="Translating files", unit="file"
+    ):
         translate_markdown(input_file_path, output_file_path)
+
 
 if __name__ == "__main__":
     print("Starting translation...")
