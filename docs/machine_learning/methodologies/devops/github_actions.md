@@ -15,7 +15,7 @@ toc_max_heading_level: 3
 ## 1. Introducción
 
 <p align="center">  
-  <img src={require("../../../img/logos/github-logo.png").default} width="500"/>  
+  <img src={require("../../../../static/img/docs/logos/github-logo.png").default} width="500"/>  
   <br />  
   <em>Logo de GitHub</em>  
 </p>
@@ -82,7 +82,7 @@ src
 ```
 
 <p align="center">  
-  <img src={require("../../../img/workflow-github-actions.png").default}/>  
+  <img src={require("../../../../static/img/docs/workflow-github-actions.png").default}/>  
   <br />  
   <em>Logo de GitHub</em>  
 </p>

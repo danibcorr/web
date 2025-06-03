@@ -15,7 +15,7 @@ toc_max_heading_level: 4
 ## 1. Introducción
 
 <p align="center">
-  <img src={require("../../img/logos/python-logo.png").default} height="250"/>
+  <img src={require("../../../static/img/docs/logos/python-logo.png").default} height="250"/>
   <br />
   <em>Logo de Python</em>
 </p>

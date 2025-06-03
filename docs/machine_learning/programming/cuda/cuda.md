@@ -17,7 +17,7 @@ toc_max_heading_level: 3
 ## 1. Introducción
 
 <p align="center">
-  <img src={require("../../../img/logos/cuda-logo.png").default} height="200"/>
+  <img src={require("../../../../static/img/docs/logos/cuda-logo.png").default} height="200"/>
   <br />
   <em>Logo de Nvidia CUDA</em>
 </p>

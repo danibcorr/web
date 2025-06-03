@@ -14,7 +14,7 @@ toc_max_heading_level: 3
 ## Introducción
 
 <p align="center">
-  <img src={require("../../img/logos/linux-logo.png").default} height="300"/>
+  <img src={require("../../../static/img/docs/logos/linux-logo.png").default} height="300"/>
   <br />
   <em>Logo de Linux</em>
 </p>

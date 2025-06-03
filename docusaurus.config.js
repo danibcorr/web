@@ -69,9 +69,9 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "machine_learning_engineering",
-        path: "docs/machine_learning_engineering",
-        routeBasePath: "docs/machine_learning_engineering",
+        id: "machine_learning",
+        path: "docs/machine_learning",
+        routeBasePath: "docs/machine_learning",
         sidebarPath: require.resolve("./sidebars.js"),
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
@@ -127,8 +127,18 @@ const config = {
   themeConfig: {
     metadata: [
       {
+        name: "keywords",
+        content:
+          "machine learning, deep learning, artificial intelligence, python programming, data science, neural networks, MLOps, software engineering, AI blog, tech tutorials, programming guides, model deployment, data engineering",
+      },
+      {
         name: "description",
-        content: "Documentation and Blog on Web and Machine Learning.",
+        content:
+          "Comprehensive Machine Learning Engineering blog featuring tutorials, best practices, and insights on AI, deep learning, Python programming, and modern software development techniques.",
+      },
+      {
+        name: "author",
+        content: "Daniel Bazo Correa",
       },
     ],
     docs: {
@@ -157,7 +167,7 @@ const config = {
               type: "doc",
               docId: "intro",
               label: "Machine Learning Wiki",
-              docsPluginId: "machine_learning_engineering",
+              docsPluginId: "machine_learning",
             },
             {
               to: "blog",

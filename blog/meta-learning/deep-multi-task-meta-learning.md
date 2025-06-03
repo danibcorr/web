@@ -15,7 +15,7 @@ Meta Learning_, procedente del curso de
 ### 1.1 Multi-Task Learning
 
 <p align="center">
-  <img src={require("./img/multi-task.png").default} height="350"/>
+  <img src={require("../../static/img/blogs/meta-learning/multi-task.png").default} height="350"/>
   <br />
   <em>Diagrama de una arquitectura Multi-Task</em>
 </p>
@@ -32,7 +32,7 @@ refuerzo.
 ### 1.2 Meta-Learning
 
 <p align="center">
-  <img src={require("./img/meta-learning.png").default} height="350"/>
+  <img src={require("../../static/img/blogs/meta-learning/meta-learning.png").default} height="350"/>
   <br />
   <em>Diagrama sobre el uso de Meta-Learning</em>
 </p>
@@ -98,7 +98,7 @@ Las principales estrategias para abordar múltiples tareas incluyen:
 ### 3.1. Aprendizaje Contrastivo
 
 <p align="center">
-  <img src={require("./img/contrastive-learning-example.png").default}/>
+  <img src={require("../../static/img/blogs/meta-learning/contrastive-learning-example.png").default}/>
   <br />
   <em>Ejemplo de Aprendizaje Contrastivo</em>
 </p>
@@ -174,7 +174,7 @@ natural. A continuación, detallamos algunos de los métodos más utilizados.
 ##### Triplet Loss
 
 <p align="center">
-  <img src={require("./img/triplet-loss-example.png").default}/>
+  <img src={require("../../static/img/blogs/meta-learning/triplet-loss-example.png").default}/>
   <br />
   <em>Ejemplo de Triplet Loss</em>
 </p>
@@ -270,7 +270,7 @@ categorías.
 ### 3.2. Few-Shot Learning
 
 <p align="center">
-  <img src={require("./img/few-shot-learning.png").default}/>
+  <img src={require("../../static/img/blogs/meta-learning/few-shot-learning.png").default}/>
   <br />
   <em>Ejemplo de uso de Few-Shot Learning de 3-ways y 3-shots</em>
 </p>

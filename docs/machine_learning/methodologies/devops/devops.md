@@ -14,7 +14,7 @@ toc_max_heading_level: 3
 ## 1. Introducción
 
 <p align="center">
-  <img src={require("../../../img/logos/devops-logo.png").default} width="500"/>
+  <img src={require("../../../../static/img/docs/logos/devops-logo.png").default} width="500"/>
   <br />
   <em>Ciclo de vida de un proyecto DevOps</em>
 </p>

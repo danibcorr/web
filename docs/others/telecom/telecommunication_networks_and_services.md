@@ -281,7 +281,7 @@ red. En este sentido, el objetivo principal consiste en minimizar la latencia y 
 el throughput.
 
 <p align="center">  
-  <img src={require("../../img/others/telecom/Untitled.png").default}/>  
+  <img src={require("../../../static/img/docs/others/telecom/Untitled.png").default}/>  
   <br />
 </p>
 
@@ -356,7 +356,7 @@ combinación de flujos de transmisión y recepción de un mismo usuario en un mi
 medio de comunicación.
 
 <p align="center">  
-  <img src={require("../../img/others/telecom/Untitled 1.png").default}/>  
+  <img src={require("../../../static/img/docs/others/telecom/Untitled 1.png").default}/>  
   <br />
 </p>
 
@@ -386,7 +386,7 @@ información una banda de frecuencias distinta dentro del medio de transmisión,
 permitiendo que estos flujos se transmitan de forma simultánea durante todo el tiempo.
 
 <p align="center">  
-  <img src={require("../../img/others/telecom/Untitled 2.png").default}/>  
+  <img src={require("../../../static/img/docs/others/telecom/Untitled 2.png").default}/>  
   <br />
 </p>
 
@@ -427,7 +427,7 @@ cada flujo es constante, o emplear TDM asíncrona, donde la capacidad varía con
 según la demanda.
 
 <p align="center">  
-  <img src={require("../../img/others/telecom/Untitled 3.png").default}/>  
+  <img src={require("../../../static/img/docs/others/telecom/Untitled 3.png").default}/>  
   <br />
 </p>
 
@@ -437,14 +437,14 @@ El entrelazado de los flujos de información puede llevarse a cabo de dos manera
    donde una palabra es un conjunto de bits.
 
    <p align="center">  
-      <img src={require("../../img/others/telecom/Untitled 4.png").default}/>  
+      <img src={require("../../../static/img/docs/others/telecom/Untitled 4.png").default}/>  
       <br />
    </p>
 
 2. **Entrelazado de bit**: En este caso, la información se entrelaza a nivel de bits.
 
    <p align="center">  
-      <img src={require("../../img/others/telecom/Untitled 5.png").default}/>  
+      <img src={require("../../../static/img/docs/others/telecom/Untitled 5.png").default}/>  
       <br />
    </p>
 
@@ -461,7 +461,7 @@ período de transmisión. En este método, se utilizan señales especiales conoc
 códigos para lograr este compartimiento efectivo del ancho de banda.
 
 <p align="center">  
-  <img src={require("../../img/others/telecom/Untitled 6.png").default}/>  
+  <img src={require("../../../static/img/docs/others/telecom/Untitled 6.png").default}/>  
   <br />
 </p>
 
@@ -773,7 +773,7 @@ dicha dirección, el bit menos significativo del primer byte define si la direcc
 unicast o multicast.
 
 <p align="center">  
-  <img src={require("../../img/others/telecom/Untitled 7.png").default}/>  
+  <img src={require("../../../static/img/docs/others/telecom/Untitled 7.png").default}/>  
   <br />
 </p>
 
@@ -826,7 +826,7 @@ El modelo TCP/IP se compone de cuatro capas:
 #### 7.4.1. Encapsulamiento
 
 <p align="center">  
-  <img src={require("../../img/others/telecom/Untitled 8.png").default}/>  
+  <img src={require("../../../static/img/docs/others/telecom/Untitled 8.png").default}/>  
   <br />
 </p>
 

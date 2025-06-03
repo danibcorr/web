@@ -16,7 +16,7 @@ toc_max_heading_level: 3
 ## 1. Introducción
 
 <p align="center">  
-  <img src={require("../../img/logos/git-logo.png").default}/>  
+  <img src={require("../../../static/img/docs/logos/git-logo.png").default}/>  
   <br />  
   <em>Logo de Git</em>  
 </p>
@@ -66,7 +66,7 @@ permitiendo la recuperación de versiones anteriores cuando es necesario.
 ### 2.2. Áreas
 
 <p align="center">  
-  <img src={require("../../img/git-stages.png").default}/>  
+  <img src={require("../../../static/img/docs/git-stages.png").default}/>  
   <br />  
   <em>Áreas de trabajo en Git. [Link](https://ihcantabria.github.io/ApuntesGit/_images/comandos-workflow.png)</em>  
 </p>
@@ -292,7 +292,7 @@ _source_ puede ser la rama `dev` y la _target_ puede ser la rama `main` o `maste
 ### 4.3. Trunk-Based Development
 
 <p align="center">
-  <img src={require("../../img/trunk-based-git.png").default}/>
+  <img src={require("../../../static/img/docs/trunk-based-git.png").default}/>
   <br />
   <em>Esquema de desarrollo Trunk-Based. [Link](https://statusneo.com/wp-content/uploads/2022/12/Beginners%20Guide%20to%20Trunk-Based%20Development.png)</em>
 </p>
@@ -319,7 +319,7 @@ Sin embargo, presenta las siguientes desventajas:
 ### 4.4. Git Flow
 
 <p align="center">
-  <img src={require("../../img/git-flow-git.png").default} width="500"/>
+  <img src={require("../../../static/img/docs/git-flow-git.png").default} width="500"/>
   <br />
   <em>Esquema de desarrollo Git Flow. [Link](https://www.alura.com.br/artigos/assets/git-flow-o-que-e-como-quando-utilizar/imagem3.png)</em>
 </p>
