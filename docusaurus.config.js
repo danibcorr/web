@@ -7,7 +7,7 @@ const projectName = "web";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Web",
+  title: "Daniel Bazo",
   url: `https://${organizationName}.github.io`,
   baseUrl: "/web/",
   onBrokenLinks: "warn",

@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.9.1",
-    "@docusaurus/core": "^3.8.0",
-    "@docusaurus/preset-classic": "^3.8.0",
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
     "@mdx-js/react": "^3.1.0",
     "acorn": "^6.4.2",
     "clsx": "^1.2.1",
@@ -33,14 +33,15 @@
     "search-insights": "^2.17.3"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.8.0",
-    "@docusaurus/tsconfig": "^3.8.0",
+    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/tsconfig": "^3.8.1",
     "@tsconfig/docusaurus": "^1.0.7",
     "@types/react": "^18.3.14",
     "css-loader": "^7.1.2",
     "prettier": "^3.4.2",
     "style-loader": "^4.0.0",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "webpack": "^5.27.0"
   },
   "browserslist": {
     "production": [
@@ -57,7 +58,7 @@
   "engines": {
     "node": ">=22.0"
   },
-  "description": "[🇬🇧 README](./README/README_EN.md)",
+  "description": "./README.md",
   "main": "babel.config.js",
   "directories": {
     "doc": "docs"

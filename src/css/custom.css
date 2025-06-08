@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree&family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Figtree&family=Montserrat&display=swap");
 
 :root {
   --ifm-font-family-base: "Montserrat", sans-serif;
@@ -45,6 +45,7 @@
   /* Cambiar el color del texto del footer */
   color: var(--colorLetraFooter);
   background-color: var(--colorFondoDoc);
+  border-top: 1px solid var(--ifm-color-emphasis-300);
 }
 
 .navbar {
@@ -75,6 +76,17 @@
   min-width: 120px;
   padding: 0.5rem;
   word-wrap: break-word;
+}
+
+.pagination-nav {
+  /* Ocultar botones de navegación anterior/siguiente */
+  display: none !important;
+}
+
+.collapseSidebarButton_PEFL {
+  /* Mantener la barra de arriba del botón de colapsar*/
+  border: none !important;
+  border-top: 1px solid var(--ifm-color-emphasis-300) !important;
 }
 
 @media screen and (max-width: 768px) {
