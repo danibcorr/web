@@ -60,7 +60,7 @@ const config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "Daniel Bazo",
+      title: "Daniel Bazo Correa",
       logo: {
         alt: "Logo",
         src: "img/logo motivo.svg",

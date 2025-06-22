@@ -53,40 +53,33 @@ const projectCategories = [
 // Proyectos de datos e IA
 const dataAiProjects = [
   {
-    title: (
-      <Translate id="proyectos.ia.wiki">
-        🏫 Wiki de Aprendizaje Automático
-      </Translate>
-    ),
+    title: <Translate id="proyectos.ia.wiki">Wiki de Aprendizaje Automático</Translate>,
     description: (
       <Translate id="proyectos.ia.wiki.descripcion">
-        Una wiki en español para almacenar y compartir aprendizajes, notas y
-        código en un solo lugar, con un enfoque en el aprendizaje automático.
+        Una wiki en español para almacenar y compartir aprendizajes, notas y código en un
+        solo lugar, con un enfoque en el aprendizaje automático.
       </Translate>
     ),
     image: ML_WIKI_IMG,
     links: [
       {
         label: <FaGithub />,
-        url: "https://github.com/danibcorr/machine-learning-wiki",
+        url: "https://github.com/danibcorr/ml-wiki",
       },
       {
         label: <TbWorld />,
-        url: "https://danibcorr.github.io/web/docs/machine-learning-wiki/intro",
+        url: "https://danibcorr.github.io/ml-wiki/intro/",
       },
     ],
   },
   {
     title: (
-      <Translate id="proyectos.ia.musica">
-        🎵 Clasificador de Géneros Musicales
-      </Translate>
+      <Translate id="proyectos.ia.musica">Clasificador de Géneros Musicales</Translate>
     ),
     description: (
       <Translate id="proyectos.ia.musica.descripcion">
-        Clasificador de géneros musicales para parámetros de ecualización
-        automática de JamesDSP, utilizando Redes Neuronales Convolucionales con
-        Transformers.
+        Clasificador de géneros musicales para parámetros de ecualización automática de
+        JamesDSP, utilizando Redes Neuronales Convolucionales con Transformers.
       </Translate>
     ),
     image: MUSIC_GENRE_IMG,
@@ -98,16 +91,11 @@ const dataAiProjects = [
     ],
   },
   {
-    title: (
-      <Translate id="proyectos.ia.ventas">
-        💸 Suite de Ventas Streamlit
-      </Translate>
-    ),
+    title: <Translate id="proyectos.ia.ventas">Suite de Ventas Streamlit</Translate>,
     description: (
       <Translate id="proyectos.ia.ventas.descripcion">
-        Plataforma web integral para análisis y visualización de datos,
-        impulsada con Streamlit, complementada con un clasificador automatizado
-        de ítems.
+        Plataforma web integral para análisis y visualización de datos, impulsada con
+        Streamlit, complementada con un clasificador automatizado de ítems.
       </Translate>
     ),
     image: SALES_SUITE_IMG,
@@ -116,14 +104,17 @@ const dataAiProjects = [
         label: <FaGithub />,
         url: "https://github.com/danibcorr/streamlit-sales-suite",
       },
+      {
+        label: <TbWorld />,
+        url: "https://sales-suite.streamlit.app/",
+      },
     ],
   },
   {
-    title: <Translate id="proyectos.ia.papers">📄 Papers con Código</Translate>,
+    title: <Translate id="proyectos.ia.papers">Papers con Código</Translate>,
     description: (
       <Translate id="proyectos.ia.papers.descripcion">
-        Implementaciones de artículos de aprendizaje automático y profundo en
-        código.
+        Implementaciones de artículos de aprendizaje automático y profundo en código.
       </Translate>
     ),
     image: PAPERS_CODE_IMG,
@@ -132,36 +123,38 @@ const dataAiProjects = [
         label: <FaGithub />,
         url: "https://github.com/danibcorr/papers-with-code",
       },
+      {
+        label: <TbWorld />,
+        url: "https://danibcorr.github.io/papers-with-code/",
+      },
     ],
   },
   {
-    title: <Translate id="proyectos.ia.universidad">🎓 MorphX</Translate>,
+    title: <Translate id="proyectos.ia.universidad">MorphX</Translate>,
     description: (
       <Translate id="proyectos.ia.universidad.descripcion">
-        MorphX es una herramienta basada en Streamlit que permite modificar
-        metadatos, convertir archivos a Markdown, transcribir audio y más.
+        MorphX es una herramienta basada en Streamlit que permite modificar metadatos,
+        convertir archivos a Markdown, transcribir audio y más.
       </Translate>
     ),
     image: MORPHX_IMG,
-    links: [
-      { label: <FaGithub />, url: "https://github.com/danibcorr/morphx" },
-    ],
+    links: [{ label: <FaGithub />, url: "https://github.com/danibcorr/morphx" }],
   },
   {
-    title: (
-      <Translate id="proyectos.ia.wattpad">
-        📚 Tu Compañero de Wattpad
-      </Translate>
-    ),
+    title: <Translate id="proyectos.ia.wattpad">Tu Compañero de Wattpad</Translate>,
     description: (
       <Translate id="proyectos.ia.wattpad.descripcion">
-        Herramienta para obtener información de Wattpad y conocer usuarios con
-        los mismos gustos.
+        Herramienta para obtener información de Wattpad y conocer usuarios con los mismos
+        gustos.
       </Translate>
     ),
     image: WATTPAD_IMG,
     links: [
       { label: <FaGithub />, url: "https://github.com/danibcorr/wattpad-mate" },
+      {
+        label: <TbWorld />,
+        url: "https://wattpad-mate.streamlit.app/",
+      },
     ],
   },
 ];
@@ -171,7 +164,7 @@ const electronicsProjects = [
   {
     title: (
       <Translate id="proyectos.ia.sistema-monitoreo">
-        🏔️ Sistema de Monitoreo Ambiental
+        Sistema de Monitoreo Ambiental
       </Translate>
     ),
     description: (
@@ -191,7 +184,7 @@ const electronicsProjects = [
   {
     title: (
       <Translate id="proyectos.ia.electronica-tiva">
-        🎛️ Electrónica con Tiva C
+        Electrónica con Tiva C
       </Translate>
     ),
     description: (
@@ -211,7 +204,7 @@ const electronicsProjects = [
   {
     title: (
       <Translate id="proyectos.ia.electronica-arduino">
-        🎛️ Electrónica con Arduino
+        Electrónica con Arduino
       </Translate>
     ),
     description: (
@@ -239,7 +232,7 @@ const electronicsProjects = [
   {
     title: (
       <Translate id="proyectos.ia.controlador-kinect">
-        👀 Controlador Kinect para PowerPoint
+        Controlador Kinect para PowerPoint
       </Translate>
     ),
     description: (
@@ -258,7 +251,7 @@ const electronicsProjects = [
   },
   {
     title: (
-      <Translate id="proyectos.ia.microbot-sumo">🤖 Microbot Sumo</Translate>
+      <Translate id="proyectos.ia.microbot-sumo">Microbot Sumo</Translate>
     ),
     description: (
       <Translate id="proyectos.ia.microbot-sumo.descripcion">
@@ -420,13 +413,12 @@ function HomepageFeatures() {
 // Variable features (no modificada respecto a tu código original)
 const features = [
   {
-    title: "Daniel Bazo Correa",
+    title: "Hola, soy Dani! 👋",
     description: (
       <Translate id="perfil.descripcion">
-        Hola, soy Dani! 👋 Soy Ingeniero de Sistemas Electrónicos y Científico
-        de Datos en el área de investigación de Ericsson. Me apasiona la
-        inteligencia artificial, los datos y sus aplicaciones para potenciar las
-        capacidades humanas.
+        Soy Ingeniero de Sistemas Electrónicos y Científico de Datos en el área
+        de investigación de Ericsson. Me apasiona la inteligencia artificial,
+        los datos y sus aplicaciones para potenciar las capacidades humanas.
       </Translate>
     ),
     image: "https://avatars.githubusercontent.com/u/77023868?v=4",

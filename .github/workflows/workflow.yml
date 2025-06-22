@@ -1,4 +1,4 @@
-name: Build and Deploy Wiki
+name: Web CI/CD
 
 on:
   pull_request:
@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build Wiki
+    name: Build Web
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -55,7 +55,7 @@ jobs:
           path: build
 
   deploy:
-    name: Deploy Wiki to GitHub Pages
+    name: Deploy Web to GitHub Pages
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
 
