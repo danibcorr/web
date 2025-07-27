@@ -45,7 +45,7 @@
   /* Cambiar el color del texto del footer */
   color: var(--colorLetraFooter);
   background-color: var(--colorFondoDoc);
-  border-top: 1px solid var(--ifm-color-emphasis-300);
+  border-top: none !important;
 }
 
 .navbar {
