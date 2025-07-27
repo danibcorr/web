@@ -29,11 +29,20 @@
   --ifm-color-primary-lightest: #ffffff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --colorFondoDoc: #15191d;
-  --ifm-link-color: #af8f6f;
-  --colorLinkSelection: #af8f6f;
+  --ifm-link-color: #8492a6;
+  --colorLinkSelection: #8492a6;
   --colorLetraFooter: #ffffff;
   --transitionTime: 0.3s;
   --maxWidth: 100%;
+}
+
+/* Estilos del selector de idioma */
+.dropdown__link--active {
+  color: var(--colorLinkSelection) !important;
+}
+
+.dropdown__link--active:hover {
+  color: var(--colorLinkSelection) !important;
 }
 
 .main-wrapper {
@@ -45,7 +54,7 @@
   /* Cambiar el color del texto del footer */
   color: var(--colorLetraFooter);
   background-color: var(--colorFondoDoc);
-  border-top: 1px solid var(--ifm-color-emphasis-300);
+  border-top: none !important;
 }
 
 .navbar {
@@ -61,32 +70,6 @@
 .dropdown > .navbar__link:after {
   /* Eliminar la flecha en los menús desplegables */
   display: none;
-}
-
-.markdown table {
-  /* Ajuste del ancho de las tablas de Markdown */
-  width: var(--maxWidth);
-  display: table;
-  margin: 1rem 0;
-}
-
-.markdown table td,
-.markdown table th {
-  /* Opcional: para hacer que las celdas se ajusten mejor */
-  min-width: 120px;
-  padding: 0.5rem;
-  word-wrap: break-word;
-}
-
-.pagination-nav {
-  /* Ocultar botones de navegación anterior/siguiente */
-  display: none !important;
-}
-
-.collapseSidebarButton_PEFL {
-  /* Mantener la barra de arriba del botón de colapsar*/
-  border: none !important;
-  border-top: 1px solid var(--ifm-color-emphasis-300) !important;
 }
 
 @media screen and (max-width: 768px) {
