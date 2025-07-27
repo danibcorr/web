@@ -26,8 +26,8 @@
 /* Dark Mode Variables */
 [data-theme="dark"] {
   --colorBotones: #313b4b;
-  --colorSeleccionBotones: #af8f6f;
-  --colorLinkSelection: #af8f6f;
+  --colorSeleccionBotones: #8492a6;
+  --colorLinkSelection: #8492a6;
   --accentColor: #e0e0e0;
   --colorBordesTarjetas: #313b4b;
   --colorTarjetas: #212529;
@@ -172,13 +172,6 @@
     opacity 0.5s ease,
     visibility 0s linear 0.5s;
   /* Transición suave para la opacidad */
-}
-
-/* Clase para mostrar grid de proyectos */
-.projectsGrid.visible {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.5s ease;
 }
 
 /* Tarjeta de proyecto individual */
