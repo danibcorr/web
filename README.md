@@ -10,13 +10,13 @@
   <br />
 </p>
 
-# Web
+# Personal Web
 
-¡Hola! 👋
+Hi there! 👋
 
-Soy Dani, Ingeniero en Sistemas Electrónicos, y te doy la bienvenida a mi página
-personal. Aquí recopilo un poco los poyectos que he ido realizando además de contenido
-adicional que pueda ser relavante.
+I'm Dani, an Electronic Systems Engineer. Welcome to my personal page! Here, you'll find
+a collection of projects I've been working on, along with additional content that I hope
+you'll find interesting and relevant.
 
-Si te interesa conectar, no dudes en hacerlo a través de mi
+If you are interested in connecting, feel free to do so through my
 [LinkedIn](https://www.linkedin.com/in/danibcorr/).

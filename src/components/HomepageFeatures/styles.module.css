@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree&family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap");
 
 /* Variables de color y tamaño */
 :root {
@@ -85,7 +86,7 @@
 .projectsTitle {
   margin-top: var(--marginTop);
   color: var(--accentColor);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 /* Contenedor de proyectos */
@@ -218,15 +219,18 @@
 
 /* Título del proyecto */
 .projectTitle {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
+  margin-bottom: 25px;
+  font-size: 1.2rem;
   color: var(--accentColor);
   text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 /* Descripción del proyecto */
 .projectDescription {
-  margin: 0 0 20px;
   color: var(--accentColor);
   font-size: var(--fontSize);
   flex-grow: 1;

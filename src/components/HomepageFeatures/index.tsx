@@ -3,7 +3,7 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
-import Translate from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 
 // Imagenes datos
 import ML_WIKI_IMG from "/static/img/projects/ml_wiki.jpg";
@@ -53,11 +53,15 @@ const projectCategories = [
 // Proyectos de datos e IA
 const dataAiProjects = [
   {
-    title: <Translate id="proyectos.ia.wiki">Wiki de Aprendizaje Automático</Translate>,
+    title: (
+      <Translate id="proyectos.ia.wiki">
+        Wiki de Aprendizaje Automático
+      </Translate>
+    ),
     description: (
       <Translate id="proyectos.ia.wiki.descripcion">
-        Una wiki en español para almacenar y compartir aprendizajes, notas y código en un
-        solo lugar, con un enfoque en el aprendizaje automático.
+        Una wiki en español para almacenar y compartir aprendizajes, notas y
+        código en un solo lugar, con un enfoque en el aprendizaje automático.
       </Translate>
     ),
     image: ML_WIKI_IMG,
@@ -74,12 +78,15 @@ const dataAiProjects = [
   },
   {
     title: (
-      <Translate id="proyectos.ia.musica">Clasificador de Géneros Musicales</Translate>
+      <Translate id="proyectos.ia.musica">
+        Clasificador de Géneros Musicales
+      </Translate>
     ),
     description: (
       <Translate id="proyectos.ia.musica.descripcion">
-        Clasificador de géneros musicales para parámetros de ecualización automática de
-        JamesDSP, utilizando Redes Neuronales Convolucionales con Transformers.
+        Clasificador de géneros musicales para parámetros de ecualización
+        automática de JamesDSP, utilizando Redes Neuronales Convolucionales con
+        Transformers.
       </Translate>
     ),
     image: MUSIC_GENRE_IMG,
@@ -91,11 +98,14 @@ const dataAiProjects = [
     ],
   },
   {
-    title: <Translate id="proyectos.ia.ventas">Suite de Ventas Streamlit</Translate>,
+    title: (
+      <Translate id="proyectos.ia.ventas">Suite de Ventas Streamlit</Translate>
+    ),
     description: (
       <Translate id="proyectos.ia.ventas.descripcion">
-        Plataforma web integral para análisis y visualización de datos, impulsada con
-        Streamlit, complementada con un clasificador automatizado de ítems.
+        Plataforma web integral para análisis y visualización de datos,
+        impulsada con Streamlit, complementada con un clasificador automatizado
+        de ítems.
       </Translate>
     ),
     image: SALES_SUITE_IMG,
@@ -114,7 +124,8 @@ const dataAiProjects = [
     title: <Translate id="proyectos.ia.papers">Papers con Código</Translate>,
     description: (
       <Translate id="proyectos.ia.papers.descripcion">
-        Implementaciones de artículos de aprendizaje automático y profundo en código.
+        Implementaciones de artículos de aprendizaje automático y profundo en
+        código.
       </Translate>
     ),
     image: PAPERS_CODE_IMG,
@@ -133,19 +144,23 @@ const dataAiProjects = [
     title: <Translate id="proyectos.ia.universidad">MorphX</Translate>,
     description: (
       <Translate id="proyectos.ia.universidad.descripcion">
-        MorphX es una herramienta basada en Streamlit que permite modificar metadatos,
-        convertir archivos a Markdown, transcribir audio y más.
+        MorphX es una herramienta basada en Streamlit que permite modificar
+        metadatos, convertir archivos a Markdown, transcribir audio y más.
       </Translate>
     ),
     image: MORPHX_IMG,
-    links: [{ label: <FaGithub />, url: "https://github.com/danibcorr/morphx" }],
+    links: [
+      { label: <FaGithub />, url: "https://github.com/danibcorr/morphx" },
+    ],
   },
   {
-    title: <Translate id="proyectos.ia.wattpad">Tu Compañero de Wattpad</Translate>,
+    title: (
+      <Translate id="proyectos.ia.wattpad">Tu Compañero de Wattpad</Translate>
+    ),
     description: (
       <Translate id="proyectos.ia.wattpad.descripcion">
-        Herramienta para obtener información de Wattpad y conocer usuarios con los mismos
-        gustos.
+        Herramienta para obtener información de Wattpad y conocer usuarios con
+        los mismos gustos.
       </Translate>
     ),
     image: WATTPAD_IMG,
@@ -250,9 +265,7 @@ const electronicsProjects = [
     ],
   },
   {
-    title: (
-      <Translate id="proyectos.ia.microbot-sumo">Microbot Sumo</Translate>
-    ),
+    title: <Translate id="proyectos.ia.microbot-sumo">Microbot Sumo</Translate>,
     description: (
       <Translate id="proyectos.ia.microbot-sumo.descripcion">
         Diseño de un microbot para lucha de sumo.
@@ -349,7 +362,7 @@ function HomepageFeatures() {
                   <img src={project.image} className={styles.projectIcon} />
                 </div>
                 <div className={styles.projectContent}>
-                  <h4 className={styles.projectTitle}>{project.title}</h4>
+                  <div className={styles.projectTitle}>{project.title}</div>
                   <p className={styles.projectDescription}>
                     {project.description}
                   </p>
@@ -413,7 +426,7 @@ function HomepageFeatures() {
 // Variable features (no modificada respecto a tu código original)
 const features = [
   {
-    title: "Hola, soy Dani! 👋",
+    title: <Translate id="perfil.title">Hola, soy Dani! 👋</Translate>,
     description: (
       <Translate id="perfil.descripcion">
         Soy Ingeniero de Sistemas Electrónicos y Científico de Datos en el área

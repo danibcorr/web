@@ -1,11 +1,6 @@
-.PHONY: translate run check-outdated update build all setup-i18n run-en build-en serve translate-content
+.PHONY: setup-i18n run run-en check-outdated update build build-en serve all
 
 .DEFAULT_GOAL := all
-
-translate-content:
-	@echo "Traducir en inglés el contenido de la Wiki..."
-	@uv run python ./src/scripts/translator.py
-	@echo "✅ Traducción de contenido realizada."
 
 setup-i18n:
 	@echo "Configurando archivos de traducción para inglés..."
@@ -61,8 +56,5 @@ build-en:
 serve:
 	@echo "Sirviendo la documentación construida..."
 	@npm run serve
-
-translate: setup-i18n translate-content
-	@echo "✅ Proceso de traducción completo."
 
 all: build run
