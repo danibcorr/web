@@ -70,6 +70,7 @@ const config = {
           position: "right",
         },
       ],
+      hideOnScroll: true,
     },
     footer: {
       copyright: `Copyright © ${new Date().getFullYear()} Daniel Bazo Correa`,
