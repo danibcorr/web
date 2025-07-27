@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree&family=Montserrat&display=swap");
+
+:root {
+  --ifm-font-family-base: "Montserrat", sans-serif;
+  --ifm-color-primary: #171717;
+  --ifm-color-primary-dark: #151515;
+  --ifm-color-primary-darker: #141414;
+  --ifm-color-primary-darkest: #101010;
+  --ifm-color-primary-light: #191919;
+  --ifm-color-primary-lighter: #1a1a1a;
+  --ifm-color-primary-lightest: #1e1e1e;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --colorFondoDoc: #f0f5ef;
+  --ifm-link-color: #af8f6f;
+  --colorLinkSelection: #af8f6f;
+  --colorLetraFooter: #000000;
+  --transitionTime: 0.3s;
+  --maxWidth: 100%;
+}
+
+[data-theme="dark"] {
+  --ifm-font-family-base: "Montserrat", sans-serif;
+  --ifm-color-primary: #e0e0e0;
+  --ifm-color-primary-dark: #cacaca;
+  --ifm-color-primary-darker: #bebebe;
+  --ifm-color-primary-darkest: #9d9d9d;
+  --ifm-color-primary-light: #f6f6f6;
+  --ifm-color-primary-lighter: #ffffff;
+  --ifm-color-primary-lightest: #ffffff;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --colorFondoDoc: #15191d;
+  --ifm-link-color: #af8f6f;
+  --colorLinkSelection: #af8f6f;
+  --colorLetraFooter: #ffffff;
+  --transitionTime: 0.3s;
+  --maxWidth: 100%;
+}
+
+.main-wrapper {
+  /* Permite cambiar el color del fondo */
+  background-color: var(--colorFondoDoc);
+}
+
+.footer {
+  /* Cambiar el color del texto del footer */
+  color: var(--colorLetraFooter);
+  background-color: var(--colorFondoDoc);
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.navbar {
+  /* Cambiar el color de fondo de la navbar */
+  background-color: var(--colorFondoDoc);
+}
+
+.navbar__link:hover {
+  /* Cambiar el color de los enlaces al pasar el ratón */
+  color: var(--colorLinkSelection);
+}
+
+.dropdown > .navbar__link:after {
+  /* Eliminar la flecha en los menús desplegables */
+  display: none;
+}
+
+.markdown table {
+  /* Ajuste del ancho de las tablas de Markdown */
+  width: var(--maxWidth);
+  display: table;
+  margin: 1rem 0;
+}
+
+.markdown table td,
+.markdown table th {
+  /* Opcional: para hacer que las celdas se ajusten mejor */
+  min-width: 120px;
+  padding: 0.5rem;
+  word-wrap: break-word;
+}
+
+.pagination-nav {
+  /* Ocultar botones de navegación anterior/siguiente */
+  display: none !important;
+}
+
+.collapseSidebarButton_PEFL {
+  /* Mantener la barra de arriba del botón de colapsar*/
+  border: none !important;
+  border-top: 1px solid var(--ifm-color-emphasis-300) !important;
+}
+
+@media screen and (max-width: 768px) {
+  /* Hacer scrollable las tablas de Markdown en móviles */
+  .markdown {
+    overflow-x: auto;
+  }
+
+  .markdown table {
+    min-width: 600px;
+  }
+}
