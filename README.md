@@ -1,16 +1,16 @@
 <p align="center">
+  <img src="./static/img/logo motivo dark.svg" width="300"/>
+  <br />
+</p>
+
+<p align="center">
   <a href="https://github.com/danibcorr/web/actions/workflows/workflow.yml"><img src="https://github.com/danibcorr/web/actions/workflows/workflow.yml/badge.svg"></a>
   <a href="https://github.com/danibcorr/web/blob/main/LICENSE" target="_blank">
       <img src="https://img.shields.io/github/license/danibcorr/web" alt="License">
   </a>
 </p>
 
-<p align="center">
-  <img src="./static/img/logo motivo dark.svg" width="300"/>
-  <br />
-</p>
-
-# Personal Web
+# Web
 
 Hi there! 👋
 
