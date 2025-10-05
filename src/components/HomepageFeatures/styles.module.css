@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree&family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap");
+
+/* Variables de color y tamaño */
+:root {
+  --colorBotones: #d2d2c8;
+  --colorSeleccionBotones: #af8f6f;
+  --colorLinkSelection: #af8f6f;
+  --accentColor: #000000;
+  --colorBordesTarjetas: #d2d2c8;
+  --colorTarjetas: #f0f3ef;
+  --shadowColor: #0000001a;
+  --transitionTime: 0.3s;
+  --fontSize: 1rem;
+  --containerMaxWidth: 830px;
+  --maxWidth: 100%;
+  --border-radius: 8px;
+  --heightImage: 220px;
+  --widthImage: 220px;
+  --borderRadiusImage: 50%;
+  --marginTop: 40px;
+  --marginRest: 30px;
+  --marginGap: 20px;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --colorBotones: #313b4b;
+  --colorSeleccionBotones: #8492a6;
+  --colorLinkSelection: #8492a6;
+  --accentColor: #e0e0e0;
+  --colorBordesTarjetas: #313b4b;
+  --colorTarjetas: #212529;
+  --shadowColor: #e0e0e01a;
+  --transitionTime: 0.3s;
+  --fontSize: 1rem;
+  --containerMaxWidth: 830px;
+  --maxWidth: 100%;
+  --border-radius: 8px;
+  --heightImage: 220px;
+  --widthImage: 220px;
+  --borderRadiusImage: 50%;
+  --marginTop: 40px;
+  --marginRest: 30px;
+}
+
+/* Esta es la sección de mi foto y descripción */
+.features {
+  padding: var(--marginRest) 0;
+  text-align: center;
+}
+
+/* Contenedor de características de mi foto y la descripción*/
+.featureContainer {
+  display: flex;
+  justify-content: center;
+}
+
+/* Característica individual */
+.feature {
+  display: flex;
+  align-items: center;
+  margin: var(--marginRest) 0;
+  max-width: var(--containerMaxWidth);
+  text-align: left;
+}
+
+/* Contenedor de imagen */
+.imageContainer {
+  margin-right: var(--marginRest);
+}
+
+/* Imagen */
+.featureImage {
+  width: var(--widthImage);
+  height: var(--heightImage);
+  border-radius: var(--borderRadiusImage);
+  transition: transform var(--transitionTime) ease;
+}
+
+.textContainer {
+  flex: 1;
+}
+
+/* Título de proyectos */
+.projectsTitle {
+  margin-top: var(--marginTop);
+  color: var(--accentColor);
+  font-size: 1.8rem;
+}
+
+/* Contenedor de proyectos */
+.projectsContainer {
+  display: flex;
+  margin-top: var(--marginRest);
+  margin-bottom: var(--marginRest);
+  max-width: var(--containerMaxWidth);
+  width: var(--maxWidth);
+  gap: var(--marginGap);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tarjeta de proyecto */
+.project {
+  background-color: var(--colorTarjetas);
+  color: var(--accentColor);
+  border: 1px solid var(--colorBordesTarjetas);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  flex: 1;
+  text-align: left;
+  box-shadow: 0 2px 5px var(--shadowColor);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Botón de categoría de proyecto */
+.projectButton {
+  display: block;
+  margin-top: auto;
+  padding: 10px 15px;
+  background-color: var(--colorBotones);
+  color: var(--accentColor);
+  border: none;
+  border-radius: var(--border-radius);
+  width: var(--maxWidth);
+  font-size: var(--fontSize);
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color var(--transitionTime) ease,
+    color var(--transitionTime) ease;
+}
+
+/* Efecto hover en botón de proyecto */
+.projectButton:hover {
+  background-color: var(--colorSeleccionBotones);
+  color: var(--colorTarjetas);
+}
+
+/* Grid de proyectos */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--marginGap);
+  max-width: var(--containerMaxWidth);
+  margin: 0 auto var(--marginRest);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease,
+    visibility 0s linear 0.5s;
+}
+
+/* Clase para mostrar grid de proyectos */
+.projectsGrid.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease;
+}
+
+.projectDetail {
+  margin-top: var(--marginTop);
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  width: var(--maxWidth);
+  max-width: var(--containerMaxWidth);
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease,
+    visibility 0s linear 0.5s;
+  /* Transición suave para la opacidad */
+}
+
+/* Tarjeta de proyecto individual */
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--colorTarjetas);
+  border: 1px solid var(--colorBordesTarjetas);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition:
+    transform var(--transitionTime),
+    box-shadow var(--transitionTime);
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px var(--shadowColor);
+}
+
+/* Modifica el contenedor de icono existente */
+.projectIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  /* Quita el padding para que la imagen ocupe todo el espacio */
+  padding: 0;
+}
+
+/* Contenido del proyecto */
+.projectContent {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título del proyecto */
+.projectTitle {
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+  color: var(--accentColor);
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Descripción del proyecto */
+.projectDescription {
+  color: var(--accentColor);
+  font-size: var(--fontSize);
+  flex-grow: 1;
+  text-align: left;
+}
+
+/* Footer del proyecto */
+.projectFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+/* Enlaces de proyecto */
+.projectLinks {
+  display: flex;
+  gap: 10px;
+}
+
+.projectLinks a {
+  color: var(--accentColor);
+  font-size: 1.2rem;
+  transition: color var(--transitionTime);
+}
+
+.projectLinks a:hover {
+  color: var(--colorLinkSelection);
+}
+
+/* Contenedor de enlaces sociales */
+.socialLinks {
+  display: flex;
+  gap: 10px;
+}
+
+/* Estilos de enlaces sociales */
+.socialLinks a {
+  display: inline-block;
+  color: var(--accentColor);
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition:
+    color var(--transitionTime),
+    transform var(--transitionTime) ease-in-out;
+}
+
+.socialLinks a:hover {
+  color: var(--colorLinkSelection);
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Sección de características */
+  .features {
+    padding: 20px 0;
+  }
+
+  /* Contenedor de características */
+  .featureContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Característica individual */
+  .feature {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imageContainer {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  /* Imagen */
+  .featureImage {
+    width: 180px;
+    height: 180px;
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+
+  /* Contenedor de proyectos */
+  .projectsContainer {
+    display: block;
+    margin-top: 20px;
+  }
+
+  /* Tarjeta de categoría de proyecto */
+  .project {
+    margin: 20px 0;
+    padding: 15px;
+    width: var(--maxWidth);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectCard {
+    margin-bottom: 20px;
+  }
+}

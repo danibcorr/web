@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree&family=Montserrat&display=swap");
+
+:root {
+  --ifm-font-family-base: "Montserrat", sans-serif;
+  --ifm-color-primary: #171717;
+  --ifm-color-primary-dark: #151515;
+  --ifm-color-primary-darker: #141414;
+  --ifm-color-primary-darkest: #101010;
+  --ifm-color-primary-light: #191919;
+  --ifm-color-primary-lighter: #1a1a1a;
+  --ifm-color-primary-lightest: #1e1e1e;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --colorFondoDoc: #f0f5ef;
+  --ifm-link-color: #af8f6f;
+  --colorLinkSelection: #af8f6f;
+  --colorLetraFooter: #000000;
+  --transitionTime: 0.3s;
+  --maxWidth: 100%;
+}
+
+[data-theme="dark"] {
+  --ifm-font-family-base: "Montserrat", sans-serif;
+  --ifm-color-primary: #e0e0e0;
+  --ifm-color-primary-dark: #cacaca;
+  --ifm-color-primary-darker: #bebebe;
+  --ifm-color-primary-darkest: #9d9d9d;
+  --ifm-color-primary-light: #f6f6f6;
+  --ifm-color-primary-lighter: #ffffff;
+  --ifm-color-primary-lightest: #ffffff;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --colorFondoDoc: #15191d;
+  --ifm-link-color: #8492a6;
+  --colorLinkSelection: #8492a6;
+  --colorLetraFooter: #ffffff;
+  --transitionTime: 0.3s;
+  --maxWidth: 100%;
+}
+
+/* Estilos del selector de idioma */
+.dropdown__link--active {
+  color: var(--colorLinkSelection) !important;
+}
+
+.dropdown__link--active:hover {
+  color: var(--colorLinkSelection) !important;
+}
+
+.main-wrapper {
+  /* Permite cambiar el color del fondo */
+  background-color: var(--colorFondoDoc);
+}
+
+.footer {
+  /* Cambiar el color del texto del footer */
+  color: var(--colorLetraFooter);
+  background-color: var(--colorFondoDoc);
+  border-top: none !important;
+}
+
+.navbar {
+  /* Cambiar el color de fondo de la navbar */
+  background-color: var(--colorFondoDoc);
+}
+
+.navbar__link:hover {
+  /* Cambiar el color de los enlaces al pasar el ratón */
+  color: var(--colorLinkSelection);
+}
+
+.dropdown > .navbar__link:after {
+  /* Eliminar la flecha en los menús desplegables */
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Hacer scrollable las tablas de Markdown en móviles */
+  .markdown {
+    overflow-x: auto;
+  }
+
+  .markdown table {
+    min-width: 600px;
+  }
+}

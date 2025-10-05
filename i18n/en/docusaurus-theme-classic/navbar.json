@@ -1,0 +1,10 @@
+{
+  "title": {
+    "message": "Daniel Bazo Correa",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Logo",
+    "description": "The alt text of navbar logo"
+  }
+}
