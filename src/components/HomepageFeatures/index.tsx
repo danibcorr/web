@@ -72,7 +72,7 @@ const dataAiProjects = [
       },
       {
         label: <TbWorld />,
-        url: "https://danibcorr.github.io/ml-wiki/intro/",
+        url: "https://danibcorr.github.io/ml-wiki/",
       },
     ],
   },
