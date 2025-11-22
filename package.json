@@ -30,7 +30,7 @@
     "dev:en": "npm run start:en"
   },
   "dependencies": {
-    "@algolia/client-search": "^5.41.0",
+    "@algolia/client-search": "^5.44.0",
     "@docusaurus/core": "^3.9.1",
     "@docusaurus/plugin-client-redirects": "^3.9.1",
     "@docusaurus/preset-classic": "^3.9.1",
