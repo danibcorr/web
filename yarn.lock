@@ -2384,10 +2384,10 @@
   resolved "https://registry.npmjs.org/@trysound/sax/-/sax-0.2.0.tgz"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
-"@tsconfig/docusaurus@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@tsconfig/docusaurus/-/docusaurus-2.0.4.tgz#adb1ee2b572d895bd44ba34b3e74b969342dafd9"
-  integrity sha512-QEu3tpCrqHHcDJYKrv/cu9G8o3XggkpKw374rzcYqfVA2lIMsOpGrt4TcZEGyzjrFpovVt8MuWuDJyR/QeETbg==
+"@tsconfig/docusaurus@^2.0.7":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@tsconfig/docusaurus/-/docusaurus-2.0.7.tgz#382387c2e3c1e2c08adab4c5f12a9615fc006c4a"
+  integrity sha512-sDDxcltg2pcV0U3sQf5EMaX4/ER+x3IXmUc5EXuz4JnFDyxfGhTG7zGKJ8cLLZzjZALgdTK2LSKQbFLSKuGvQQ==
 
 "@types/body-parser@*":
   version "1.19.6"
