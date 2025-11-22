@@ -47,7 +47,7 @@
     "search-insights": "^2.17.3"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.9.1",
+    "@docusaurus/module-type-aliases": "^3.9.2",
     "@docusaurus/tsconfig": "^3.9.2",
     "@tsconfig/docusaurus": "^2.0.4",
     "@types/react": "^19.1.16",
