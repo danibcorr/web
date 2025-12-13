@@ -1,8 +1,11 @@
 {
   "name": "web",
   "version": "1.0.0",
-  "license": "MIT",
+  "description": "🏡 Personal website showcasing my key projects and contact information.",
+  "license": "Attribution-NonCommercial-ShareAlike 4.0 International",
   "private": true,
+  "author": "Daniel Bazo Correa",
+  "homepage": "https://danibcorr.github.io/web/",
   "scripts": {
     "docusaurus": "docusaurus --config config/docusaurus.config.js",
     "start": "docusaurus start --config config/docusaurus.config.js",
@@ -15,7 +18,7 @@
     "deploy": "docusaurus deploy --config config/docusaurus.config.js",
     "deploy:es": "docusaurus deploy --config config/docusaurus.config.js --locale es",
     "deploy:en": "docusaurus deploy --config config/docusaurus.config.js --locale en",
-    "clear": "docusaurus clear --config config/docusaurus.config.js",
+    "clear": "docusaurus clear",
     "serve": "docusaurus serve --config config/docusaurus.config.js",
     "serve:es": "docusaurus serve --config config/docusaurus.config.js --locale es",
     "serve:en": "docusaurus serve --config config/docusaurus.config.js --locale en",
@@ -30,45 +33,25 @@
     "dev:en": "npm run start:en"
   },
   "dependencies": {
-    "@algolia/client-search": "^5.46.0",
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/plugin-client-redirects": "^3.9.1",
     "@docusaurus/preset-classic": "^3.9.2",
     "@mdx-js/react": "^3.1.1",
-    "acorn": "^8.15.0",
     "clsx": "^2.1.1",
-    "prism-react-renderer": "^2.4.1",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-icons": "^5.4.0",
-    "react-loadable": "^5.5.0",
-    "rehype-katex": "^7.0.1",
-    "remark-math": "^6.0.0",
-    "search-insights": "^2.17.3"
+    "react-icons": "^5.4.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.9.1",
     "@docusaurus/tsconfig": "^3.9.2",
     "@tsconfig/docusaurus": "^2.0.7",
     "@types/react": "^19.1.16",
-    "css-loader": "^7.1.2",
     "prettier": "^3.7.4",
-    "style-loader": "^4.0.0",
-    "typescript": "^5.9.3",
-    "webpack": "^5.103.0"
+    "typescript": "^5.9.3"
   },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    "defaults"
+  ],
   "engines": {
     "node": ">=22.0"
   }

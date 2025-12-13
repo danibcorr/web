@@ -1,26 +1,23 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
-import styles from "./styles.module.css";
+import styles from "@site/src/components/HomepageFeatures/styles.module.css";
 import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
-import Translate, { translate } from "@docusaurus/Translate";
+import Translate from "@docusaurus/Translate";
 
-// Imagenes datos
-import ML_WIKI_IMG from "/static/img/projects/ml_wiki.jpg";
-import MUSIC_GENRE_IMG from "/static/img/projects/music_genre_classifier.jpg";
-import PAPERS_CODE_IMG from "/static/img/projects/papers_with_code.jpg";
-import SALES_SUITE_IMG from "/static/img/projects/streamline_sales_suite.jpg";
-import MORPHX_IMG from "/static/img/projects/morphx.jpg";
-import WATTPAD_IMG from "/static/img/projects/wattpad.jpg";
+import ML_WIKI_IMG from "@site/static/img/projects/ml_wiki.jpg";
+import MUSIC_GENRE_IMG from "@site/static/img/projects/music_genre_classifier.jpg";
+import PAPERS_CODE_IMG from "@site/static/img/projects/papers_with_code.jpg";
+import SALES_SUITE_IMG from "@site/static/img/projects/streamline_sales_suite.jpg";
+import MORPHX_IMG from "@site/static/img/projects/morphx.jpg";
+import WATTPAD_IMG from "@site/static/img/projects/wattpad.jpg";
 
-// Imagenes electronica
-import IOT_IMG from "/static/img/projects/arduino_iot.jpg";
-import TIVA_IMG from "/static/img/projects/tivac_projects.jpg";
-import ARDUINO_IMG from "/static/img/projects/creativa.jpg";
-import KINECT_IMG from "/static/img/projects/kinect.jpg";
-import SUMO_IMG from "/static/img/projects/tivac_sumo.jpg";
+import IOT_IMG from "@site/static/img/projects/arduino_iot.jpg";
+import TIVA_IMG from "@site/static/img/projects/tivac_projects.jpg";
+import ARDUINO_IMG from "@site/static/img/projects/creativa.jpg";
+import KINECT_IMG from "@site/static/img/projects/kinect.jpg";
+import SUMO_IMG from "@site/static/img/projects/tivac_sumo.jpg";
 
-// Categorías de proyectos
 const projectCategories = [
   {
     title: (
@@ -50,7 +47,6 @@ const projectCategories = [
   },
 ];
 
-// Proyectos de datos e IA
 const dataAiProjects = [
   {
     title: (
@@ -174,7 +170,6 @@ const dataAiProjects = [
   },
 ];
 
-// Proyectos de electrónica y robótica
 const electronicsProjects = [
   {
     title: (
@@ -426,7 +421,15 @@ function HomepageFeatures() {
 // Variable features (no modificada respecto a tu código original)
 const features = [
   {
-    title: <Translate id="perfil.title">Hola, soy Dani! 👋</Translate>,
+    title: (
+      <>
+        <Translate id="perfil.title">Hola, soy Dani! </Translate>
+        <img
+          src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif"
+          width={35}
+        />
+      </>
+    ),
     description: (
       <Translate id="perfil.descripcion">
         Soy Ingeniero de Sistemas Electrónicos y Científico de Datos en el área
