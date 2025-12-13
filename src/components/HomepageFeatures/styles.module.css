@@ -18,8 +18,8 @@
   --heightImage: 220px;
   --widthImage: 220px;
   --borderRadiusImage: 50%;
-  --marginTop: 40px;
-  --marginRest: 30px;
+  --marginTop: 0px;
+  --marginRest: 20px;
   --marginGap: 20px;
 }
 
@@ -40,8 +40,9 @@
   --heightImage: 220px;
   --widthImage: 220px;
   --borderRadiusImage: 50%;
-  --marginTop: 40px;
-  --marginRest: 30px;
+  --marginTop: 0px;
+  --marginRest: 20px;
+  --marginGap: 20px;
 }
 
 /* Esta es la sección de mi foto y descripción */
@@ -171,7 +172,6 @@
   transition:
     opacity 0.5s ease,
     visibility 0s linear 0.5s;
-  /* Transición suave para la opacidad */
 }
 
 /* Tarjeta de proyecto individual */
